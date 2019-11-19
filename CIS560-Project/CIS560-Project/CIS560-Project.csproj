@@ -70,6 +70,12 @@
     <Compile Include="EnterRace.Designer.cs">
       <DependentUpon>EnterRace.cs</DependentUpon>
     </Compile>
+    <Compile Include="EnterRaceDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnterRaceDetails.Designer.cs">
+      <DependentUpon>EnterRaceDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogTrainingRun.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EnterRace.resx">
       <DependentUpon>EnterRace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnterRaceDetails.resx">
+      <DependentUpon>EnterRaceDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogTrainingRun.resx">
       <DependentUpon>LogTrainingRun.cs</DependentUpon>
