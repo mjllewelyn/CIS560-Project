@@ -15,11 +15,11 @@ namespace CIS560_Project.Models
         public string FirstName { get; }
         public string LastName { get; }
         public DateTime CreatedOn { get; }
-        public DateTime UpdatedOn { get; set; }
+        public DateTime UpdatedOn { get; }
 
         public User() { }
 
-        public User(int userId, string email, string password, string userType, string firstName, string lastName)
+        public User(int userId, string email, string password, string userType, string firstName, string lastName, DateTime createdOn, DateTime updatedOn)
         {
             UserId = userId;
             Email = email;
@@ -27,6 +27,8 @@ namespace CIS560_Project.Models
             UserType = userType;
             FirstName = firstName;
             LastName = lastName;
+            CreatedOn = createdOn;
+            UpdatedOn = updatedOn;
         }
 
         private string encryptPassword(string password, bool encrypt)
@@ -35,9 +37,9 @@ namespace CIS560_Project.Models
             for (int i = 0; i < password.Length; i++)
             {
                 if (encrypt)
-                    sb.Append(password[i] + 10);
+                    sb.Append(password[i] + i);
                 else
-                    sb.Append(password[i] - 10);
+                    sb.Append(password[i] - i);
             }
             return sb.ToString();
         }

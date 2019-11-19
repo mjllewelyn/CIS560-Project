@@ -19,6 +19,7 @@ namespace CIS560_Project.Models
         {
             LocationId = locationId;
             Name = name;
+            City = city;
             StateProv = stateProv;
         }
     }

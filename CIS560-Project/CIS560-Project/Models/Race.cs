@@ -13,18 +13,18 @@ namespace CIS560_Project.Models
         public int LocationId { get; }
         public DateTime DateTime { get; }
         public int Distance { get; }
-        public bool IsArchived { get; set; }
-        public int ChangeInElevation { get; set; }
+        public bool IsArchived { get; }
 
         public Race() { }
 
-        public Race(int raceId, int creatorId, int locationId, DateTime dateTime, int distance)
+        public Race(int raceId, int creatorId, int locationId, DateTime dateTime, int distance, bool isArchived=false)
         {
             RaceId = raceId;
             CreatorId = creatorId;
             LocationId = locationId;
             DateTime = dateTime;
             Distance = distance;
+            IsArchived = isArchived;
         }
     }
 }

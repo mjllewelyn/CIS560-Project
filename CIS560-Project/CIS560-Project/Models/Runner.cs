@@ -14,10 +14,11 @@ namespace CIS560_Project.Models
 
         public Runner() { }
 
-        public Runner(int teamId, DateTime startYear)
+        public Runner(int teamId, DateTime startYear, DateTime endYear)
         {
             TeamId = teamId;
             StartYear = startYear;
+            EndYear = endYear;
         }
     }
 }
