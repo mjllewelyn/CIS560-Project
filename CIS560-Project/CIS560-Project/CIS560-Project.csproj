@@ -52,6 +52,12 @@
     <Compile Include="CoachWelcome.Designer.cs">
       <DependentUpon>CoachWelcome.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateTeam.Designer.cs">
+      <DependentUpon>CreateTeam.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataAccess\ColumnNotFoundException.cs" />
     <Compile Include="DataAccess\DataDelegate.cs" />
     <Compile Include="DataAccess\DataReaderDelegate.cs" />
@@ -134,6 +140,9 @@
     </Compile>
     <EmbeddedResource Include="CoachWelcome.resx">
       <DependentUpon>CoachWelcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateTeam.resx">
+      <DependentUpon>CreateTeam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EnterRace.resx">
       <DependentUpon>EnterRace.cs</DependentUpon>
