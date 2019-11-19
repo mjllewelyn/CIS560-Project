@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace CIS560_Project
 {
-    public partial class Form1 : Form
+    public partial class uxSignIn : Form
     {
-        public Form1()
+        public uxSignIn()
         {
             InitializeComponent();
+        }
+
+        private void uxSignInButton_Click(object sender, EventArgs e)
+        {
+            string username = uxUsernameTextBox.Text;
+            string password = uxPasswordTextBox.Text;
+            // call method to login
         }
     }
 }
