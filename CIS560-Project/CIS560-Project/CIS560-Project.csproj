@@ -100,6 +100,12 @@
     <Compile Include="Races.Designer.cs">
       <DependentUpon>Races.cs</DependentUpon>
     </Compile>
+    <Compile Include="Records.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Records.Designer.cs">
+      <DependentUpon>Records.cs</DependentUpon>
+    </Compile>
     <Compile Include="RunnerWelcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Races.resx">
       <DependentUpon>Races.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Records.resx">
+      <DependentUpon>Records.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RunnerWelcome.resx">
       <DependentUpon>RunnerWelcome.cs</DependentUpon>
