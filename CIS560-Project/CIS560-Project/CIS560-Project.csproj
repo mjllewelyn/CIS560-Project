@@ -70,6 +70,12 @@
     <Compile Include="Profle.Designer.cs">
       <DependentUpon>Profle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Races.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Races.Designer.cs">
+      <DependentUpon>Races.cs</DependentUpon>
+    </Compile>
     <Compile Include="RunnerHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Profle.resx">
       <DependentUpon>Profle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Races.resx">
+      <DependentUpon>Races.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RunnerHomePage.resx">
       <DependentUpon>RunnerHomePage.cs</DependentUpon>
