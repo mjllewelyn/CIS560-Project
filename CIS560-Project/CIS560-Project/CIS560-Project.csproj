@@ -59,6 +59,7 @@
     <Compile Include="DataAccess\RecordNotFoundException.cs" />
     <Compile Include="DataAccess\SqlCommandExecutor.cs" />
     <Compile Include="DataDelegates\CreateTrainingRunDataDelegate.cs" />
+    <Compile Include="DataDelegates\GetUserDataDelegate.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
