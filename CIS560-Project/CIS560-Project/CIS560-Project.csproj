@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\CoachWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CoachWelcome.Designer.cs">
+      <DependentUpon>CoachWelcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CreateTeam.Designer.cs">
+      <DependentUpon>CreateTeam.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataAccess\ColumnNotFoundException.cs" />
     <Compile Include="DataAccess\DataDelegate.cs" />
     <Compile Include="DataAccess\DataReaderDelegate.cs" />
@@ -61,13 +73,115 @@
     <Compile Include="DataDelegates\CreateTrainingRunDataDelegate.cs" />
     <Compile Include="DataDelegates\GetUserDataDelegate.cs" />
     <Compile Include="Form1.cs">
+    <Compile Include="Views\EnterRace.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Views\EnterRace.Designer.cs">
+      <DependentUpon>EnterRace.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\EnterRaceDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EnterRaceDetails.Designer.cs">
+      <DependentUpon>EnterRaceDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LogTrainingRun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LogTrainingRun.Designer.cs">
+      <DependentUpon>LogTrainingRun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Profle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Profle.Designer.cs">
+      <DependentUpon>Profle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RaceDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RaceDetails.Designer.cs">
+      <DependentUpon>RaceDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Races.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Races.Designer.cs">
+      <DependentUpon>Races.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Records.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Records.Designer.cs">
+      <DependentUpon>Records.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RunnerWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RunnerWelcome.Designer.cs">
+      <DependentUpon>RunnerWelcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SignIn.Designer.cs">
+      <DependentUpon>SignIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Coach.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\Race.cs" />
+    <Compile Include="Models\RaceParticipant.cs" />
+    <Compile Include="Models\Runner.cs" />
+    <Compile Include="Models\Team.cs" />
+    <Compile Include="Models\TrainingRun.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Teams.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Teams.Designer.cs">
+      <DependentUpon>Teams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrainingRuns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TrainingRuns.Designer.cs">
+      <DependentUpon>TrainingRuns.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\CoachWelcome.resx">
+      <DependentUpon>CoachWelcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CreateTeam.resx">
+      <DependentUpon>CreateTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EnterRace.resx">
+      <DependentUpon>EnterRace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EnterRaceDetails.resx">
+      <DependentUpon>EnterRaceDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LogTrainingRun.resx">
+      <DependentUpon>LogTrainingRun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Profle.resx">
+      <DependentUpon>Profle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RaceDetails.resx">
+      <DependentUpon>RaceDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Races.resx">
+      <DependentUpon>Races.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Records.resx">
+      <DependentUpon>Records.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RunnerWelcome.resx">
+      <DependentUpon>RunnerWelcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SignIn.resx">
+      <DependentUpon>SignIn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -77,6 +191,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Teams.resx">
+      <DependentUpon>Teams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TrainingRuns.resx">
+      <DependentUpon>TrainingRuns.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
