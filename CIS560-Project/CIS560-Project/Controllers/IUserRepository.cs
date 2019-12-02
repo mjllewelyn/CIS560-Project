@@ -10,5 +10,7 @@ namespace CIS560_Project.Controllers
     interface IUserRepository
     {
         User GetUser(string email);
+
+        bool ValidateUser(string email, string password);
     }
 }

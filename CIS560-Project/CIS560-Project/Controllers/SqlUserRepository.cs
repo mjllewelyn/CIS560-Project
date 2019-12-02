@@ -22,5 +22,11 @@ namespace CIS560_Project.Controllers
             var d = new GetUserDataDelegate(email);
             return executor.ExecuteReader(d);
         }
+
+        public bool ValidateUser(string email, string password)
+        {
+            var d = new ValidateUserDataDelegate(email, password);
+            return executor.ExecuteNonQuery(d);
+        }
     }
 }
