@@ -46,6 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ICoachRepository.cs" />
+    <Compile Include="Controllers\ILocationRepository.cs" />
+    <Compile Include="Controllers\IRaceParticipantRepository.cs" />
+    <Compile Include="Controllers\IRaceRepository.cs" />
+    <Compile Include="Controllers\IRunnerRepository.cs" />
+    <Compile Include="Controllers\ITeamRepository.cs" />
+    <Compile Include="Controllers\ITrainingRunRepository.cs" />
+    <Compile Include="Controllers\IUserRepository.cs" />
+    <Compile Include="Controllers\SqlCoachRepository.cs" />
+    <Compile Include="Controllers\SqlLocationRepository.cs" />
+    <Compile Include="Controllers\SqlRaceParticipantRepository.cs" />
+    <Compile Include="Controllers\SqlRaceRepository.cs" />
+    <Compile Include="Controllers\SqlRunnerRepository.cs" />
+    <Compile Include="Controllers\SqlTeamRepository.cs" />
+    <Compile Include="Controllers\SqlTrainingRunRepository.cs" />
+    <Compile Include="Controllers\SqlUserRepository.cs" />
     <Compile Include="Views\CoachWelcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,5 +226,6 @@
   <ItemGroup>
     <Content Include="DataAccess\DataAccess.csproj" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
