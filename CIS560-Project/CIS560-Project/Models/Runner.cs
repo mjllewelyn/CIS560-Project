@@ -9,12 +9,12 @@ namespace CIS560_Project.Models
     class Runner : User
     {
         public int TeamId { get; }
-        public DateTime StartYear { get; }
-        public DateTime EndYear { get; set; }
+        public int StartYear { get; }
+        public int EndYear { get; set; }
 
         public Runner() { }
 
-        public Runner(int teamId, DateTime startYear, DateTime endYear)
+        public Runner(int teamId, int startYear, int endYear)
         {
             TeamId = teamId;
             StartYear = startYear;

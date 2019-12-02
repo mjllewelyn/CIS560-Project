@@ -8,12 +8,12 @@ namespace CIS560_Project.Models
 {
     class Coach : User
     {
-        public DateTime StartYear { get; }
-        public DateTime EndYear { get; }
+        public int StartYear { get; }
+        public int EndYear { get; }
 
         public Coach() { }
 
-        public Coach(DateTime startYear, DateTime endYear)
+        public Coach(int startYear, int endYear)
         {
             StartYear = startYear;
             EndYear = endYear;
