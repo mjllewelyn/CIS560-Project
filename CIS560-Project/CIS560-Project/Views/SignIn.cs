@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CIS560_Project.Models;
+using CIS560_Project.Controllers;
 
 namespace CIS560_Project
 {
@@ -19,9 +21,14 @@ namespace CIS560_Project
 
         private void uxSignInButton_Click(object sender, EventArgs e)
         {
-            string username = uxUsernameTextBox.Text;
+            string email = uxEmailTextBox.Text;
             string password = uxPasswordTextBox.Text;
             // call method to login
+            if (ValidateUser(email, password))
+            {
+                Program.currentUser = GetUser(email);
+
+            }
         }
     }
 }
