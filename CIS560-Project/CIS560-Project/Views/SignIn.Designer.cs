@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uxUsernameTextBox = new System.Windows.Forms.TextBox();
+            this.uxEmailTextBox = new System.Windows.Forms.TextBox();
             this.uxSignInLabel = new System.Windows.Forms.Label();
-            this.uxUserNameLabel = new System.Windows.Forms.Label();
+            this.uxEmailLabel = new System.Windows.Forms.Label();
             this.uxPasswordLabel = new System.Windows.Forms.Label();
             this.uxPasswordTextBox = new System.Windows.Forms.TextBox();
             this.uxSignInButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // uxUsernameTextBox
+            // uxEmailTextBox
             // 
-            this.uxUsernameTextBox.Location = new System.Drawing.Point(121, 173);
-            this.uxUsernameTextBox.Name = "uxUsernameTextBox";
-            this.uxUsernameTextBox.Size = new System.Drawing.Size(249, 22);
-            this.uxUsernameTextBox.TabIndex = 0;
+            this.uxEmailTextBox.Location = new System.Drawing.Point(121, 173);
+            this.uxEmailTextBox.Name = "uxEmailTextBox";
+            this.uxEmailTextBox.Size = new System.Drawing.Size(249, 22);
+            this.uxEmailTextBox.TabIndex = 0;
             // 
             // uxSignInLabel
             // 
@@ -53,14 +53,14 @@
             this.uxSignInLabel.TabIndex = 1;
             this.uxSignInLabel.Text = "Sign In";
             // 
-            // uxUserNameLabel
+            // uxEmailLabel
             // 
-            this.uxUserNameLabel.AutoSize = true;
-            this.uxUserNameLabel.Location = new System.Drawing.Point(121, 150);
-            this.uxUserNameLabel.Name = "uxUserNameLabel";
-            this.uxUserNameLabel.Size = new System.Drawing.Size(73, 17);
-            this.uxUserNameLabel.TabIndex = 2;
-            this.uxUserNameLabel.Text = "Username";
+            this.uxEmailLabel.AutoSize = true;
+            this.uxEmailLabel.Location = new System.Drawing.Point(121, 150);
+            this.uxEmailLabel.Name = "uxEmailLabel";
+            this.uxEmailLabel.Size = new System.Drawing.Size(42, 17);
+            this.uxEmailLabel.TabIndex = 2;
+            this.uxEmailLabel.Text = "Email";
             // 
             // uxPasswordLabel
             // 
@@ -97,9 +97,9 @@
             this.Controls.Add(this.uxSignInButton);
             this.Controls.Add(this.uxPasswordLabel);
             this.Controls.Add(this.uxPasswordTextBox);
-            this.Controls.Add(this.uxUserNameLabel);
+            this.Controls.Add(this.uxEmailLabel);
             this.Controls.Add(this.uxSignInLabel);
-            this.Controls.Add(this.uxUsernameTextBox);
+            this.Controls.Add(this.uxEmailTextBox);
             this.Name = "uxSignIn";
             this.Text = "SignIn";
             this.ResumeLayout(false);
@@ -109,9 +109,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox uxUsernameTextBox;
+        private System.Windows.Forms.TextBox uxEmailTextBox;
         private System.Windows.Forms.Label uxSignInLabel;
-        private System.Windows.Forms.Label uxUserNameLabel;
+        private System.Windows.Forms.Label uxEmailLabel;
         private System.Windows.Forms.Label uxPasswordLabel;
         private System.Windows.Forms.TextBox uxPasswordTextBox;
         private System.Windows.Forms.Button uxSignInButton;

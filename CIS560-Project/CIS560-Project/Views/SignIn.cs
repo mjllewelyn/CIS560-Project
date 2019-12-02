@@ -19,9 +19,10 @@ namespace CIS560_Project
 
         private void uxSignInButton_Click(object sender, EventArgs e)
         {
-            string username = uxUsernameTextBox.Text;
+            string email = uxEmailTextBox.Text;
             string password = uxPasswordTextBox.Text;
             // call method to login
+            ValidateUser(username, password)
         }
     }
 }
