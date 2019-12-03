@@ -7,7 +7,7 @@ CREATE TABLE CrossCountry.RaceParticipant
 		REFERENCES CrossCountry.Race,
 	RunnerId INT NOT NULL FOREIGN KEY
 		REFERENCES CrossCountry.Runner,
-	[Time] TIME,
+	[Time] INT,
 	AvgHeartRate INT,
 
 	UNIQUE(RaceId, RunnerId)
