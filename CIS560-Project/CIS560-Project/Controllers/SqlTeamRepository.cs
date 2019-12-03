@@ -17,20 +17,21 @@ namespace CIS560_Project.Controllers
             executor = new SqlCommandExecutor(connectionString);
         }
 
-        public IReadOnlyList<Team> RetrieveTeams()
-        {
-            return executor.ExecuteReader(new RetrieveTeamsDataDelegate());
-        }
-
         public Team GetTeam(int teamId)
         {
             var d = new GetTeamDataDelegate(teamId);
             return executor.ExecuteReader(d);
         }
 
-        public Team FetchTeam(string name)
+        public List<Team> FetchCoachTeams(int coachId)
         {
-            var d = new FetchTeamDataDelegate(name);
+            var d = new FetchCoachTeamsDataDelegate(coachId);
+            return executor.ExecuteReader(d);
+        }
+
+        public List<Team> GetTeamsForRace(int raceId)
+        {
+            var d = new GetTeamsForRaceDataDelegate(raceId);
             return executor.ExecuteReader(d);
         }
 
@@ -55,6 +56,15 @@ namespace CIS560_Project.Controllers
                 throw new ArgumentException("The parameter cannot be null or empty.", nameof(endYear));
 
             var d = new CreateTeamDataDelegate(name, coachId, createdOn, updatedOn, startYear, endYear);
+            return executor.ExecuteNonQuery(d);
+        }
+
+        public Team RetireTeam(int teamId)
+        {
+            if (string.IsNullOrWhiteSpace(teamId.ToString()))
+                throw new ArgumentException("The parameter cannot be null or empty.", nameof(teamId));
+
+            var d = new RetireTeamDataDelegate(teamId);
             return executor.ExecuteNonQuery(d);
         }
     }

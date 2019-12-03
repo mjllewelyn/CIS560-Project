@@ -28,5 +28,17 @@ namespace CIS560_Project.Controllers
             var d = new ValidateUserDataDelegate(email, password);
             return executor.ExecuteNonQuery(d);
         }
+
+        public User RetireUser(int userId)
+        {
+            var d = new RetireUserDataDelegate(userId);
+            return executor.ExecuteNonQuery(d);
+        }
+
+        public List<User> GetCoachsRunnersUser(int coachId)
+        {
+            var d = new GetCoachsRunnersUserDataDelegate(coachId);
+            return executor.ExecuteReader(d);
+        }
     }
 }

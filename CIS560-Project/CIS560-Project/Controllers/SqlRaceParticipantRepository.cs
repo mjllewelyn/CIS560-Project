@@ -18,30 +18,47 @@ namespace CIS560_Project.Controllers
             executor = new SqlCommandExecutor(connectionString);
         }
 
-        public IReadOnlyList<RaceParticipant> RetrieveRaceParticipants()
-        {
-            return executor.ExecuteReader(new GetRaceParticipantDataDelegate());
-        }
-
         public RaceParticipant GetRaceParticipant(int raceParticipantId)
         {
             var d = new GetRaceParticipantDataDelegate(raceParticipantId);
             return executor.ExecuteReader(d);
         }
 
-        public RaceParticipant FetchRaceParticipant(int raceId)
+        public List<RaceParticipant> FetchRunnersForRace(int raceId)
         {
-            var d = new FetchRaceRunnerDataDelegate(raceId);
+            var d = new FetchRunnersForRaceDataDelegate(raceId);
             return executor.ExecuteReader(d);
         }
 
-        public RaceParticipant FetchRaceRunner(int runnerId)
+        public List<RaceParticipant> FetchRacesForRunner(int runnerId)
         {
-            var d = new FetchRaceRunnerDataDelegate(runnerId);
+            var d = new FetchRacesForRunnerDataDelegate(runnerId);
             return executor.ExecuteReader(d);
         }
 
-        public RaceParticipant CreateRaceParticipant(int raceId, int runnerId, double time = 0.0, double averageHeartRate = 0.0)
+        public List<RaceParticipant> GetTeamRecords(int teamId)
+        {
+            var d = new GetTeamRecordsDataDelegate(teamId);
+            return executor.ExecuteReader(d);
+        }
+
+        public RaceParticipant UpdateRaceParticipantTime(int raceId, int runnerId, int time)
+        {
+            var d = new UpdateRaceParticipantTimeDataDelegate(raceId, runnerId, time);
+            return executor.ExecuteNonQuery(d);
+        }
+
+        public List<RaceParticipant> CreateRaceParticipants(List<Runner> runners, int raceId)
+        {
+            List<RaceParticipant> participants = new List<RaceParticipant>();
+            foreach(Runner r in runners)
+            {
+                participants.Add(CreateRaceParticipant(raceId, r.UserId));
+            }
+            return participants;
+        }
+
+        public RaceParticipant CreateRaceParticipant(int raceId, int runnerId, int time = 0, double averageHeartRate = 0.0)
         {
             if (string.IsNullOrWhiteSpace(raceId.ToString()))
                 throw new ArgumentException("The parameter cannot be null or empty.", nameof(raceId));

@@ -17,20 +17,15 @@ namespace CIS560_Project.Controllers
             executor = new SqlCommandExecutor(connectionString);
         }
 
-        public IReadOnlyList<TrainingRun> RetrieveTrainingRuns()
-        {
-            return executor.ExecuteReader(new RetrieveTrainingRunsDataDelegate());
-        }
-
         public TrainingRun GetTrainingRun(int trainingRunId)
         {
             var d = new GetTrainingRunDataDelegate(trainingRunId);
             return executor.ExecuteReader(d);
         }
 
-        public TrainingRun FetchTrainingRun(int runnerId)
+        public List<TrainingRun> FetchTrainingRuns(int runnerId)
         {
-            var d = new FetchTrainingRunDataDelegate(runnerId);
+            var d = new FetchTrainingRunsDataDelegate(runnerId);
             return executor.ExecuteReader(d);
         }
 

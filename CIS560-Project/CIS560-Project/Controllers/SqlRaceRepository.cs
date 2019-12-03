@@ -51,5 +51,11 @@ namespace CIS560_Project.Controllers
             var d = new CreateRaceDataDelegate(creatorId, locationId, dateTime, distance, isArchived);
             return executor.ExecuteNonQuery(d);
         }
+
+        public Race ArchiveRace(int raceId)
+        {
+            var d = new ArchiveRaceDataDelegate(raceId);
+            return executor.ExecuteNonQuery(d);
+        }
     }
 }

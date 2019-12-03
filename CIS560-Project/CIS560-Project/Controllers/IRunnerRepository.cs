@@ -9,6 +9,12 @@ namespace CIS560_Project.Controllers
 {
     interface IRunnerRepository
     {
+        IReadOnlyList<Runner> RetrieveRunners();
+
         Runner GetRunner(int runnerId);
+
+        List<Runner> GetTeamRunners(int teamId);
+
+        List<Runner> GetRunnersNoTeam();
     }
 }
