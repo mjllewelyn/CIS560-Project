@@ -29,6 +29,7 @@ namespace CIS560_Project.DataDelegates
             while (reader.Read())
             {
                 races.Add(new Race(
+                    reader.GetInt32("RaceId"),
                     reader.GetInt32("CreatorId"),
                     reader.GetInt32("LocationId"),
                     reader.GetValue<DateTime>("DateTime"),
