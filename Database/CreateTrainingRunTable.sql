@@ -5,7 +5,7 @@ CREATE TABLE CrossCountry.TrainingRun
 		REFERENCES CrossCountry.Runner,
 	[Date] DATE NOT NULL,
 	Distance INT NOT NULL,
-	[Time] TIME NOT NULL,
+	[Time] INT NOT NULL,
 	AvgHeartRate INT,
 	ChangeInElevation INT,
 	IsArchived INT
