@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess;
 using CIS560_Project.Models;
+using CIS560_Project.DataDelegates;
 
 namespace CIS560_Project.Controllers
 {
@@ -19,7 +20,7 @@ namespace CIS560_Project.Controllers
 
         public IReadOnlyList<RaceParticipant> RetrieveRaceParticipants()
         {
-            return executor.ExecuteReader(new RetrieveRaceParticipantsDataDelegate());
+            return executor.ExecuteReader(new GetRaceParticipantDataDelegate());
         }
 
         public RaceParticipant GetRaceParticipant(int raceParticipantId)
@@ -30,7 +31,7 @@ namespace CIS560_Project.Controllers
 
         public RaceParticipant FetchRaceParticipant(int raceId)
         {
-            var d = new FetchRaceParticipantDataDelegate(raceId);
+            var d = new FetchRaceRunnerDataDelegate(raceId);
             return executor.ExecuteReader(d);
         }
 

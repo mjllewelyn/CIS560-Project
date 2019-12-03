@@ -33,8 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.2.5.2\lib\NET35\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Services.Transaction, Version=3.0.202.2202, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Services.Transaction.3.0.202.2202\lib\net40\Castle.Services.Transaction.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,6 +69,10 @@
     <Compile Include="Controllers\SqlTeamRepository.cs" />
     <Compile Include="Controllers\SqlTrainingRunRepository.cs" />
     <Compile Include="Controllers\SqlUserRepository.cs" />
+    <Compile Include="DataDelegates\GetCoachDataDelegate.cs" />
+    <Compile Include="DataDelegates\GetLocationDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrieveRaceParticipantsDataDelegate - Copy.cs" />
+    <Compile Include="DataDelegates\GetRaceParticipantDataDelegate.cs" />
     <Compile Include="Views\CoachWelcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,7 +94,6 @@
     <Compile Include="DataAccess\IDataRowReader.cs" />
     <Compile Include="DataAccess\INonQueryDataDelegate.cs" />
     <Compile Include="DataAccess\NonQueryDataDelegate.cs" />
-    <Compile Include="DataAccess\Properties\AssemblyInfo.cs" />
     <Compile Include="DataAccess\RecordNotFoundException.cs" />
     <Compile Include="DataAccess\SqlCommandExecutor.cs" />
     <Compile Include="DataDelegates\CreateTrainingRunDataDelegate.cs" />
@@ -212,6 +222,7 @@
     <EmbeddedResource Include="Views\TrainingRuns.resx">
       <DependentUpon>TrainingRuns.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -228,6 +239,8 @@
   <ItemGroup>
     <Content Include="DataAccess\DataAccess.csproj" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DataAccess\Properties\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
