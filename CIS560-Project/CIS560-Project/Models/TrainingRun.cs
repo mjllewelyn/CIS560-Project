@@ -12,14 +12,14 @@ namespace CIS560_Project.Models
         public int RunnerId { get; }
         public DateTime Date { get; }
         public int Distance { get; }
-        public double Time { get; }
+        public int Time { get; }
         public double AverageHeartRate { get; }
         public bool IsArchived { get; }
 
 
         public TrainingRun() { }
 
-        public TrainingRun(int trainingRunId, int runnerId, DateTime date, int distance, double time, double averageHeartRate=0.0, bool isArchived=false)
+        public TrainingRun(int trainingRunId, int runnerId, DateTime date, int distance, int time, double averageHeartRate=0.0, bool isArchived=false)
         {
             TrainingRunId = trainingRunId;
             RunnerId = runnerId;

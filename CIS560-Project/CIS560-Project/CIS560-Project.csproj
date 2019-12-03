@@ -69,10 +69,16 @@
     <Compile Include="Controllers\SqlTeamRepository.cs" />
     <Compile Include="Controllers\SqlTrainingRunRepository.cs" />
     <Compile Include="Controllers\SqlUserRepository.cs" />
+    <Compile Include="DataDelegates\CreateRaceParticipantDataDelegate.cs" />
+    <Compile Include="DataDelegates\FetchRacesForRunnerDataDelegate.cs" />
+    <Compile Include="DataDelegates\FetchRunnersForRaceDataDelegate.cs" />
     <Compile Include="DataDelegates\GetCoachDataDelegate.cs" />
     <Compile Include="DataDelegates\GetLocationDataDelegate.cs" />
-    <Compile Include="DataDelegates\RetrieveRaceParticipantsDataDelegate - Copy.cs" />
+    <Compile Include="DataDelegates\GetTeamRecordsDataDelegate.cs" />
     <Compile Include="DataDelegates\GetRaceParticipantDataDelegate.cs" />
+    <Compile Include="DataDelegates\GetRaceDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrieveRacesDataDelegate.cs" />
+    <Compile Include="DataDelegates\UpdateRaceParticipantTimeDataDelegate.cs" />
     <Compile Include="Views\CoachWelcome.cs">
       <SubType>Form</SubType>
     </Compile>
