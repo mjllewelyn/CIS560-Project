@@ -28,12 +28,6 @@ namespace CIS560_Project.Controllers
             return executor.ExecuteReader(d);
         }
 
-        public Race FetchRace(int locationId)
-        {
-            var d = new FetchRaceDataDelegate(locationId);
-            return executor.ExecuteReader(d);
-        }
-
         public Race CreateRace(int creatorId, int locationId, DateTime dateTime, int distance, bool isArchived = false)
         {
             if (string.IsNullOrWhiteSpace(creatorId.ToString()))
