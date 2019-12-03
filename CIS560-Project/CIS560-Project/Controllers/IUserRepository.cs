@@ -15,6 +15,6 @@ namespace CIS560_Project.Controllers
 
         User RetireUser(int userId);
 
-        List<User> GetCoachsRunnersUser(int coachId);
+        IReadOnlyList<User> GetCoachsRunnersUser(int coachId);
     }
 }

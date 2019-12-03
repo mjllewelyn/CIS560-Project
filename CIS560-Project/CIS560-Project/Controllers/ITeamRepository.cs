@@ -11,7 +11,9 @@ namespace CIS560_Project.Controllers
     {
         Team GetTeam(int teamId);
 
-        List<Team> FetchCoachTeams(int coachId);
+        IReadOnlyList<Team> FetchCoachTeams(int coachId);
+
+        IReadOnlyList<Team> GetTeamsForRace(int raceId);
 
         Team CreateTeam(string name, int coachId, DateTime createdOn, DateTime updatedOn, int startYear, int endYear);
 

@@ -23,13 +23,13 @@ namespace CIS560_Project.Controllers
             return executor.ExecuteReader(d);
         }
 
-        public List<Team> FetchCoachTeams(int coachId)
+        public IReadOnlyList<Team> FetchCoachTeams(int coachId)
         {
             var d = new FetchCoachTeamsDataDelegate(coachId);
             return executor.ExecuteReader(d);
         }
 
-        public List<Team> GetTeamsForRace(int raceId)
+        public IReadOnlyList<Team> GetTeamsForRace(int raceId)
         {
             var d = new GetTeamsForRaceDataDelegate(raceId);
             return executor.ExecuteReader(d);

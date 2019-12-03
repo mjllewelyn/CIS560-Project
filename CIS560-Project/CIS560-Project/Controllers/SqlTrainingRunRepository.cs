@@ -23,7 +23,7 @@ namespace CIS560_Project.Controllers
             return executor.ExecuteReader(d);
         }
 
-        public List<TrainingRun> FetchTrainingRuns(int runnerId)
+        public IReadOnlyList<TrainingRun> FetchTrainingRuns(int runnerId)
         {
             var d = new FetchTrainingRunsDataDelegate(runnerId);
             return executor.ExecuteReader(d);

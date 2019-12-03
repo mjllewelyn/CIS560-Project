@@ -28,13 +28,13 @@ namespace CIS560_Project.Controllers
             return executor.ExecuteReader(d);
         }
 
-        public List<Runner> GetTeamRunners(int teamId)
+        public IReadOnlyList<Runner> GetTeamRunners(int teamId)
         {
             var d = new GetTeamRunnersDataDelegate(teamId);
             return executor.ExecuteReader(d);
         }
 
-        public List<Runner> GetRunnersNoTeam()
+        public IReadOnlyList<Runner> GetRunnersNoTeam()
         {
             var d = new GetRunnersNoTeamDataDelegate();
             return executor.ExecuteReader(d);

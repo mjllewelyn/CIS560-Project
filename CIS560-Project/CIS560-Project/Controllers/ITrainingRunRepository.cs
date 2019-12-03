@@ -11,6 +11,8 @@ namespace CIS560_Project.Controllers
     {
         TrainingRun GetTrainingRun(int trainingRunId);
 
+        IReadOnlyList<TrainingRun> FetchTrainingRuns(int runnerId);
+
         TrainingRun CreateTrainingRun(int runnerId, DateTime date, int distance, double time, double averageHeartRate = 0.0, bool isArchived = false);
     }
 }

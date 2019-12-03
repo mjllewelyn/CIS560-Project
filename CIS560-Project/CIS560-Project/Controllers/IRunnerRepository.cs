@@ -13,8 +13,8 @@ namespace CIS560_Project.Controllers
 
         Runner GetRunner(int runnerId);
 
-        List<Runner> GetTeamRunners(int teamId);
+        IReadOnlyList<Runner> GetTeamRunners(int teamId);
 
-        List<Runner> GetRunnersNoTeam();
+        IReadOnlyList<Runner> GetRunnersNoTeam();
     }
 }

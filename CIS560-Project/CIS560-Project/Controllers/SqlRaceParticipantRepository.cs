@@ -24,19 +24,19 @@ namespace CIS560_Project.Controllers
             return executor.ExecuteReader(d);
         }
 
-        public List<RaceParticipant> FetchRunnersForRace(int raceId)
+        public IReadOnlyList<RaceParticipant> FetchRunnersForRace(int raceId)
         {
             var d = new FetchRunnersForRaceDataDelegate(raceId);
             return executor.ExecuteReader(d);
         }
 
-        public List<RaceParticipant> FetchRacesForRunner(int runnerId)
+        public IReadOnlyList<RaceParticipant> FetchRacesForRunner(int runnerId)
         {
             var d = new FetchRacesForRunnerDataDelegate(runnerId);
             return executor.ExecuteReader(d);
         }
 
-        public List<RaceParticipant> GetTeamRecords(int teamId)
+        public IReadOnlyList<RaceParticipant> GetTeamRecords(int teamId)
         {
             var d = new GetTeamRecordsDataDelegate(teamId);
             return executor.ExecuteReader(d);
@@ -48,7 +48,7 @@ namespace CIS560_Project.Controllers
             return executor.ExecuteNonQuery(d);
         }
 
-        public List<RaceParticipant> CreateRaceParticipants(List<Runner> runners, int raceId)
+        public IReadOnlyList<RaceParticipant> CreateRaceParticipants(List<Runner> runners, int raceId)
         {
             List<RaceParticipant> participants = new List<RaceParticipant>();
             foreach(Runner r in runners)

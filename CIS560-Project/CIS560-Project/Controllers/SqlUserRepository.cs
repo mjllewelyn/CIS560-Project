@@ -35,7 +35,7 @@ namespace CIS560_Project.Controllers
             return executor.ExecuteNonQuery(d);
         }
 
-        public List<User> GetCoachsRunnersUser(int coachId)
+        public IReadOnlyList<User> GetCoachsRunnersUser(int coachId)
         {
             var d = new GetCoachsRunnersUserDataDelegate(coachId);
             return executor.ExecuteReader(d);
