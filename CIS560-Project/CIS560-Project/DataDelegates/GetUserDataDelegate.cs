@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccess;
-using System.Data.SqlClient;
+using CIS560_Project.Models;
 
 namespace CIS560_Project.DataDelegates
 {
@@ -35,9 +35,11 @@ namespace CIS560_Project.DataDelegates
                reader.GetInt32("UserId"),
                reader.GetString("FirstName"),
                reader.GetString("LastName"),
-               reader.GetString("UserType"),
+               reader.GetInt32("UserType"),
                reader.GetString("LastName"),
-               email);
+               email,
+               DateTime.Now,
+               DateTime.Now);
         }
     }
 }

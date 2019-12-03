@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DataAccess;
 using System.Data;
 using System.Data.SqlClient;
+using CIS560_Project.Models;
 
 namespace CIS560_Project.DataDelegates
 {

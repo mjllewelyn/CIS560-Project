@@ -69,6 +69,10 @@
     <Compile Include="Controllers\SqlTeamRepository.cs" />
     <Compile Include="Controllers\SqlTrainingRunRepository.cs" />
     <Compile Include="Controllers\SqlUserRepository.cs" />
+    <Compile Include="DataDelegates\GetCoachDataDelegate.cs" />
+    <Compile Include="DataDelegates\GetLocationDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrieveRaceParticipantsDataDelegate - Copy.cs" />
+    <Compile Include="DataDelegates\GetRaceParticipantDataDelegate.cs" />
     <Compile Include="Views\CoachWelcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,7 +94,6 @@
     <Compile Include="DataAccess\IDataRowReader.cs" />
     <Compile Include="DataAccess\INonQueryDataDelegate.cs" />
     <Compile Include="DataAccess\NonQueryDataDelegate.cs" />
-    <Compile Include="DataAccess\Properties\AssemblyInfo.cs" />
     <Compile Include="DataAccess\RecordNotFoundException.cs" />
     <Compile Include="DataAccess\SqlCommandExecutor.cs" />
     <Compile Include="DataDelegates\CreateTrainingRunDataDelegate.cs" />
@@ -236,6 +239,8 @@
   <ItemGroup>
     <Content Include="DataAccess\DataAccess.csproj" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DataAccess\Properties\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

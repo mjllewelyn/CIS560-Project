@@ -14,6 +14,7 @@ namespace CIS560_Project
 {
     public partial class uxSignIn : Form
     {
+        SqlUserRepository controller = new SqlUserRepository(Program.connectionString);
         public uxSignIn()
         {
             InitializeComponent();
@@ -24,10 +25,17 @@ namespace CIS560_Project
             string email = uxEmailTextBox.Text;
             string password = uxPasswordTextBox.Text;
             // call method to login
-            if (ValidateUser(email, password))
+            if (controller.ValidateUser(email, password))
             {
-                Program.currentUser = GetUser(email);
-
+                Program.currentUser = controller.GetUser(email);
+                if (Program.currentUser.UserType == 0)
+                    Application.Run(new CoachWelcome());
+                else
+                    Application.Run(new uxRunnerHomePage());
+            }
+            else
+            {
+                uxErrorLabel.Text = "Invalid Email/Password";
             }
         }
     }
