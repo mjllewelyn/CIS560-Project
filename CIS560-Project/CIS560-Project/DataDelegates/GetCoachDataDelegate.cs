@@ -11,19 +11,19 @@ namespace CIS560_Project.DataDelegates
 {
     internal class GetCoachDataDelegate : DataReaderDelegate<Coach>
     {
-        private readonly int userId;
+        private readonly int coachId;
 
-        public GetCoachDataDelegate(int userId)
+        public GetCoachDataDelegate(int coachId)
             : base("Coach.GetCoach")
         {
-            this.userId = userId;
+            this.coachId = coachId;
         }
 
         public override void PrepareCommand(SqlCommand command)
         {
             base.PrepareCommand(command);
 
-            command.Parameters.AddWithValue("UserId", userId);
+            command.Parameters.AddWithValue("CoachId", coachId);
         }
 
         public override Coach Translate(SqlCommand command, IDataRowReader reader)
@@ -32,6 +32,7 @@ namespace CIS560_Project.DataDelegates
                 return null;
 
             return new Coach(
+                coachId,
                 reader.GetInt32("StartYear"),
                 reader.GetInt32("EndYear")
                 );

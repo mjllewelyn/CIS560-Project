@@ -12,14 +12,16 @@ namespace CIS560_Project.DataDelegates
 {
     internal class CreateTrainingRunDataDelegate : NonQueryDataDelegate<TrainingRun>
     {
-        public readonly string date;
-        public readonly string distance;
-        public readonly string time;
-        public readonly string averageHR;
+        public readonly int runnerId;
+        public readonly DateTime date;
+        public readonly int distance;
+        public readonly int time;
+        public readonly double averageHR;
 
-        public CreateTrainingRunDataDelegate(string date, string distance, string time, string averageHR)
+        public CreateTrainingRunDataDelegate(DateTime date, int distance, int time, double averageHR)
             : base("TrainingRun.CreateTrainingRun")
         {
+            runnerId = Program.currentUser.UserId;
             this.date = date;
             this.distance = distance;
             this.time = time;
@@ -31,6 +33,7 @@ namespace CIS560_Project.DataDelegates
         {
             base.PrepareCommand(command);
 
+            command.Parameters.AddWithValue("RunnerId", runnerId);
             command.Parameters.AddWithValue("Date", date);
             command.Parameters.AddWithValue("Distance", distance);
             command.Parameters.AddWithValue("Time", time);
@@ -42,7 +45,7 @@ namespace CIS560_Project.DataDelegates
 
         public override TrainingRun Translate(SqlCommand command)
         {
-            throw new NotImplementedException();
+            return new TrainingRun((int)command.Parameters["TrainingRunId"].Value, runnerId, date, distance, time, averageHR);
         }
     }
 }
