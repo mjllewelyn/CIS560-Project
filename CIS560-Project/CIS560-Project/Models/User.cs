@@ -11,7 +11,7 @@ namespace CIS560_Project.Models
         public int UserId { get; }
         public string Email { get; }
         public string PasswordHash { get => encryptPassword(PasswordHash, false); set => encryptPassword(PasswordHash, true);  }
-        public string UserType { get; }
+        public int UserType { get; }
         public string FirstName { get; }
         public string LastName { get; }
         public DateTime CreatedOn { get; }
@@ -19,7 +19,7 @@ namespace CIS560_Project.Models
 
         public User() { }
 
-        public User(int userId, string email, string password, string userType, string firstName, string lastName, DateTime createdOn, DateTime updatedOn)
+        public User(int userId, string email, string password, int userType, string firstName, string lastName, DateTime createdOn, DateTime updatedOn)
         {
             UserId = userId;
             Email = email;

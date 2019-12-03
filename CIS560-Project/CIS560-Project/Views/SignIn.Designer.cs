@@ -34,6 +34,7 @@
             this.uxPasswordLabel = new System.Windows.Forms.Label();
             this.uxPasswordTextBox = new System.Windows.Forms.TextBox();
             this.uxSignInButton = new System.Windows.Forms.Button();
+            this.uxErrorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // uxEmailTextBox
@@ -89,11 +90,21 @@
             this.uxSignInButton.UseVisualStyleBackColor = true;
             this.uxSignInButton.Click += new System.EventHandler(this.uxSignInButton_Click);
             // 
+            // uxErrorLabel
+            // 
+            this.uxErrorLabel.AutoSize = true;
+            this.uxErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.uxErrorLabel.Location = new System.Drawing.Point(124, 116);
+            this.uxErrorLabel.Name = "uxErrorLabel";
+            this.uxErrorLabel.Size = new System.Drawing.Size(0, 17);
+            this.uxErrorLabel.TabIndex = 6;
+            // 
             // uxSignIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 452);
+            this.Controls.Add(this.uxErrorLabel);
             this.Controls.Add(this.uxSignInButton);
             this.Controls.Add(this.uxPasswordLabel);
             this.Controls.Add(this.uxPasswordTextBox);
@@ -115,6 +126,7 @@
         private System.Windows.Forms.Label uxPasswordLabel;
         private System.Windows.Forms.TextBox uxPasswordTextBox;
         private System.Windows.Forms.Button uxSignInButton;
+        private System.Windows.Forms.Label uxErrorLabel;
     }
 }
 

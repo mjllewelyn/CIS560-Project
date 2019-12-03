@@ -11,6 +11,7 @@ namespace CIS560_Project
     static class Program
     {
         static public User currentUser = new User();
+        public const string connectionString = "string";
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
