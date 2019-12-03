@@ -12,5 +12,9 @@ namespace CIS560_Project.Controllers
         User GetUser(string email);
 
         bool ValidateUser(string email, string password);
+
+        User RetireUser(int userId);
+
+        List<User> GetCoachsRunnersUser(int coachId);
     }
 }

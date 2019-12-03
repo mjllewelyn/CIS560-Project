@@ -9,12 +9,12 @@ namespace CIS560_Project.Controllers
 {
     interface ITeamRepository
     {
-        IReadOnlyList<Team> RetrieveTeams();
-
         Team GetTeam(int teamId);
 
-        Team FetchTeam(string name);
+        List<Team> FetchCoachTeams(int coachId);
 
         Team CreateTeam(string name, int coachId, DateTime createdOn, DateTime updatedOn, int startYear, int endYear);
+
+        Team RetireTeam(int teamId);
     }
 }

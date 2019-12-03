@@ -9,14 +9,14 @@ namespace CIS560_Project.Controllers
 {
     interface IRaceParticipantRepository
     {
-        IReadOnlyList<RaceParticipant> RetrieveRaceParticipants();
-
         RaceParticipant GetRaceParticipant(int raceParticipantId);
 
-        RaceParticipant FetchRaceParticipant(int raceId);
+        List<RaceParticipant> FetchRunnersForRace(int raceId);
 
-        RaceParticipant FetchRaceRunner(int runnerId);
+        List<RaceParticipant> FetchRacesForRunner(int runnerId);
 
-        RaceParticipant CreateRaceParticipant(int raceId, int runnerId, double time = 0.0, double averageHeartRate = 0.0);
+        RaceParticipant UpdateRaceParticipantTime(int raceId, int runnerId, int time);
+
+        RaceParticipant CreateRaceParticipant(int raceId, int runnerId, int time = 0, double averageHeartRate = 0.0);
     }
 }

@@ -17,9 +17,26 @@ namespace CIS560_Project.Controllers
             executor = new SqlCommandExecutor(connectionString);
         }
 
+        public IReadOnlyList<Runner> RetrieveRunners()
+        {
+            return executor.ExecuteReader(new RetrieveRunnersDataDelegate());
+        }
+
         public Runner GetRunner(int runnerId)
         {
             var d = new GetRunnerDataDelegate(runnerId);
+            return executor.ExecuteReader(d);
+        }
+
+        public List<Runner> GetTeamRunners(int teamId)
+        {
+            var d = new GetTeamRunnersDataDelegate(teamId);
+            return executor.ExecuteReader(d);
+        }
+
+        public List<Runner> GetRunnersNoTeam()
+        {
+            var d = new GetRunnersNoTeamDataDelegate();
             return executor.ExecuteReader(d);
         }
     }
