@@ -15,7 +15,7 @@ namespace CIS560_Project.DataDelegates
         private readonly int time;
 
         public UpdateRaceParticipantTimeDataDelegate(int raceParticipantId, int time)
-            : base ("RaceParticipant.UpdateRaceParticipantTime")
+            : base ("CrossCountry.UpdateRaceParticipantTime")
         {
             this.raceParticipantId = raceParticipantId;
             this.time = time;

@@ -14,7 +14,7 @@ namespace CIS560_Project.DataDelegates
         private readonly int runnerId;
 
         public FetchRacesForRunnerDataDelegate(int runnerId)
-            : base("Race.FetchRunnersForRace")
+            : base("CrossCountry.FetchRunnersForRace")
         {
             this.runnerId = runnerId;
         }

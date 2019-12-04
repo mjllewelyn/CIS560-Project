@@ -14,7 +14,7 @@ namespace CIS560_Project.DataDelegates
         private readonly string email;
 
         public GetUserDataDelegate(string email)
-            : base("User.GetUser")
+            : base("CrossCountry.GetUser")
         {
             this.email = email;
         }
@@ -33,13 +33,13 @@ namespace CIS560_Project.DataDelegates
 
             return new User(
                reader.GetInt32("UserId"),
+               email,
+               reader.GetString("Password"),
+               reader.GetInt32("UserType"),
                reader.GetString("FirstName"),
                reader.GetString("LastName"),
-               reader.GetInt32("UserType"),
-               reader.GetString("LastName"),
-               email,
-               DateTime.Now,
-               DateTime.Now);
+               reader.GetValue<DateTime>("CreatedOn"),
+               reader.GetValue<DateTime>("UpdatedOn"));
         }
     }
 }

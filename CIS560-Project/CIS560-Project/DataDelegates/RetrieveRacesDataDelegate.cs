@@ -12,7 +12,7 @@ namespace CIS560_Project.DataDelegates
     internal class RetrieveRacesDataDelegate : DataReaderDelegate<IReadOnlyList<Race>>
     {
         public RetrieveRacesDataDelegate()
-            : base("Race.RetrieveRaces")
+            : base("CrossCountry.RetrieveRaces")
         {
 
         }

@@ -17,6 +17,6 @@ namespace CIS560_Project.Controllers
 
         Team CreateTeam(string name, int coachId, DateTime createdOn, DateTime updatedOn, int startYear, int endYear);
 
-        Team RetireTeam(int teamId);
+        void RetireTeam(int teamId);
     }
 }

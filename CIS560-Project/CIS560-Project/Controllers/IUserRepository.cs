@@ -13,7 +13,7 @@ namespace CIS560_Project.Controllers
 
         bool ValidateUser(string email, string password);
 
-        User RetireUser(int userId);
+        void RetireUser(int userId);
 
         IReadOnlyList<User> GetCoachsRunnersUser(int coachId);
     }

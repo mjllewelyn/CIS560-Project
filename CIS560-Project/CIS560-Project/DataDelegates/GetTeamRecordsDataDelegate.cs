@@ -14,7 +14,7 @@ namespace CIS560_Project.DataDelegates
         private readonly int teamId;
 
         public GetTeamRecordsDataDelegate(int teamId)
-            : base("RaceParticipants.GetTeamRecords")
+            : base("CrossCountry.GetTeamRecords")
         {
             this.teamId = teamId;
         }
