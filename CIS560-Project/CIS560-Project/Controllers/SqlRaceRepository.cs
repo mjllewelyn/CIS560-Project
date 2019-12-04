@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess;
 using CIS560_Project.Models;
+using CIS560_Project.DataDelegates;
 
 namespace CIS560_Project.Controllers
 {
@@ -46,10 +47,10 @@ namespace CIS560_Project.Controllers
             return executor.ExecuteNonQuery(d);
         }
 
-        public Race ArchiveRace(int raceId)
+        public void ArchiveRace(int raceId)
         {
             var d = new ArchiveRaceDataDelegate(raceId);
-            return executor.ExecuteNonQuery(d);
+            executor.ExecuteNonQuery(d);
         }
     }
 }

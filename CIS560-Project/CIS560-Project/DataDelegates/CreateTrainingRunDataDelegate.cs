@@ -17,16 +17,17 @@ namespace CIS560_Project.DataDelegates
         public readonly int distance;
         public readonly int time;
         public readonly double averageHR;
+        public readonly bool isArchived;
 
-        public CreateTrainingRunDataDelegate(DateTime date, int distance, int time, double averageHR)
-            : base("TrainingRun.CreateTrainingRun")
+        public CreateTrainingRunDataDelegate(DateTime date, int distance, int time, double averageHR, bool isArchived)
+            : base("CrossCountry.CreateTrainingRun")
         {
             runnerId = Program.currentUser.UserId;
             this.date = date;
             this.distance = distance;
             this.time = time;
             this.averageHR = averageHR;
-
+            this.isArchived = isArchived;
         }
 
         public override void PrepareCommand(SqlCommand command)
@@ -38,6 +39,7 @@ namespace CIS560_Project.DataDelegates
             command.Parameters.AddWithValue("Distance", distance);
             command.Parameters.AddWithValue("Time", time);
             command.Parameters.AddWithValue("AverageHR", averageHR);
+            command.Parameters.AddWithValue("IsArchived", isArchived);
 
             var t = command.Parameters.Add("TrainingRunId", SqlDbType.Int);
             t.Direction = ParameterDirection.Output;

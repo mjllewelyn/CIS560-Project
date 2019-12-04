@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess;
 using CIS560_Project.Models;
+using CIS560_Project.DataDelegates;
 
 namespace CIS560_Project.Controllers
 {
@@ -26,13 +27,13 @@ namespace CIS560_Project.Controllers
         public bool ValidateUser(string email, string password)
         {
             var d = new ValidateUserDataDelegate(email, password);
-            return executor.ExecuteNonQuery(d);
+            return executor.ExecuteReader(d);
         }
 
-        public User RetireUser(int userId)
+        public void RetireUser(int userId)
         {
             var d = new RetireUserDataDelegate(userId);
-            return executor.ExecuteNonQuery(d);
+            executor.ExecuteNonQuery(d);
         }
 
         public IReadOnlyList<User> GetCoachsRunnersUser(int coachId)

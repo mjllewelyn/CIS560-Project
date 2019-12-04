@@ -15,7 +15,7 @@ namespace CIS560_Project.DataDelegates
         private readonly int locationId;
 
         public GetLocationDataDelegate(int locationId)
-            : base("Location.GetLocation")
+            : base("CrossCountry.GetLocation")
         {
             this.locationId = locationId;
         }

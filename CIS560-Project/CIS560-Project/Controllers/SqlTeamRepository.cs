@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess;
 using CIS560_Project.Models;
+using CIS560_Project.DataDelegates;
 
 namespace CIS560_Project.Controllers
 {
@@ -59,13 +60,13 @@ namespace CIS560_Project.Controllers
             return executor.ExecuteNonQuery(d);
         }
 
-        public Team RetireTeam(int teamId)
+        public void RetireTeam(int teamId)
         {
             if (string.IsNullOrWhiteSpace(teamId.ToString()))
                 throw new ArgumentException("The parameter cannot be null or empty.", nameof(teamId));
 
             var d = new RetireTeamDataDelegate(teamId);
-            return executor.ExecuteNonQuery(d);
+            executor.ExecuteNonQuery(d);
         }
     }
 }

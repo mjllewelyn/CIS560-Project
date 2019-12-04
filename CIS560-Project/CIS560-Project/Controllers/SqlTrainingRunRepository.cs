@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess;
 using CIS560_Project.Models;
+using CIS560_Project.DataDelegates;
 
 namespace CIS560_Project.Controllers
 {
@@ -29,7 +30,7 @@ namespace CIS560_Project.Controllers
             return executor.ExecuteReader(d);
         }
 
-        public TrainingRun CreateTrainingRun(int runnerId, DateTime date, int distance, double time, double averageHeartRate = 0.0, bool isArchived = false)
+        public TrainingRun CreateTrainingRun(int runnerId, DateTime date, int distance, int time, double averageHeartRate = 0.0, bool isArchived = false)
         {
             if (string.IsNullOrWhiteSpace(runnerId.ToString()))
                 throw new ArgumentException("The parameter cannot be null or empty.", nameof(runnerId));
@@ -43,7 +44,7 @@ namespace CIS560_Project.Controllers
             if (string.IsNullOrWhiteSpace(time.ToString()))
                 throw new ArgumentException("The parameter cannot be null or empty.", nameof(time));
 
-            var d = new CreateTrainingRunDataDelegate(runnerId, date, distance, time, averageHeartRate, isArchived);
+            var d = new CreateTrainingRunDataDelegate(date, distance, time, averageHeartRate, isArchived);
             return executor.ExecuteNonQuery(d);
         }
     }

@@ -42,10 +42,10 @@ namespace CIS560_Project.Controllers
             return executor.ExecuteReader(d);
         }
 
-        public RaceParticipant UpdateRaceParticipantTime(int raceId, int runnerId, int time)
+        public void UpdateRaceParticipantTime(int raceParticipantId, int time)
         {
-            var d = new UpdateRaceParticipantTimeDataDelegate(raceId, runnerId, time);
-            return executor.ExecuteNonQuery(d);
+            var d = new UpdateRaceParticipantTimeDataDelegate(raceParticipantId, time);
+            executor.ExecuteNonQuery(d);
         }
 
         public IReadOnlyList<RaceParticipant> CreateRaceParticipants(List<Runner> runners, int raceId)

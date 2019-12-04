@@ -18,7 +18,7 @@ namespace CIS560_Project.DataDelegates
         public readonly double averageHR;
 
         public CreateRaceParticipantDataDelegate(int raceId, int runnerId, int time, double averageHR)
-            : base("RaceParticipant.CreateRaceParticipant")
+            : base("CrossCountry.CreateRaceParticipant")
         {
             this.raceId = raceId;
             this.runnerId = runnerId;
