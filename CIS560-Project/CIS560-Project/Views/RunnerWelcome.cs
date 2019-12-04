@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CIS560_Project.Controllers;
+using CIS560_Project.Models;
 
 namespace CIS560_Project
 {
     public partial class uxRunnerHomePage : Form
     {
+        IRunnerRepository runnerController = new SqlRunnerRepository(Program.connectionString);
+        ITrainingRunRepository trainingRunController = new SqlTrainingRunRepository(Program.connectionString);
         public uxRunnerHomePage()
         {
             InitializeComponent();
@@ -19,12 +23,13 @@ namespace CIS560_Project
 
         private void uxProfileButton_Click(object sender, EventArgs e)
         {
-                
+            Application.Run(new Profile(runnerController.GetRunner(Program.currentUser.UserId)));
+
         }
 
         private void uxRunsButton_Click(object sender, EventArgs e)
         {
-
+            Application.Run(new TrainingRuns(trainingRunController.FetchTrainingRuns(Program.currentUser.UserId));
         }
 
         private void uxRacesButton_Click(object sender, EventArgs e)

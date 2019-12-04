@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CIS560_Project.Models
 {
-    class Runner : User
+    public class Runner : User
     {
         public int RunnerId { get; }
         public int TeamId { get; }

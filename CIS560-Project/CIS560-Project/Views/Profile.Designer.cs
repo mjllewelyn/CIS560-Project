@@ -1,6 +1,6 @@
 ﻿namespace CIS560_Project
 {
-    partial class Profle
+    partial class Profile
     {
         /// <summary>
         /// Required designer variable.
@@ -32,12 +32,10 @@
             this.uxNameLabel = new System.Windows.Forms.Label();
             this.uxEmailLabel = new System.Windows.Forms.Label();
             this.uxRunningSinceLabel = new System.Windows.Forms.Label();
-            this.uxTeamNameLabel = new System.Windows.Forms.Label();
             this.uxUserTypeLabel = new System.Windows.Forms.Label();
             this.uxNameTextBox = new System.Windows.Forms.TextBox();
             this.uxEmailTextBox = new System.Windows.Forms.TextBox();
             this.uxUserTypeTextBox = new System.Windows.Forms.TextBox();
-            this.uxTeamNameTextBox = new System.Windows.Forms.TextBox();
             this.uxRunningSinceTextBox = new System.Windows.Forms.TextBox();
             this.uxBackButton = new System.Windows.Forms.Button();
             this.uxRetireButton = new System.Windows.Forms.Button();
@@ -77,21 +75,11 @@
             // 
             this.uxRunningSinceLabel.AutoSize = true;
             this.uxRunningSinceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxRunningSinceLabel.Location = new System.Drawing.Point(140, 288);
+            this.uxRunningSinceLabel.Location = new System.Drawing.Point(140, 249);
             this.uxRunningSinceLabel.Name = "uxRunningSinceLabel";
             this.uxRunningSinceLabel.Size = new System.Drawing.Size(145, 25);
             this.uxRunningSinceLabel.TabIndex = 3;
             this.uxRunningSinceLabel.Text = "Running Since:";
-            // 
-            // uxTeamNameLabel
-            // 
-            this.uxTeamNameLabel.AutoSize = true;
-            this.uxTeamNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxTeamNameLabel.Location = new System.Drawing.Point(140, 244);
-            this.uxTeamNameLabel.Name = "uxTeamNameLabel";
-            this.uxTeamNameLabel.Size = new System.Drawing.Size(126, 25);
-            this.uxTeamNameLabel.TabIndex = 4;
-            this.uxTeamNameLabel.Text = "Team Name:";
             // 
             // uxUserTypeLabel
             // 
@@ -127,18 +115,10 @@
             this.uxUserTypeTextBox.Size = new System.Drawing.Size(215, 22);
             this.uxUserTypeTextBox.TabIndex = 8;
             // 
-            // uxTeamNameTextBox
-            // 
-            this.uxTeamNameTextBox.Enabled = false;
-            this.uxTeamNameTextBox.Location = new System.Drawing.Point(314, 248);
-            this.uxTeamNameTextBox.Name = "uxTeamNameTextBox";
-            this.uxTeamNameTextBox.Size = new System.Drawing.Size(215, 22);
-            this.uxTeamNameTextBox.TabIndex = 9;
-            // 
             // uxRunningSinceTextBox
             // 
             this.uxRunningSinceTextBox.Enabled = false;
-            this.uxRunningSinceTextBox.Location = new System.Drawing.Point(314, 292);
+            this.uxRunningSinceTextBox.Location = new System.Drawing.Point(314, 253);
             this.uxRunningSinceTextBox.Name = "uxRunningSinceTextBox";
             this.uxRunningSinceTextBox.Size = new System.Drawing.Size(215, 22);
             this.uxRunningSinceTextBox.TabIndex = 10;
@@ -146,24 +126,26 @@
             // uxBackButton
             // 
             this.uxBackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxBackButton.Location = new System.Drawing.Point(357, 360);
+            this.uxBackButton.Location = new System.Drawing.Point(335, 331);
             this.uxBackButton.Name = "uxBackButton";
             this.uxBackButton.Size = new System.Drawing.Size(127, 42);
             this.uxBackButton.TabIndex = 11;
             this.uxBackButton.Text = "Back";
             this.uxBackButton.UseVisualStyleBackColor = true;
+            this.uxBackButton.Click += new System.EventHandler(this.uxBackButton_Click);
             // 
             // uxRetireButton
             // 
             this.uxRetireButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxRetireButton.Location = new System.Drawing.Point(190, 360);
+            this.uxRetireButton.Location = new System.Drawing.Point(168, 331);
             this.uxRetireButton.Name = "uxRetireButton";
             this.uxRetireButton.Size = new System.Drawing.Size(127, 42);
             this.uxRetireButton.TabIndex = 12;
             this.uxRetireButton.Text = "Retire";
             this.uxRetireButton.UseVisualStyleBackColor = true;
+            this.uxRetireButton.Click += new System.EventHandler(this.uxRetireButton_Click);
             // 
-            // Profle
+            // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -171,18 +153,16 @@
             this.Controls.Add(this.uxRetireButton);
             this.Controls.Add(this.uxBackButton);
             this.Controls.Add(this.uxRunningSinceTextBox);
-            this.Controls.Add(this.uxTeamNameTextBox);
             this.Controls.Add(this.uxUserTypeTextBox);
             this.Controls.Add(this.uxEmailTextBox);
             this.Controls.Add(this.uxNameTextBox);
             this.Controls.Add(this.uxUserTypeLabel);
-            this.Controls.Add(this.uxTeamNameLabel);
             this.Controls.Add(this.uxRunningSinceLabel);
             this.Controls.Add(this.uxEmailLabel);
             this.Controls.Add(this.uxNameLabel);
             this.Controls.Add(this.uxProfileLabel);
             this.Enabled = false;
-            this.Name = "Profle";
+            this.Name = "Profile";
             this.Text = "Profle";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -195,12 +175,10 @@
         private System.Windows.Forms.Label uxNameLabel;
         private System.Windows.Forms.Label uxEmailLabel;
         private System.Windows.Forms.Label uxRunningSinceLabel;
-        private System.Windows.Forms.Label uxTeamNameLabel;
         private System.Windows.Forms.Label uxUserTypeLabel;
         private System.Windows.Forms.TextBox uxNameTextBox;
         private System.Windows.Forms.TextBox uxEmailTextBox;
         private System.Windows.Forms.TextBox uxUserTypeTextBox;
-        private System.Windows.Forms.TextBox uxTeamNameTextBox;
         private System.Windows.Forms.TextBox uxRunningSinceTextBox;
         private System.Windows.Forms.Button uxBackButton;
         private System.Windows.Forms.Button uxRetireButton;
