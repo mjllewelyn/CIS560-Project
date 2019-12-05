@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CIS560_Project.Models;
 
 namespace CIS560_Project
 {
     public partial class uxRaces : Form
     {
-        public uxRaces()
+        public uxRaces(IReadOnlyList<RaceParticipant> races)
         {
             InitializeComponent();
         }

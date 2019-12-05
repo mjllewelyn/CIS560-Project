@@ -35,10 +35,11 @@
             this.uxTimeTextBox = new System.Windows.Forms.TextBox();
             this.uxDistanceTextBox = new System.Windows.Forms.TextBox();
             this.uxDistanceLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.uxAverageHRTextBox = new System.Windows.Forms.TextBox();
             this.uxAverageHR = new System.Windows.Forms.Label();
             this.uxCancelButton = new System.Windows.Forms.Button();
             this.uxLogRunButton = new System.Windows.Forms.Button();
+            this.uxErrorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // uxLogTrainingRunLabel
@@ -106,14 +107,14 @@
             this.uxDistanceLabel.TabIndex = 5;
             this.uxDistanceLabel.Text = "Distance";
             // 
-            // textBox1
+            // uxAverageHRTextBox
             // 
-            this.textBox1.AccessibleName = "";
-            this.textBox1.Location = new System.Drawing.Point(61, 334);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 22);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.Tag = "";
+            this.uxAverageHRTextBox.AccessibleName = "";
+            this.uxAverageHRTextBox.Location = new System.Drawing.Point(61, 334);
+            this.uxAverageHRTextBox.Name = "uxAverageHRTextBox";
+            this.uxAverageHRTextBox.Size = new System.Drawing.Size(241, 22);
+            this.uxAverageHRTextBox.TabIndex = 8;
+            this.uxAverageHRTextBox.Tag = "";
             // 
             // uxAverageHR
             // 
@@ -134,6 +135,7 @@
             this.uxCancelButton.TabIndex = 9;
             this.uxCancelButton.Text = "Cancel";
             this.uxCancelButton.UseVisualStyleBackColor = true;
+            this.uxCancelButton.Click += new System.EventHandler(this.uxCancelButton_Click);
             // 
             // uxLogRunButton
             // 
@@ -144,15 +146,26 @@
             this.uxLogRunButton.TabIndex = 10;
             this.uxLogRunButton.Text = "Log Run";
             this.uxLogRunButton.UseVisualStyleBackColor = true;
+            this.uxLogRunButton.Click += new System.EventHandler(this.uxLogRunButton_Click);
+            // 
+            // uxErrorLabel
+            // 
+            this.uxErrorLabel.AutoSize = true;
+            this.uxErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.uxErrorLabel.Location = new System.Drawing.Point(66, 86);
+            this.uxErrorLabel.Name = "uxErrorLabel";
+            this.uxErrorLabel.Size = new System.Drawing.Size(0, 17);
+            this.uxErrorLabel.TabIndex = 11;
             // 
             // uxLogTrainingRun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(377, 450);
+            this.Controls.Add(this.uxErrorLabel);
             this.Controls.Add(this.uxLogRunButton);
             this.Controls.Add(this.uxCancelButton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.uxAverageHRTextBox);
             this.Controls.Add(this.uxAverageHR);
             this.Controls.Add(this.uxDistanceTextBox);
             this.Controls.Add(this.uxDistanceLabel);
@@ -177,9 +190,10 @@
         private System.Windows.Forms.TextBox uxTimeTextBox;
         private System.Windows.Forms.TextBox uxDistanceTextBox;
         private System.Windows.Forms.Label uxDistanceLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox uxAverageHRTextBox;
         private System.Windows.Forms.Label uxAverageHR;
         private System.Windows.Forms.Button uxCancelButton;
         private System.Windows.Forms.Button uxLogRunButton;
+        private System.Windows.Forms.Label uxErrorLabel;
     }
 }

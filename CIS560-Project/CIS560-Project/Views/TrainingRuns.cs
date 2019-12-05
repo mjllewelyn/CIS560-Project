@@ -17,22 +17,23 @@ namespace CIS560_Project
         public TrainingRuns(IReadOnlyList<TrainingRun> readOnlyList)
         {
             InitializeComponent();
-
+            FillListView(readOnlyList);
         }
 
         private void uxLogRunButton_Click(object sender, EventArgs e)
         {
-
+            Application.Run(new uxLogTrainingRun());
         }
 
         private void uxBackButton_Click(object sender, EventArgs e)
         {
-
+            Application.Run(new uxRunnerHomePage());
         }
 
         private void FillListView(IReadOnlyList<TrainingRun> readOnlyList)
         {
             BindingSource source = new BindingSource(readOnlyList, "trainingRun");
+            uxTrainingRunsDataGrid.DataSource = source;
         }
     }
 }

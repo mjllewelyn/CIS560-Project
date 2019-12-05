@@ -16,6 +16,7 @@ namespace CIS560_Project
     {
         IRunnerRepository runnerController = new SqlRunnerRepository(Program.connectionString);
         ITrainingRunRepository trainingRunController = new SqlTrainingRunRepository(Program.connectionString);
+        IRaceParticipantRepository raceController = new SqlRaceParticipantRepository(Program.connectionString);
         public uxRunnerHomePage()
         {
             InitializeComponent();
@@ -29,12 +30,12 @@ namespace CIS560_Project
 
         private void uxRunsButton_Click(object sender, EventArgs e)
         {
-            Application.Run(new TrainingRuns(trainingRunController.FetchTrainingRuns(Program.currentUser.UserId));
+            Application.Run(new TrainingRuns(trainingRunController.FetchTrainingRuns(Program.currentUser.UserId)));
         }
 
         private void uxRacesButton_Click(object sender, EventArgs e)
         {
-
+            Application.Run(new uxRaces(raceController.FetchRacesForRunner(Program.currentUser.UserId)));
         }
 
         private void uxTeamRosterButton_Click(object sender, EventArgs e)
