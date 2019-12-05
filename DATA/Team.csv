@@ -1,13 +1,13 @@
 TeamId,CoachId,Name,StartYear
-1,rphilot0,turpis adipiscing,2007
-2,rphilot0,in felis,2006
-3,flongson1,id nulla,2008
-4,focollopy2,erat fermentum,2010
-5,apiniur3,amet,2007
-6,sisard4,sapien ut nunc,2019
-7,ckeepe5,ligula vehicula consequat,2019
-8,tbateup6,velit donec,2006
-9,bbarwise7,vitae,2006
-10,wkaasmann8,sit amet,2012
-11,ttroctor9,tincidunt in leo,2018
-12,ecornillota,vel nulla eget,2011
+1,1,turpis adipiscing,2007
+2,1,in felis,2006
+3,2,id nulla,2008
+4,3,erat fermentum,2010
+5,4,amet,2007
+6,5,sapien ut nunc,2019
+7,6,ligula vehicula consequat,2019
+8,7,velit donec,2006
+9,8,vitae,2006
+10,9,sit amet,2012
+11,10,tincidunt in leo,2018
+12,11,vel nulla eget,2011
