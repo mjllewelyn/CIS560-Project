@@ -138,11 +138,11 @@
     <Compile Include="Views\LogTrainingRun.Designer.cs">
       <DependentUpon>LogTrainingRun.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Profle.cs">
+    <Compile Include="Views\Profile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Profle.Designer.cs">
-      <DependentUpon>Profle.cs</DependentUpon>
+    <Compile Include="Views\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\RaceDetails.cs">
       <SubType>Form</SubType>
@@ -211,8 +211,8 @@
     <EmbeddedResource Include="Views\LogTrainingRun.resx">
       <DependentUpon>LogTrainingRun.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Profle.resx">
-      <DependentUpon>Profle.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\RaceDetails.resx">
       <DependentUpon>RaceDetails.cs</DependentUpon>

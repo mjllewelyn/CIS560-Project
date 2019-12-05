@@ -31,6 +31,8 @@
             this.uxRacesLabel = new System.Windows.Forms.Label();
             this.uxEnterARaceButton = new System.Windows.Forms.Button();
             this.uxBackButton = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // uxRacesLabel
@@ -46,7 +48,7 @@
             // uxEnterARaceButton
             // 
             this.uxEnterARaceButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxEnterARaceButton.Location = new System.Drawing.Point(63, 285);
+            this.uxEnterARaceButton.Location = new System.Drawing.Point(86, 333);
             this.uxEnterARaceButton.Name = "uxEnterARaceButton";
             this.uxEnterARaceButton.Size = new System.Drawing.Size(164, 47);
             this.uxEnterARaceButton.TabIndex = 1;
@@ -57,7 +59,7 @@
             // uxBackButton
             // 
             this.uxBackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxBackButton.Location = new System.Drawing.Point(253, 285);
+            this.uxBackButton.Location = new System.Drawing.Point(276, 333);
             this.uxBackButton.Name = "uxBackButton";
             this.uxBackButton.Size = new System.Drawing.Size(164, 47);
             this.uxBackButton.TabIndex = 2;
@@ -65,16 +67,27 @@
             this.uxBackButton.UseVisualStyleBackColor = true;
             this.uxBackButton.Click += new System.EventHandler(this.uxBackButton_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(23, 105);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(481, 194);
+            this.dataGridView1.TabIndex = 3;
+            // 
             // uxRaces
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.uxBackButton);
             this.Controls.Add(this.uxEnterARaceButton);
             this.Controls.Add(this.uxRacesLabel);
             this.Name = "uxRaces";
             this.Text = "Races";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -85,5 +98,6 @@
         private System.Windows.Forms.Label uxRacesLabel;
         private System.Windows.Forms.Button uxEnterARaceButton;
         private System.Windows.Forms.Button uxBackButton;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

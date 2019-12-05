@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CIS560_Project.Models
 {
-    class User
+    public class User
     {
         public int UserId { get; }
         public string Email { get; }
