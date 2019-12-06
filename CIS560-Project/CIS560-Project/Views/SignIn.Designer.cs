@@ -39,52 +39,56 @@
             // 
             // uxEmailTextBox
             // 
-            this.uxEmailTextBox.Location = new System.Drawing.Point(121, 173);
+            this.uxEmailTextBox.Location = new System.Drawing.Point(136, 216);
+            this.uxEmailTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxEmailTextBox.Name = "uxEmailTextBox";
-            this.uxEmailTextBox.Size = new System.Drawing.Size(249, 22);
+            this.uxEmailTextBox.Size = new System.Drawing.Size(280, 26);
             this.uxEmailTextBox.TabIndex = 0;
             // 
             // uxSignInLabel
             // 
             this.uxSignInLabel.AutoSize = true;
             this.uxSignInLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxSignInLabel.Location = new System.Drawing.Point(138, 76);
+            this.uxSignInLabel.Location = new System.Drawing.Point(155, 95);
             this.uxSignInLabel.Name = "uxSignInLabel";
-            this.uxSignInLabel.Size = new System.Drawing.Size(109, 36);
+            this.uxSignInLabel.Size = new System.Drawing.Size(128, 40);
             this.uxSignInLabel.TabIndex = 1;
             this.uxSignInLabel.Text = "Sign In";
             // 
             // uxEmailLabel
             // 
             this.uxEmailLabel.AutoSize = true;
-            this.uxEmailLabel.Location = new System.Drawing.Point(121, 150);
+            this.uxEmailLabel.Location = new System.Drawing.Point(136, 188);
             this.uxEmailLabel.Name = "uxEmailLabel";
-            this.uxEmailLabel.Size = new System.Drawing.Size(42, 17);
+            this.uxEmailLabel.Size = new System.Drawing.Size(48, 20);
             this.uxEmailLabel.TabIndex = 2;
             this.uxEmailLabel.Text = "Email";
             // 
             // uxPasswordLabel
             // 
             this.uxPasswordLabel.AutoSize = true;
-            this.uxPasswordLabel.Location = new System.Drawing.Point(121, 244);
+            this.uxPasswordLabel.Location = new System.Drawing.Point(136, 305);
             this.uxPasswordLabel.Name = "uxPasswordLabel";
-            this.uxPasswordLabel.Size = new System.Drawing.Size(69, 17);
+            this.uxPasswordLabel.Size = new System.Drawing.Size(78, 20);
             this.uxPasswordLabel.TabIndex = 4;
             this.uxPasswordLabel.Text = "Password";
             // 
             // uxPasswordTextBox
             // 
-            this.uxPasswordTextBox.Location = new System.Drawing.Point(121, 267);
+            this.uxPasswordTextBox.Location = new System.Drawing.Point(136, 334);
+            this.uxPasswordTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxPasswordTextBox.Name = "uxPasswordTextBox";
-            this.uxPasswordTextBox.Size = new System.Drawing.Size(249, 22);
+            this.uxPasswordTextBox.PasswordChar = '*';
+            this.uxPasswordTextBox.Size = new System.Drawing.Size(280, 26);
             this.uxPasswordTextBox.TabIndex = 3;
             // 
             // uxSignInButton
             // 
             this.uxSignInButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxSignInButton.Location = new System.Drawing.Point(170, 333);
+            this.uxSignInButton.Location = new System.Drawing.Point(191, 416);
+            this.uxSignInButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxSignInButton.Name = "uxSignInButton";
-            this.uxSignInButton.Size = new System.Drawing.Size(131, 48);
+            this.uxSignInButton.Size = new System.Drawing.Size(147, 60);
             this.uxSignInButton.TabIndex = 5;
             this.uxSignInButton.Text = "Sign In";
             this.uxSignInButton.UseVisualStyleBackColor = true;
@@ -94,16 +98,16 @@
             // 
             this.uxErrorLabel.AutoSize = true;
             this.uxErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.uxErrorLabel.Location = new System.Drawing.Point(124, 116);
+            this.uxErrorLabel.Location = new System.Drawing.Point(140, 145);
             this.uxErrorLabel.Name = "uxErrorLabel";
-            this.uxErrorLabel.Size = new System.Drawing.Size(0, 17);
+            this.uxErrorLabel.Size = new System.Drawing.Size(0, 20);
             this.uxErrorLabel.TabIndex = 6;
             // 
             // uxSignIn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 452);
+            this.ClientSize = new System.Drawing.Size(560, 565);
             this.Controls.Add(this.uxErrorLabel);
             this.Controls.Add(this.uxSignInButton);
             this.Controls.Add(this.uxPasswordLabel);
@@ -111,6 +115,7 @@
             this.Controls.Add(this.uxEmailLabel);
             this.Controls.Add(this.uxSignInLabel);
             this.Controls.Add(this.uxEmailTextBox);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "uxSignIn";
             this.Text = "SignIn";
             this.ResumeLayout(false);
