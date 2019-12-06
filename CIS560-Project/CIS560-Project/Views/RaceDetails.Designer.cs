@@ -38,51 +38,58 @@
             // 
             this.uxRaceDetailsLabel.AutoSize = true;
             this.uxRaceDetailsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxRaceDetailsLabel.Location = new System.Drawing.Point(46, 47);
+            this.uxRaceDetailsLabel.Location = new System.Drawing.Point(52, 59);
             this.uxRaceDetailsLabel.Name = "uxRaceDetailsLabel";
-            this.uxRaceDetailsLabel.Size = new System.Drawing.Size(182, 36);
+            this.uxRaceDetailsLabel.Size = new System.Drawing.Size(221, 40);
             this.uxRaceDetailsLabel.TabIndex = 0;
             this.uxRaceDetailsLabel.Text = "Race Details";
             // 
             // uxEnterARaceButton
             // 
             this.uxEnterARaceButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxEnterARaceButton.Location = new System.Drawing.Point(123, 312);
+            this.uxEnterARaceButton.Location = new System.Drawing.Point(138, 390);
+            this.uxEnterARaceButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxEnterARaceButton.Name = "uxEnterARaceButton";
-            this.uxEnterARaceButton.Size = new System.Drawing.Size(168, 38);
+            this.uxEnterARaceButton.Size = new System.Drawing.Size(189, 48);
             this.uxEnterARaceButton.TabIndex = 1;
             this.uxEnterARaceButton.Text = "Enter a Race";
             this.uxEnterARaceButton.UseVisualStyleBackColor = true;
+            this.uxEnterARaceButton.Click += new System.EventHandler(this.uxEnterARaceButton_Click);
             // 
             // uxBackButton
             // 
             this.uxBackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxBackButton.Location = new System.Drawing.Point(316, 312);
+            this.uxBackButton.Location = new System.Drawing.Point(356, 390);
+            this.uxBackButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxBackButton.Name = "uxBackButton";
-            this.uxBackButton.Size = new System.Drawing.Size(168, 38);
+            this.uxBackButton.Size = new System.Drawing.Size(189, 48);
             this.uxBackButton.TabIndex = 2;
             this.uxBackButton.Text = "Back";
             this.uxBackButton.UseVisualStyleBackColor = true;
+            this.uxBackButton.Click += new System.EventHandler(this.uxBackButton_Click);
             // 
             // uxEnterTimesButton
             // 
             this.uxEnterTimesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxEnterTimesButton.Location = new System.Drawing.Point(409, 45);
+            this.uxEnterTimesButton.Location = new System.Drawing.Point(460, 56);
+            this.uxEnterTimesButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxEnterTimesButton.Name = "uxEnterTimesButton";
-            this.uxEnterTimesButton.Size = new System.Drawing.Size(168, 38);
+            this.uxEnterTimesButton.Size = new System.Drawing.Size(189, 48);
             this.uxEnterTimesButton.TabIndex = 3;
             this.uxEnterTimesButton.Text = "Enter times";
             this.uxEnterTimesButton.UseVisualStyleBackColor = true;
+            this.uxEnterTimesButton.Click += new System.EventHandler(this.uxEnterTimesButton_Click);
             // 
             // RaceDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 450);
+            this.ClientSize = new System.Drawing.Size(732, 562);
             this.Controls.Add(this.uxEnterTimesButton);
             this.Controls.Add(this.uxBackButton);
             this.Controls.Add(this.uxEnterARaceButton);
             this.Controls.Add(this.uxRaceDetailsLabel);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "RaceDetails";
             this.Text = "RaceDetails";
             this.ResumeLayout(false);

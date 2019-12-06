@@ -23,5 +23,22 @@ namespace CIS560_Project
             Application.Run(new uxSignIn());
             User curentUser = new User();
         }
+
+        public static void GoHome(Form f)
+        {
+            f.Hide();
+            if (currentUser.UserType == 1)
+            {
+                var homepage = new uxRunnerHomePage();
+                homepage.Closed += (s, args) => f.Close();
+                homepage.Show();
+            }
+            else
+            {
+                var homepage = new CoachWelcome();
+                homepage.Closed += (s, args) => f.Close();
+                homepage.Show();
+            }
+        }
     }
 }

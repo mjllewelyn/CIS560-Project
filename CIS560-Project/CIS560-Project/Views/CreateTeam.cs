@@ -19,12 +19,12 @@ namespace CIS560_Project
 
         private void uxSaveButton_Click(object sender, EventArgs e)
         {
-
+            Program.GoHome(this);
         }
 
         private void uxCancelButton_Click(object sender, EventArgs e)
         {
-
+            Program.GoHome(this);
         }
     }
 }

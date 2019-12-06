@@ -16,5 +16,10 @@ namespace CIS560_Project
         {
             InitializeComponent();
         }
+
+        private void uxBackButton_Click(object sender, EventArgs e)
+        {
+            Program.GoHome(this);
+        }
     }
 }
