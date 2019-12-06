@@ -21,7 +21,7 @@ Invoke-Sqlcmd -ServerInstance $Server -Database $Database -InputFile "Database\T
 Invoke-Sqlcmd -ServerInstance $Server -Database $Database -InputFile "Database\Tables\CreateRaceTable.sql"
 Invoke-Sqlcmd -ServerInstance $Server -Database $Database -InputFile "Database\Tables\CreateRaceParticipantTable.sql"
 Write-Host "Stored Procedures"
-Invoke-Sqlcmd -ServerInstance $Server -Database $Database -InputFile ""
+Invoke-Sqlcmd -ServerInstance $Server -Database $Database -InputFile "Database\Procedures\Procedures.sql"
 
 Write-Host "Inserting Data"
 Invoke-Sqlcmd -ServerInstance $Server -Database $Database -InputFile "DATA\InsertData.sql"
