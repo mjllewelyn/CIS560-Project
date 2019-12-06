@@ -25,33 +25,50 @@ namespace CIS560_Project
 
         private void uxProfileButton_Click(object sender, EventArgs e)
         {
-            Application.Run(new Profile(runnerController.GetRunner(Program.currentUser.UserId)));
-
+            Hide();
+            var profile = new Profile(runnerController.GetRunner(Program.currentUser.UserId));
+            profile.Closed += (s, args) => Close();
+            profile.Show();
         }
 
         private void uxRunsButton_Click(object sender, EventArgs e)
         {
-            Application.Run(new TrainingRuns(trainingRunController.FetchTrainingRuns(Program.currentUser.UserId)));
+            Hide();
+            var runs = new TrainingRuns(trainingRunController.FetchTrainingRuns(Program.currentUser.UserId));
+            runs.Closed += (s, args) => Close();
+            runs.Show();
         }
 
         private void uxRacesButton_Click(object sender, EventArgs e)
         {
-            Application.Run(new uxRaces(raceController.FetchRacesForRunner(Program.currentUser.UserId)));
+            Hide();
+            var races = new uxRaces(raceController.FetchRacesForRunner(Program.currentUser.UserId));
+            races.Closed += (s, args) => Close();
+            races.Show();
         }
 
         private void uxTeamRosterButton_Click(object sender, EventArgs e)
         {
-
+            /*Hide();
+            var teams = new Teams(raceController.FetchRacesForRunner(Program.currentUser.UserId));
+            teams.Closed += (s, args) => Close();
+            teams.Show();*/
         }
 
         private void uxTeamRecordsButton_Click(object sender, EventArgs e)
         {
-
+            /*Hide();
+            var teams = new TeamsRecords(raceController.FetchRacesForRunner(Program.currentUser.UserId));
+            teams.Closed += (s, args) => Close();
+            teams.Show();*/
         }
 
         private void uxTeamRacesButton_Click(object sender, EventArgs e)
         {
-
+           /*Hide();
+           var races = new Races(raceController.FetchRacesForRunner(Program.currentUser.UserId));
+           races.Closed += (s, args) => Close();
+           races.Show();*/
         }
 
         private void uxSignOutButton_Click(object sender, EventArgs e)
