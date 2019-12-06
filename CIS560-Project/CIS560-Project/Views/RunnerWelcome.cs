@@ -20,6 +20,7 @@ namespace CIS560_Project
         public uxRunnerHomePage()
         {
             InitializeComponent();
+            uxWelcomeLabel.Text = "Welcome, Runner " + Program.currentUser.FirstName + " " + Program.currentUser.LastName;
         }
 
         private void uxProfileButton_Click(object sender, EventArgs e)

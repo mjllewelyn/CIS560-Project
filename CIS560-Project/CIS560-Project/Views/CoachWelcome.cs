@@ -15,6 +15,7 @@ namespace CIS560_Project
         public CoachWelcome()
         {
             InitializeComponent();
+            uxWelcomeLabel.Text = "Welcome, Coach " + Program.currentUser.FirstName + " " + Program.currentUser.LastName;
         }
 
         private void uxProfileButton_Click(object sender, EventArgs e)
