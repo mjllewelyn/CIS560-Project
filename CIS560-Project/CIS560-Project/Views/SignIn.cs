@@ -30,13 +30,17 @@ namespace CIS560_Project
                 Program.currentUser = controller.GetUser(email);
                 if (Program.currentUser.UserType == 0) 
                 {
-                    CoachWelcome childForm = new CoachWelcome();
-                    childForm.Show();
+                    Hide();
+                    var coachWelcome = new CoachWelcome();
+                    coachWelcome.Closed += (s, args) => Close();
+                    coachWelcome.Show();
                 }
                 else 
                 {
-                    uxRunnerHomePage childForm = new uxRunnerHomePage();
-                    childForm.Show();
+                    Hide();
+                    var runnerWelcome = new uxRunnerHomePage();
+                    runnerWelcome.Closed += (s, args) => Close();
+                    runnerWelcome.Show();
                 }
             }
             else

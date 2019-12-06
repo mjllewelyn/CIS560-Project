@@ -55,7 +55,10 @@ namespace CIS560_Project
 
         private void uxSignOutButton_Click(object sender, EventArgs e)
         {
-
+            Hide();
+            var login = new uxSignIn();
+            login.Closed += (s, args) => Close();
+            login.Show();
         }
     }
 }
