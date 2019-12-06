@@ -34,12 +34,12 @@ namespace CIS560_Project.DataDelegates
             return new User(
                reader.GetInt32("UserId"),
                email,
-               reader.GetString("Password"),
+               reader.GetString("PassHash"),
                reader.GetInt32("UserType"),
                reader.GetString("FirstName"),
                reader.GetString("LastName"),
-               reader.GetValue<DateTime>("CreatedOn"),
-               reader.GetValue<DateTime>("UpdatedOn"));
+               reader.GetValue<DateTimeOffset>("CreatedOn"),
+               reader.GetValue<DateTimeOffset>("UpdatedOn"));
         }
     }
 }
