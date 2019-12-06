@@ -1,4 +1,4 @@
-BULK INSERT CrossCountry.User
+BULK INSERT CrossCountry.[User]
 FROM 'User.csv'
 WITH (FORMAT='CSV');
 
@@ -18,7 +18,7 @@ BULK INSERT CrossCountry.TrainingRun
 FROM 'TrainingRun.csv'
 WITH (FORMAT='CSV');
 
-BULK INSERT CrossCountry.Location
+BULK INSERT CrossCountry.[Location]
 FROM 'Location.csv'
 WITH (FORMAT='CSV');
 
