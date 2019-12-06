@@ -49,26 +49,27 @@ namespace CIS560_Project
 
         private void uxTeamRosterButton_Click(object sender, EventArgs e)
         {
-            /*Hide();
-            var teams = new Teams(raceController.FetchRacesForRunner(Program.currentUser.UserId));
+            Hide();
+            var teams = new Teams(runnerController.GetRunner(Program.currentUser.UserId));
             teams.Closed += (s, args) => Close();
-            teams.Show();*/
+            teams.Show();
         }
 
         private void uxTeamRecordsButton_Click(object sender, EventArgs e)
         {
-            /*Hide();
-            var teams = new TeamsRecords(raceController.FetchRacesForRunner(Program.currentUser.UserId));
+            Hide();
+            var teams = new uxRecords(runnerController.GetRunner(Program.currentUser.UserId));
             teams.Closed += (s, args) => Close();
-            teams.Show();*/
+            teams.Show();
         }
 
         private void uxTeamRacesButton_Click(object sender, EventArgs e)
         {
-           /*Hide();
-           var races = new Races(raceController.FetchRacesForRunner(Program.currentUser.UserId));
+           Hide();
+           var races = new uxRaces(raceController.FetchRacesForRunner(Program.currentUser.UserId));
+            //raceController.FetchRacesForTeam(((Runner)Program.currentUser).TeamId)
            races.Closed += (s, args) => Close();
-           races.Show();*/
+           races.Show();
         }
 
         private void uxSignOutButton_Click(object sender, EventArgs e)
@@ -77,6 +78,7 @@ namespace CIS560_Project
             var login = new uxSignIn();
             login.Closed += (s, args) => Close();
             login.Show();
+            Program.currentUser = null;
         }
     }
 }

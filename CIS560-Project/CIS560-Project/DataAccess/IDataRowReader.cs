@@ -15,5 +15,6 @@ namespace DataAccess
       string GetString(string name, string defaultValue);
       T GetValue<T>(string name);
       T GetValue<T>(string name, T defaultValue);
+      bool IsDbNull(string name);
    }
 }

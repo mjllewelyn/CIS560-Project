@@ -7,13 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CIS560_Project.Models;
+using CIS560_Project.Controllers;
 
 namespace CIS560_Project
 {
     public partial class uxRecords : Form
     {
-        public uxRecords()
+        private readonly User user;
+        public uxRecords(User user)
         {
+            this.user = user;
             InitializeComponent();
         }
 

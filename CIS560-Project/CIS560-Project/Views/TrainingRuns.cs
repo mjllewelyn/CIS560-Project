@@ -35,7 +35,7 @@ namespace CIS560_Project
 
         private void FillListView(IReadOnlyList<TrainingRun> readOnlyList)
         {
-            BindingSource source = new BindingSource(readOnlyList, "trainingRun");
+            BindingSource source = new BindingSource(readOnlyList, "TrainingRun");
             uxTrainingRunsDataGrid.DataSource = source;
         }
     }

@@ -31,10 +31,14 @@ namespace CIS560_Project.DataDelegates
             if (!reader.Read())
                 return null;
 
+            int endYear = 0;
+            if (!reader.IsDbNull("EndYear"))
+                endYear = reader.GetInt32("EndYear");
+
             return new Coach(
                 coachId,
                 reader.GetInt32("StartYear"),
-                reader.GetInt32("EndYear")
+                endYear
                 );
         }
     }
