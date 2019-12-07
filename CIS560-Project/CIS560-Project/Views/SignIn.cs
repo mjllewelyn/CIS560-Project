@@ -28,10 +28,20 @@ namespace CIS560_Project
             if (controller.ValidateUser(email, password))
             {
                 Program.currentUser = controller.GetUser(email);
-                if (Program.currentUser.UserType == 0)
-                    Application.Run(new CoachWelcome());
-                else
-                    Application.Run(new uxRunnerHomePage());
+                if (Program.currentUser.UserType == 0) 
+                {
+                    Hide();
+                    var coachWelcome = new CoachWelcome();
+                    coachWelcome.Closed += (s, args) => Close();
+                    coachWelcome.Show();
+                }
+                else 
+                {
+                    Hide();
+                    var runnerWelcome = new uxRunnerHomePage();
+                    runnerWelcome.Closed += (s, args) => Close();
+                    runnerWelcome.Show();
+                }
             }
             else
             {

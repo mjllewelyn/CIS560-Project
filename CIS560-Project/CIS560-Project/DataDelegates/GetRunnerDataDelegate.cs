@@ -27,12 +27,18 @@ namespace CIS560_Project.DataDelegates
 
         public override Runner Translate(SqlCommand command, IDataRowReader reader)
         {
+            if (!reader.Read())
+                return null;
 
+            int endYear = 0;
+            if (!reader.IsDbNull("EndYear"))
+                endYear = reader.GetInt32("EndYear");
+            
             return new Runner(
                     runnerId,
                     reader.GetInt32("TeamId"),
                     reader.GetInt32("StartYear"),
-                    reader.GetInt32("EndYear"));
+                    endYear);
         }
     }
 }

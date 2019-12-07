@@ -16,5 +16,15 @@ namespace CIS560_Project
         {
             InitializeComponent();
         }
+
+        private void uxSaveButton_Click(object sender, EventArgs e)
+        {
+            Program.GoHome(this);
+        }
+
+        private void uxCancelButton_Click(object sender, EventArgs e)
+        {
+            Program.GoHome(this);
+        }
     }
 }

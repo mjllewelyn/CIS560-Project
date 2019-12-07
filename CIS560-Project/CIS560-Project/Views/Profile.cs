@@ -16,26 +16,28 @@ namespace CIS560_Project
     {
         IUserRepository userController = new SqlUserRepository(Program.connectionString);
 
-        private readonly Runner runner;
-        public Profile(Runner runner)
+        private readonly User user;
+        public Profile(User user)
         {
-            this.runner = runner;
+            this.user = user;
             InitializeComponent();
             FillProfile();
         }
 
         private void FillProfile()
         {
-            uxNameTextBox.Text = Program.currentUser.FirstName + Program.currentUser.LastName;
+            uxNameTextBox.Text = Program.currentUser.FirstName + " " + Program.currentUser.LastName;
             uxEmailTextBox.Text = Program.currentUser.Email;
-            if (Program.currentUser.UserType == 0)
+            if (Program.currentUser.UserType == 1)
             {
                 uxUserTypeTextBox.Text = "Runner";
-            } else
+                uxRunningSinceTextBox.Text = ((Runner)user).StartYear.ToString();
+            }
+            else
             {
                 uxUserTypeTextBox.Text = "Coach";
+                uxRunningSinceTextBox.Text = ((Coach)user).StartYear.ToString();
             }
-            uxRunningSinceTextBox.Text = runner.StartYear.ToString();
         }
 
         private void uxRetireButton_Click(object sender, EventArgs e)
@@ -45,7 +47,7 @@ namespace CIS560_Project
 
         private void uxBackButton_Click(object sender, EventArgs e)
         {
-            Application.Run(new uxRunnerHomePage());
+            Program.GoHome(this);
         }
     }
 }

@@ -41,18 +41,18 @@
             // 
             this.uxWelcomeLabel.AutoSize = true;
             this.uxWelcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxWelcomeLabel.Location = new System.Drawing.Point(52, 62);
+            this.uxWelcomeLabel.Location = new System.Drawing.Point(58, 78);
             this.uxWelcomeLabel.Name = "uxWelcomeLabel";
-            this.uxWelcomeLabel.Size = new System.Drawing.Size(240, 36);
+            this.uxWelcomeLabel.Size = new System.Drawing.Size(0, 40);
             this.uxWelcomeLabel.TabIndex = 0;
-            this.uxWelcomeLabel.Text = "Welcome, Coach";
             // 
             // uxProfileButton
             // 
             this.uxProfileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxProfileButton.Location = new System.Drawing.Point(58, 166);
+            this.uxProfileButton.Location = new System.Drawing.Point(65, 208);
+            this.uxProfileButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxProfileButton.Name = "uxProfileButton";
-            this.uxProfileButton.Size = new System.Drawing.Size(166, 45);
+            this.uxProfileButton.Size = new System.Drawing.Size(187, 56);
             this.uxProfileButton.TabIndex = 1;
             this.uxProfileButton.Text = "Profile";
             this.uxProfileButton.UseVisualStyleBackColor = true;
@@ -61,9 +61,10 @@
             // uxRunnersButton
             // 
             this.uxRunnersButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxRunnersButton.Location = new System.Drawing.Point(263, 239);
+            this.uxRunnersButton.Location = new System.Drawing.Point(296, 299);
+            this.uxRunnersButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxRunnersButton.Name = "uxRunnersButton";
-            this.uxRunnersButton.Size = new System.Drawing.Size(166, 45);
+            this.uxRunnersButton.Size = new System.Drawing.Size(187, 56);
             this.uxRunnersButton.TabIndex = 2;
             this.uxRunnersButton.Text = "Runners";
             this.uxRunnersButton.UseVisualStyleBackColor = true;
@@ -72,9 +73,10 @@
             // uxRacesButton
             // 
             this.uxRacesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxRacesButton.Location = new System.Drawing.Point(263, 166);
+            this.uxRacesButton.Location = new System.Drawing.Point(296, 208);
+            this.uxRacesButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxRacesButton.Name = "uxRacesButton";
-            this.uxRacesButton.Size = new System.Drawing.Size(166, 45);
+            this.uxRacesButton.Size = new System.Drawing.Size(187, 56);
             this.uxRacesButton.TabIndex = 3;
             this.uxRacesButton.Text = "Races";
             this.uxRacesButton.UseVisualStyleBackColor = true;
@@ -83,9 +85,10 @@
             // uxSignoutButton
             // 
             this.uxSignoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxSignoutButton.Location = new System.Drawing.Point(160, 373);
+            this.uxSignoutButton.Location = new System.Drawing.Point(180, 466);
+            this.uxSignoutButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxSignoutButton.Name = "uxSignoutButton";
-            this.uxSignoutButton.Size = new System.Drawing.Size(166, 45);
+            this.uxSignoutButton.Size = new System.Drawing.Size(187, 56);
             this.uxSignoutButton.TabIndex = 4;
             this.uxSignoutButton.Text = "Signout";
             this.uxSignoutButton.UseVisualStyleBackColor = true;
@@ -94,9 +97,10 @@
             // uxRecordsButton
             // 
             this.uxRecordsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxRecordsButton.Location = new System.Drawing.Point(58, 291);
+            this.uxRecordsButton.Location = new System.Drawing.Point(65, 364);
+            this.uxRecordsButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxRecordsButton.Name = "uxRecordsButton";
-            this.uxRecordsButton.Size = new System.Drawing.Size(166, 45);
+            this.uxRecordsButton.Size = new System.Drawing.Size(187, 56);
             this.uxRecordsButton.TabIndex = 5;
             this.uxRecordsButton.Text = "Records";
             this.uxRecordsButton.UseVisualStyleBackColor = true;
@@ -105,9 +109,10 @@
             // uxTeamsButton
             // 
             this.uxTeamsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxTeamsButton.Location = new System.Drawing.Point(58, 227);
+            this.uxTeamsButton.Location = new System.Drawing.Point(65, 284);
+            this.uxTeamsButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxTeamsButton.Name = "uxTeamsButton";
-            this.uxTeamsButton.Size = new System.Drawing.Size(166, 45);
+            this.uxTeamsButton.Size = new System.Drawing.Size(187, 56);
             this.uxTeamsButton.TabIndex = 6;
             this.uxTeamsButton.Text = "Teams";
             this.uxTeamsButton.UseVisualStyleBackColor = true;
@@ -115,9 +120,9 @@
             // 
             // CoachWelcome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.uxTeamsButton);
             this.Controls.Add(this.uxRecordsButton);
             this.Controls.Add(this.uxSignoutButton);
@@ -125,6 +130,7 @@
             this.Controls.Add(this.uxRunnersButton);
             this.Controls.Add(this.uxProfileButton);
             this.Controls.Add(this.uxWelcomeLabel);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "CoachWelcome";
             this.Text = "CoachWelcome";
             this.ResumeLayout(false);

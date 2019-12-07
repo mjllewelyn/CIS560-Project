@@ -24,14 +24,12 @@ namespace CIS560_Project
 
         private void uxEnterButton_Click(object sender, EventArgs e)
         {
-            uxLocationListBox.SelectedItem.ToString();
-            uxDateListBox.SelectedItem.ToString();
-
+            Program.GoHome(this);
         }
 
         private void uxCancelButton_Click(object sender, EventArgs e)
         {
-
+            Program.GoHome(this);
         }
 
         private void FillLocationList()

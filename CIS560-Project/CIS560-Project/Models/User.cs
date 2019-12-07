@@ -10,16 +10,17 @@ namespace CIS560_Project.Models
     {
         public int UserId { get; }
         public string Email { get; }
-        public string PasswordHash { get => encryptPassword(PasswordHash, false); set => encryptPassword(PasswordHash, true);  }
+        //public string PasswordHash { get => encryptPassword(PasswordHash, false); set => encryptPassword(PasswordHash, true);  }
+        public string PasswordHash { get; set;  }
         public int UserType { get; }
         public string FirstName { get; }
         public string LastName { get; }
-        public DateTime CreatedOn { get; }
-        public DateTime UpdatedOn { get; }
+        public DateTimeOffset CreatedOn { get; }
+        public DateTimeOffset UpdatedOn { get; }
 
         public User() { }
 
-        public User(int userId, string email, string password, int userType, string firstName, string lastName, DateTime createdOn, DateTime updatedOn)
+        public User(int userId, string email, string password, int userType, string firstName, string lastName, DateTimeOffset createdOn, DateTimeOffset updatedOn)
         {
             UserId = userId;
             Email = email;

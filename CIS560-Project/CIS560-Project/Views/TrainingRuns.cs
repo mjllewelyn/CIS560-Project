@@ -22,17 +22,20 @@ namespace CIS560_Project
 
         private void uxLogRunButton_Click(object sender, EventArgs e)
         {
-            Application.Run(new uxLogTrainingRun());
+            Hide();
+            var runs = new uxLogTrainingRun();
+            runs.Closed += (s, args) => Close();
+            runs.Show();
         }
 
         private void uxBackButton_Click(object sender, EventArgs e)
         {
-            Application.Run(new uxRunnerHomePage());
+            Program.GoHome(this);
         }
 
         private void FillListView(IReadOnlyList<TrainingRun> readOnlyList)
         {
-            BindingSource source = new BindingSource(readOnlyList, "trainingRun");
+            BindingSource source = new BindingSource(readOnlyList, "TrainingRun");
             uxTrainingRunsDataGrid.DataSource = source;
         }
     }

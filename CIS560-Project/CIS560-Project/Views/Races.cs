@@ -29,7 +29,7 @@ namespace CIS560_Project
 
         private void uxBackButton_Click(object sender, EventArgs e)
         {
-            Application.Run(new uxRunnerHomePage());
+            Program.GoHome(this);
         }
 
         private void uxCreateRaceButton_Click(object sender, EventArgs e)

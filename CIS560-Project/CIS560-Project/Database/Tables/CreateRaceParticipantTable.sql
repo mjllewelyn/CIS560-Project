@@ -1,5 +1,3 @@
-USE noahk;
-
 CREATE TABLE CrossCountry.RaceParticipant
 (
 	RaceParticipantId INT NOT NULL IDENTITY(1, 1) PRIMARY KEY,

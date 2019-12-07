@@ -36,7 +36,7 @@ namespace CIS560_Project.DataDelegates
                 users.Add(new User(
                     reader.GetInt32("UserId"),
                     reader.GetString("Email"),
-                    reader.GetString("Password"),
+                    reader.GetString("PassHash"),
                     reader.GetInt32("UserType"),
                     reader.GetString("FirstName"),
                     reader.GetString("LastName"),

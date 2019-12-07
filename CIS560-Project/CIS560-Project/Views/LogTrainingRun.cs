@@ -24,7 +24,7 @@ namespace CIS560_Project
         {
             if (controller.CreateTrainingRun(Program.currentUser.UserId, uxDateTimePicker.Value, Convert.ToInt32(uxDistanceTextBox.Text), Convert.ToInt32(uxTimeTextBox.Text), Convert.ToDouble(uxAverageHRTextBox.Text)) != null)
             {
-                Application.Run(new uxRunnerHomePage());
+                Program.GoHome(this);
             }
             else
             {
@@ -34,7 +34,7 @@ namespace CIS560_Project
 
         private void uxCancelButton_Click(object sender, EventArgs e)
         {
-            Application.Run(new uxRunnerHomePage());
+            Program.GoHome(this);
         }
     }
 }
