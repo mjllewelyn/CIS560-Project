@@ -35,12 +35,12 @@ namespace CIS560_Project
 
         private void uxRacesButton_Click(object sender, EventArgs e)
         {
-            Application.Run(new uxRaces(raceController.FetchRacesForRunner(Program.currentUser.UserId)));
+            Application.Run(new uxRaces());
         }
 
         private void uxTeamRosterButton_Click(object sender, EventArgs e)
         {
-
+            Application.Run(new team)
         }
 
         private void uxTeamRecordsButton_Click(object sender, EventArgs e)

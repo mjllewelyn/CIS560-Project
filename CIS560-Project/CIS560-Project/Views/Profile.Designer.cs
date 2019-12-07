@@ -161,7 +161,6 @@
             this.Controls.Add(this.uxEmailLabel);
             this.Controls.Add(this.uxNameLabel);
             this.Controls.Add(this.uxProfileLabel);
-            this.Enabled = false;
             this.Name = "Profile";
             this.Text = "Profle";
             this.ResumeLayout(false);

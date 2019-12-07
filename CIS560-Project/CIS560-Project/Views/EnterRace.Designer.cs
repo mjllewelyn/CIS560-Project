@@ -67,6 +67,7 @@
             this.uxLocationListBox.Name = "uxLocationListBox";
             this.uxLocationListBox.Size = new System.Drawing.Size(224, 84);
             this.uxLocationListBox.TabIndex = 2;
+            this.uxLocationListBox.SelectedIndexChanged += new System.EventHandler(this.uxLocationListBox_SelectedIndexChanged);
             // 
             // uxDateLabel
             // 
