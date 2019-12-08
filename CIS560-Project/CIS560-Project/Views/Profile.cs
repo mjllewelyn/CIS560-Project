@@ -16,10 +16,8 @@ namespace CIS560_Project
     {
         IUserRepository userController = new SqlUserRepository(Program.connectionString);
 
-        private readonly User user;
-        public Profile(User user)
+        public Profile()
         {
-            this.user = user;
             InitializeComponent();
             FillProfile();
         }
@@ -31,12 +29,16 @@ namespace CIS560_Project
             if (Program.currentUser.UserType == 1)
             {
                 uxUserTypeTextBox.Text = "Runner";
-                uxRunningSinceTextBox.Text = ((Runner)user).StartYear.ToString();
+                var runnerController = new SqlRunnerRepository(Program.connectionString);
+                var runner = runnerController.GetRunner(Program.currentUser.UserId);
+                uxRunningSinceTextBox.Text = ((Runner)Program.currentUser).StartYear.ToString();
             }
             else
             {
                 uxUserTypeTextBox.Text = "Coach";
-                uxRunningSinceTextBox.Text = ((Coach)user).StartYear.ToString();
+                var coachController = new SqlCoachRepository(Program.connectionString);
+                var coach = coachController.GetCoach(Program.currentUser.UserId);
+                uxRunningSinceTextBox.Text = coach.StartYear.ToString();
             }
         }
 

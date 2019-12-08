@@ -18,6 +18,12 @@ namespace CIS560_Project.Controllers
             executor = new SqlCommandExecutor(connectionString);
         }
 
+        public IReadOnlyList<Location> FetchLocations()
+        {
+            var d = new FetchLocationsDataDelegate();
+            return executor.ExecuteReader(d);
+        }
+
         public Location GetLocation(int locationId)
         {
             var d = new GetLocationDataDelegate(locationId);
