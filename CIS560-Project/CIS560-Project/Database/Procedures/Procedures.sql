@@ -118,12 +118,11 @@ CREATE OR ALTER PROCEDURE CrossCountry.CreateRace
 	@CreatorId INT, 
 	@LocationId INT, 
 	@DateTime DATETIME2, 
-	@Distance INT, 
-	@IsArchived INT
+	@Distance INT
 AS
 
-INSERT CrossCountry.Race(CreatorId, LocationId, [DateTime], Distance, IsArchived)
-VALUES (@CreatorId, @LocationId, @DateTime, @Distance, @IsArchived);
+INSERT CrossCountry.Race(CreatorId, LocationId, [DateTime], Distance)
+VALUES (@CreatorId, @LocationId, @DateTime, @Distance);
 
 GO
 
@@ -223,12 +222,11 @@ GO
 CREATE OR ALTER PROCEDURE CrossCountry.CreateTeam
 	@Name NVARCHAR(64),
 	@CoachId INT,
-	@StartYear INT,
-	@EndYear INT
+	@StartYear INT
 AS
 
-INSERT CrossCountry.Team([Name], CoachId, StartYear, EndYear)
-VALUES (@Name, @CoachId, @StartYear, @EndYear);
+INSERT CrossCountry.Team([Name], CoachId, StartYear)
+VALUES (@Name, @CoachId, @StartYear);
 
 GO
 
@@ -260,12 +258,11 @@ CREATE OR ALTER PROCEDURE CrossCountry.CreateTrainingRun
 	@Date DATE,
 	@Distance INT,
 	@Time INT,
-	@AverageHeartRate INT,
-	@IsArchived INT
+	@AverageHeartRate INT
 AS
 
-INSERT CrossCountry.TrainingRun(RunnerId, [Date], Distance, [Time], AvgHeartRate, IsArchived)
-VALUES (@RunnerId, @Date, @Distance, @Time, @AverageHeartRate, @IsArchived);
+INSERT CrossCountry.TrainingRun(RunnerId, [Date], Distance, [Time], AvgHeartRate)
+VALUES (@RunnerId, @Date, @Distance, @Time, @AverageHeartRate);
 
 GO
 
