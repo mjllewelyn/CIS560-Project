@@ -20,7 +20,7 @@ FROM CrossCountry.Race R
 WHERE R.RaceId = @RaceId;
 GO
 
-
+-- Double check this
 CREATE OR ALTER PROCEDURE CrossCountry.FetchRacesForRunner
 	@RunnerId INT
 AS
@@ -30,6 +30,19 @@ FROM CrossCountry.RaceParticipant RP
      INNER JOIN CrossCountry.Race R ON RP.RaceId = R.RaceId
 	 INNER JOIN CrossCountry.Location L ON L.LocationId = R.LocationId
 WHERE RP.RunnerId = @RunnerId
+
+GO
+
+-- Might need to change this one
+CREATE OR ALTER PROCEDURE CrossCountry.FetchRacesForTeam
+	@TeamId INT
+AS
+
+SELECT Rc.RaceId, Rc.CreatorId, Rc.[DateTime], Rc.Distance, Rc.IsArchived, Rc.ChangeInElevation
+FROM CrossCountry.Race Rc
+	INNER JOIN CrossCountry.RaceParticipant RP ON Rc.RaceId = RP.RaceId
+	INNER JOIN CrossCountry.Runner Rn ON RP.RunnerId = Rn.RunnerId
+WHERE Rn.TeamId = @TeamId AND RP.[Time] IS NOT NULL AND Rc.IsArchived IS NULL;
 
 GO
 
@@ -44,13 +57,6 @@ WHERE C.CoachId = @CoachId;
 
 GO
 
-CREATE OR ALTER PROCEDURE CrossCountry.FetchLocations
-AS
-
-SELECT L.LocationId, L.[Name], L.City, L.StateProvince
-FROM CrossCountry.[Location] L
-
-GO
 
 CREATE OR ALTER PROCEDURE CrossCountry.GetLocation
 	@LocationId INT
@@ -104,7 +110,7 @@ AS
 
 SELECT *
 FROM CrossCountry.Race R
-WHERE R.RaceId = @RaceId AND R.IsArchived = 0;
+WHERE R.RaceId = @RaceId;
 
 GO
 
@@ -172,7 +178,7 @@ AS
 
 SELECT *
 FROM CrossCountry.Runner Rn
-WHERE Rn.TeamId = 1;
+WHERE Rn.TeamId IS NULL;
 
 GO
 
@@ -204,13 +210,12 @@ CREATE OR ALTER PROCEDURE CrossCountry.GetTeamsForRace
 	@RaceId INT
 AS
 
-SELECT FIRST_VALUE(Rn.TeamId) OVER(
-		PARTITION BY Rn.TeamId
-		ORDER BY Rn.TeamId ASC) AS TeamId
+SELECT Rn.TeamId
 FROM CrossCountry.Race R
 	INNER JOIN CrossCountry.RaceParticipant RP ON R.RaceId = RP.RaceId
 	INNER JOIN CrossCountry.Runner Rn ON RP.RunnerId = Rn.RunnerId
-WHERE R.RaceId = @RaceId;
+WHERE R.RaceId = @RaceId
+GROUP BY Rn.TeamId;
 
 GO
 
@@ -218,14 +223,11 @@ GO
 CREATE OR ALTER PROCEDURE CrossCountry.CreateTeam
 	@Name NVARCHAR(64),
 	@CoachId INT,
-	@CreatedOn DATETIMEOFFSET,
-	@UpdatedOn DATETIMEOFFSET,
-	@StartYear INT,
-	@EndYear INT
+	@StartYear INT
 AS
 
-INSERT CrossCountry.Team([Name], CoachId, CreatedOn, UpdatedOn, StartYear, EndYear)
-VALUES (@Name, @CoachId, @CreatedOn, @UpdatedOn, @StartYear, @EndYear);
+INSERT CrossCountry.Team([Name], CoachId, StartYear)
+VALUES (@Name, @CoachId, @StartYear);
 
 GO
 
@@ -302,27 +304,94 @@ WHERE T.CoachId = @CoachId AND R.EndYear IS NULL;
 GO
 
 
-
-
-
-
-CREATE OR ALTER PROCEDURE CrossCountry.RaceSummary
-	@RaceId INT
+CREATE OR ALTER PROCEDURE CrossCountry.GetRunnersNoTeam
 AS
 
-SELECT 
-	COUNT(*) AS NumberOfRacers,
-	AVG(ALL RP.[Time]) AS AveragePace,
-	FIRST_VALUE(RP.[Time]) OVER(
-		ORDER BY RP.[Time] DESC) AS WinningTime
-FROM CrossCountry.RaceParticipant RP
-WHERE RP.RaceId = @RaceId
-GROUP BY RP.RaceParticipantId, RP.[Time];
+SELECT *
+FROM CrossCountry.Runner R
+WHERE R.TeamId IS NULL AND R.EndYear IS NULL;
 
 GO
 
 
-CREATE OR ALTER PROCEDURE CrossCountry.TeamPlaceingForRace
+CREATE OR ALTER PROCEDURE CrossCountry.RetireTeam
+	@TeamId	INT
+AS
+
+UPDATE CrossCountry.Runner
+SET EndYear = YEAR(SYSDATETIMEOFFSET()),
+	TeamId = NULL
+WHERE TeamId = @TeamId;
+
+UPDATE CrossCountry.Team
+SET 
+	EndYear = YEAR(SYSDATETIMEOFFSET()),
+	UpdatedOn = SYSDATETIMEOFFSET()
+WHERE TeamId = @TeamId;
+
+GO
+
+
+CREATE OR ALTER PROCEDURE CrossCountry.RetireUser
+	@UserId INT
+AS
+
+UPDATE CrossCountry.Coach
+SET EndYear = YEAR(SYSDATETIMEOFFSET())
+WHERE CoachId = @UserId;
+
+UPDATE CrossCountry.Runner
+SET 
+	EndYear = YEAR(SYSDATETIMEOFFSET()),
+	TeamId = NULL
+WHERE RunnerId = @UserId;
+
+GO
+
+
+CREATE OR ALTER PROCEDURE CrossCountry.FetchLocations
+AS
+
+SELECT *
+FROM CrossCountry.[Location] L;
+
+GO
+
+
+CREATE OR ALTER PROCEDURE CrossCountry.GetDatesForLocation
+	@LocationId INT
+AS
+
+SELECT R.[DateTime]
+FROM CrossCountry.Race R
+WHERE R.[DateTime] > SYSDATETIMEOFFSET() AND R.LocationId = @LocationId;
+
+GO
+
+
+
+
+-- Check these queries
+CREATE OR ALTER PROCEDURE CrossCountry.RaceSummary
+	@RaceId INT
+AS
+
+SELECT
+	COUNT(*) AS NumberOfRacers,
+	AVG(ALL (R.Distance/RP.[Time])) AS AveragePace,
+	(
+		SELECT TOP(1) RP.[Time]
+		FROM CrossCountry.RaceParticipant RP
+		WHERE RP.RaceId = @RaceId
+	) AS WinningTime
+FROM CrossCountry.RaceParticipant RP
+	INNER JOIN CrossCountry.Race R ON RP.RaceId = R.RaceId
+WHERE RP.RaceId = @RaceId;
+
+GO
+
+
+CREATE OR ALTER PROCEDURE CrossCountry.TeamPlacingForRace
 	@RaceId INT
 AS
 
@@ -335,9 +404,10 @@ WITH TeamAverageCte(TeamId, AverageTime) AS
 		GROUP BY R.TeamId
 	)
 
-SELECT RANK() OVER(
+SELECT T.TeamId, RANK() OVER(
 	ORDER BY T.AverageTime DESC) AS TeamPlacing
-FROM TeamAverageCte T;
+FROM TeamAverageCte T
+ORDER BY TeamPlacing ASC;
 
 GO
 
@@ -346,8 +416,25 @@ CREATE OR ALTER PROCEDURE CrossCountry.RunnerSummary
 	@RunnerId INT
 AS
 
-SELECT AVG(ALL TR.Distance) AS AverageDistance, 
-	AVG(ALL TR.[Time]) AS AverageTime, 
-	AVG(ALL (TR.Distance/TR.[Time])) AS AveragePace
+SELECT ROUND(AVG(ALL TR.Distance * 1.0), 2) AS AverageDistance, 
+	ROUND(AVG(ALL TR.[Time] * 1.0), 2) AS AverageTime, 
+	ROUND(AVG(ALL (TR.Distance/(TR.[Time]/3600.0))), 2) AS AveragePace
 FROM CrossCountry.TrainingRun TR
-WHERE TR.RunnerId = @RunnerId;
+WHERE TR.RunnerId = @RunnerId AND TR.IsArchived = 0;
+
+GO
+
+
+CREATE OR ALTER PROCEDURE CrossCountry.FastestTimeForEachRunnerOnTeam
+	@TeamId INT
+AS
+
+SELECT R.RunnerId,
+	MIN(RP.[Time]) AS FastestTime
+FROM CrossCountry.Runner R
+	INNER JOIN CrossCountry.RaceParticipant RP ON R.RunnerId = RP.RunnerId
+	INNER JOIN CrossCountry.Race Rc ON RP.RaceId = Rc.RaceId
+WHERE R.TeamId = @TeamId AND Rc.IsArchived IS NULL AND RP.[Time] IS NOT NULL
+GROUP BY R.RunnerId;
+
+GO
