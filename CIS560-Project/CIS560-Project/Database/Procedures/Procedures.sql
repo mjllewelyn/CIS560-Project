@@ -25,11 +25,11 @@ CREATE OR ALTER PROCEDURE CrossCountry.FetchRacesForRunner
 	@RunnerId INT
 AS
 
-SELECT Rc.RaceId, Rc.CreatorId, Rc.[DateTime], Rc.Distance, Rc.IsArchived, Rc.ChangeInElevation
-FROM CrossCountry.Runner Rn
-	INNER JOIN CrossCountry.RaceParticipant RP ON Rn.RunnerId = RP.RaceParticipantId
-	INNER JOIN CrossCountry.Race Rc ON RP.RaceId = Rc.RaceId
-WHERE Rn.RunnerId = @RunnerId AND Rc.IsArchived = 0;
+SELECT L.Name, R.DateTime, R.Distance, RP.Time, RP.AvgHeartRate
+FROM CrossCountry.RaceParticipant RP
+     INNER JOIN CrossCountry.Race R ON RP.RaceId = R.RaceId
+	 INNER JOIN CrossCountry.Location L ON L.LocationId = R.LocationId
+WHERE RP.RunnerId = @RunnerId
 
 GO
 

@@ -37,7 +37,7 @@ namespace CIS560_Project.DataDelegates
                     raceId,
                     reader.GetInt32("RunnerId"),
                     reader.GetInt32("Time"),
-                    reader.GetValue<double>("AverageHeartRate")));
+                    reader.GetValue<int>("AvgHeartRate")));
             }
 
             return raceParticipants;

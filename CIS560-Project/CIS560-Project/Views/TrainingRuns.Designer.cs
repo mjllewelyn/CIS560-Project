@@ -39,18 +39,19 @@
             // 
             this.uxTrainingRunsLabel.AutoSize = true;
             this.uxTrainingRunsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxTrainingRunsLabel.Location = new System.Drawing.Point(12, 20);
+            this.uxTrainingRunsLabel.Location = new System.Drawing.Point(14, 25);
             this.uxTrainingRunsLabel.Name = "uxTrainingRunsLabel";
-            this.uxTrainingRunsLabel.Size = new System.Drawing.Size(203, 36);
+            this.uxTrainingRunsLabel.Size = new System.Drawing.Size(241, 40);
             this.uxTrainingRunsLabel.TabIndex = 0;
             this.uxTrainingRunsLabel.Text = "Training Runs";
             // 
             // uxLogRunButton
             // 
             this.uxLogRunButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxLogRunButton.Location = new System.Drawing.Point(59, 335);
+            this.uxLogRunButton.Location = new System.Drawing.Point(214, 419);
+            this.uxLogRunButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxLogRunButton.Name = "uxLogRunButton";
-            this.uxLogRunButton.Size = new System.Drawing.Size(147, 43);
+            this.uxLogRunButton.Size = new System.Drawing.Size(165, 54);
             this.uxLogRunButton.TabIndex = 1;
             this.uxLogRunButton.Text = "Log Run";
             this.uxLogRunButton.UseVisualStyleBackColor = true;
@@ -59,9 +60,10 @@
             // uxBackButton
             // 
             this.uxBackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxBackButton.Location = new System.Drawing.Point(234, 335);
+            this.uxBackButton.Location = new System.Drawing.Point(451, 419);
+            this.uxBackButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxBackButton.Name = "uxBackButton";
-            this.uxBackButton.Size = new System.Drawing.Size(147, 43);
+            this.uxBackButton.Size = new System.Drawing.Size(165, 54);
             this.uxBackButton.TabIndex = 2;
             this.uxBackButton.Text = "Back";
             this.uxBackButton.UseVisualStyleBackColor = true;
@@ -70,21 +72,23 @@
             // uxTrainingRunsDataGrid
             // 
             this.uxTrainingRunsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.uxTrainingRunsDataGrid.Location = new System.Drawing.Point(18, 59);
+            this.uxTrainingRunsDataGrid.Location = new System.Drawing.Point(20, 74);
+            this.uxTrainingRunsDataGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxTrainingRunsDataGrid.Name = "uxTrainingRunsDataGrid";
             this.uxTrainingRunsDataGrid.RowTemplate.Height = 24;
-            this.uxTrainingRunsDataGrid.Size = new System.Drawing.Size(461, 259);
+            this.uxTrainingRunsDataGrid.Size = new System.Drawing.Size(807, 324);
             this.uxTrainingRunsDataGrid.TabIndex = 6;
             // 
             // TrainingRuns
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.uxTrainingRunsDataGrid);
             this.Controls.Add(this.uxBackButton);
             this.Controls.Add(this.uxLogRunButton);
             this.Controls.Add(this.uxTrainingRunsLabel);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "TrainingRuns";
             this.Text = "TrainingRuns";
             ((System.ComponentModel.ISupportInitialize)(this.uxTrainingRunsDataGrid)).EndInit();

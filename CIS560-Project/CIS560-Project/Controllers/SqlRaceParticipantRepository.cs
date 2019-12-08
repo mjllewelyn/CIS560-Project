@@ -30,7 +30,7 @@ namespace CIS560_Project.Controllers
             return executor.ExecuteReader(d);
         }
 
-        public IReadOnlyList<RaceParticipant> FetchRacesForRunner(int runnerId)
+        public IReadOnlyList<RaceForRunner> FetchRacesForRunner(int runnerId)
         {
             var d = new FetchRacesForRunnerDataDelegate(runnerId);
             return executor.ExecuteReader(d);
@@ -58,7 +58,7 @@ namespace CIS560_Project.Controllers
             return participants;
         }
 
-        public RaceParticipant CreateRaceParticipant(int raceId, int runnerId, int time = 0, double averageHeartRate = 0.0)
+        public RaceParticipant CreateRaceParticipant(int raceId, int runnerId, int time = 0, int averageHeartRate = 0)
         {
             if (string.IsNullOrWhiteSpace(raceId.ToString()))
                 throw new ArgumentException("The parameter cannot be null or empty.", nameof(raceId));

@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace CIS560_Project.DataDelegates
 {
-    internal class FetchRacesForRunnerDataDelegate : DataReaderDelegate<IReadOnlyList<RaceParticipant>>
+    internal class FetchRacesForRunnerDataDelegate : DataReaderDelegate<IReadOnlyList<RaceForRunner>>
     {
         private readonly int runnerId;
 
@@ -26,18 +26,18 @@ namespace CIS560_Project.DataDelegates
             command.Parameters.AddWithValue("RunnerId", runnerId);
         }
 
-        public override IReadOnlyList<RaceParticipant> Translate(SqlCommand command, IDataRowReader reader)
+        public override IReadOnlyList<RaceForRunner> Translate(SqlCommand command, IDataRowReader reader)
         {
-            var raceParticipants = new List<RaceParticipant>();
+            var raceParticipants = new List<RaceForRunner>();
 
             while (reader.Read())
             {
-                raceParticipants.Add(new RaceParticipant(
-                    reader.GetInt32("RaceParticipantId"),
-                    reader.GetInt32("RaceId"),
-                    runnerId,
+                raceParticipants.Add(new RaceForRunner(
+                    reader.GetString("Name"),
+                    reader.GetValue<DateTime>("DateTime"),
+                    reader.GetInt32("Distance"),
                     reader.GetInt32("Time"),
-                    reader.GetValue<double>("AverageHeartRate")));
+                    reader.GetInt32("AvgHeartRate")));
             }
 
             return raceParticipants;

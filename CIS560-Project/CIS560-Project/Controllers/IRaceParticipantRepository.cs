@@ -13,12 +13,12 @@ namespace CIS560_Project.Controllers
 
         IReadOnlyList<RaceParticipant> FetchRunnersForRace(int raceId);
 
-        IReadOnlyList<RaceParticipant> FetchRacesForRunner(int runnerId);
+        IReadOnlyList<RaceForRunner> FetchRacesForRunner(int runnerId);
 
         IReadOnlyList<RaceParticipant> GetTeamRecords(int teamId);
 
         void UpdateRaceParticipantTime(int raceParticipantId, int time);
 
-        RaceParticipant CreateRaceParticipant(int raceId, int runnerId, int time = 0, double averageHeartRate = 0.0);
+        RaceParticipant CreateRaceParticipant(int raceId, int runnerId, int time = 0, int averageHeartRate = 0);
     }
 }

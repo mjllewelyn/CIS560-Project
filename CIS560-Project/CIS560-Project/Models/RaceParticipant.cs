@@ -12,11 +12,11 @@ namespace CIS560_Project.Models
         public int RaceId { get; }
         public int RunnerId { get; }
         public int Time { get; }
-        public double AverageHeartRate { get; set; }
+        public int AverageHeartRate { get; set; }
 
         public RaceParticipant() { }
 
-        public RaceParticipant(int raceParticipantId, int raceId, int runnerId, int time=0, double averageHeartRate=0.0)
+        public RaceParticipant(int raceParticipantId, int raceId, int runnerId, int time=0, int averageHeartRate=0)
         {
             RaceParticipantId = raceParticipantId;
             RaceId = raceId;

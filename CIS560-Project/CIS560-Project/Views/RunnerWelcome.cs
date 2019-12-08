@@ -42,7 +42,7 @@ namespace CIS560_Project
         private void uxRacesButton_Click(object sender, EventArgs e)
         {
             Hide();
-            var races = new uxRaces();
+            var races = new RunnerRaces(raceController.FetchRacesForRunner(Program.currentUser.UserId));
             races.Closed += (s, args) => Close();
             races.Show();
         }
