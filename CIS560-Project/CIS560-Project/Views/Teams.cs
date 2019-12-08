@@ -33,8 +33,11 @@ namespace CIS560_Project
 
         private void uxTeamsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            uxTeamsListBox.SelectedItem.ToString();
-            //teamController.GetTeam
+            Team team = teamController.FetchTeam(uxTeamsListBox.SelectedItem.ToString());
+            Hide();
+            var teamDetails = new TeamDetails(team.TeamId);
+            teamDetails.Closed += (s, args) => Close();
+            teamDetails.Show();
         }
 
         private void FillList()
