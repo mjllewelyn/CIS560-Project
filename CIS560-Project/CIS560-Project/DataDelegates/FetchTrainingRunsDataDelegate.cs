@@ -36,12 +36,12 @@ namespace CIS560_Project.DataDelegates
 
             do
             {
-                double averageHR = 0.0;
+                int averageHR = 0;
                 if (!reader.IsDbNull("AvgHeartRate"))
-                    averageHR = reader.GetValue<double>("AvgHeartRate");
-                bool isArchived = false;
+                    averageHR = reader.GetValue<int>("AvgHeartRate");
+                int isArchived = 0;
                 if (!reader.IsDbNull("isArchived"))
-                    isArchived = reader.GetValue<bool>("isArchived");
+                    isArchived = reader.GetValue<int>("isArchived");
                 trainingRuns.Add(new TrainingRun(
                     reader.GetInt32("TrainingRunId"),
                     runnerId,

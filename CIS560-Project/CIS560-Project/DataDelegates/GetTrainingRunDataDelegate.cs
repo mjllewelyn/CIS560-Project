@@ -37,8 +37,8 @@ namespace CIS560_Project.DataDelegates
                 reader.GetValue<DateTime>("Date"),
                 reader.GetInt32("Distance"),
                 reader.GetInt32("Time"),
-                reader.GetValue<double>("AverageHeartRate"),
-                reader.GetValue<bool>("isArchived"));
+                reader.GetValue<int>("AverageHeartRate"),
+                reader.GetValue<int>("isArchived"));
         }
     }
 }
