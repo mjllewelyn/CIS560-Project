@@ -11,7 +11,7 @@ namespace CIS560_Project.Models
         public string LocationName { get; }
         public DateTime DateAndTime { get; }
         public int Distance { get; }
-        public int Time { get; }
+        public string Time { get; }
         public int AverageHeartRate { get; }
 
         public RaceForRunner (string name, DateTime dateTime, int distance, int time, int averageHeartRate)
@@ -19,7 +19,7 @@ namespace CIS560_Project.Models
             LocationName = name;
             DateAndTime = dateTime;
             Distance = distance;
-            Time = time;
+            Time = Program.GetTimeString(time);
             AverageHeartRate = averageHeartRate;
         }
     }

@@ -12,7 +12,7 @@ namespace CIS560_Project.Models
         public int RunnerId { get; }
         public DateTime Date { get; }
         public int Distance { get; }
-        public int Time { get; }
+        public string Time { get; }
         public int AverageHeartRate { get; }
         public int IsArchived { get; }
 
@@ -25,7 +25,7 @@ namespace CIS560_Project.Models
             RunnerId = runnerId;
             Date = date;
             Distance = distance;
-            Time = time;
+            Time = Program.GetTimeString(time);
             AverageHeartRate = averageHeartRate;
             IsArchived = isArchived;
         }

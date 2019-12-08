@@ -31,7 +31,7 @@ namespace CIS560_Project
                 uxUserTypeTextBox.Text = "Runner";
                 var runnerController = new SqlRunnerRepository(Program.connectionString);
                 var runner = runnerController.GetRunner(Program.currentUser.UserId);
-                uxRunningSinceTextBox.Text = ((Runner)Program.currentUser).StartYear.ToString();
+                uxRunningSinceTextBox.Text = runner.StartYear.ToString();
             }
             else
             {

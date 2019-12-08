@@ -62,14 +62,6 @@ namespace CIS560_Project
             teams.Show();
         }
 
-        private void uxTeamRecordsButton_Click(object sender, EventArgs e)
-        {
-            Hide();
-            var teams = new uxRecords(runnerController.GetRunner(Program.currentUser.UserId));
-            teams.Closed += (s, args) => Close();
-            teams.Show();
-        }
-
         private void uxTeamRacesButton_Click(object sender, EventArgs e)
         {
            Hide();

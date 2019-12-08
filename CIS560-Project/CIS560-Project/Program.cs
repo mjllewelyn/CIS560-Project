@@ -40,5 +40,17 @@ namespace CIS560_Project
                 homepage.Show();
             }
         }
+
+        public static string GetTimeString(int time)
+        {
+            int hours = time / 3600;
+            time -= hours * 3600;
+            int mins = time / 60;
+            time -= mins * 60; //time now = secs
+            string str = "";
+            if (hours > 0)
+                str += hours + " hrs ";
+            return str + mins + " mins " + time + " secs";
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace CIS560_Project.Models
         public int RaceParticipantId { get; }
         public int RaceId { get; }
         public int RunnerId { get; }
-        public int Time { get; }
+        public string Time { get; }
         public int AverageHeartRate { get; set; }
 
         public RaceParticipant() { }
@@ -21,7 +21,7 @@ namespace CIS560_Project.Models
             RaceParticipantId = raceParticipantId;
             RaceId = raceId;
             RunnerId = runnerId;
-            Time = time;
+            Time = Program.GetTimeString(time);
             AverageHeartRate = averageHeartRate;
         }
     }
