@@ -14,13 +14,20 @@ namespace CIS560_Project
 {
     public partial class uxRunnerHomePage : Form
     {
-        IRunnerRepository runnerController = new SqlRunnerRepository(Program.connectionString);
+        static IRunnerRepository runnerController = new SqlRunnerRepository(Program.connectionString);
         ITrainingRunRepository trainingRunController = new SqlTrainingRunRepository(Program.connectionString);
         IRaceParticipantRepository raceController = new SqlRaceParticipantRepository(Program.connectionString);
+
+        private Runner runner = runnerController.GetRunner(Program.currentUser.UserId);
+
         public uxRunnerHomePage()
         {
             InitializeComponent();
             uxWelcomeLabel.Text = "Welcome, Runner " + Program.currentUser.FirstName + " " + Program.currentUser.LastName;
+            if (runner.TeamId == 0)
+            {
+                uxTeamRosterButton.Enabled = false;
+            }
         }
 
         private void uxProfileButton_Click(object sender, EventArgs e)
@@ -50,7 +57,7 @@ namespace CIS560_Project
         private void uxTeamRosterButton_Click(object sender, EventArgs e)
         {
             Hide();
-            var teams = new TeamDetails();
+            var teams = new TeamDetails(runnerController.GetRunner(Program.currentUser.UserId).TeamId);
             teams.Closed += (s, args) => Close();
             teams.Show();
         }
