@@ -1,5 +1,5 @@
 ﻿Param(
-   [string] $Server = "DESKTOP-FI4BV8L\SQLEXPRESS",
+   [string] $Server = "DESKTOP-FI4BV8L\MSSQLSERVER2",
    [string] $Database = "master"
 )
 
