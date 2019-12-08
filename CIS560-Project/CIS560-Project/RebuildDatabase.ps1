@@ -1,9 +1,9 @@
 ﻿Param(
-   [string] $Server = "(localdb)\MSSQLLocalDb",
-   [string] $Database = "mcsmih"
+   [string] $Server = "DESKTOP-FI4BV8L\SQLEXPRESS",
+   [string] $Database = "master"
 )
 
-Import-Module Sqlps -DisableNameChecking;
+Import-Module Sqlps -DisableNameChecking
 
 Write-Host "Rebuilding Database"
 
