@@ -97,8 +97,10 @@ GO
 CREATE OR ALTER PROCEDURE CrossCountry.RetrieveRaces
 AS
 
-SELECT *
-FROM CrossCountry.Race
+SELECT R.RaceId, CONCAT(U.FirstName, U.LastName) AS CreatorName, L.[Name] AS LocationName, R.[DateTime], R.Distance
+FROM CrossCountry.Race R
+  INNER JOIN CrossCountry.[User] U ON R.CreatorId = U.UserId
+  INNER JOIN CrossCountry.[Location] L ON L.LocationId = R.LocationId
 WHERE IsArchived = 0;
 
 GO

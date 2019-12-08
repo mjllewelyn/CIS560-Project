@@ -8,7 +8,7 @@ CREATE TABLE CrossCountry.Race
 		REFERENCES CrossCountry.[Location],
 	Distance INT NOT NULL,
 	ChangeInElevation INT,
-	IsArchived INT,
+	IsArchived INT NOT NULL DEFAULT 0,
 
 	UNIQUE(LocationId, [DateTime], Distance)
 

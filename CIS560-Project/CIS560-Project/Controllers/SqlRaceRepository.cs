@@ -18,7 +18,7 @@ namespace CIS560_Project.Controllers
             executor = new SqlCommandExecutor(connectionString);
         }
 
-        public IReadOnlyList<Race> RetrieveRaces()
+        public IReadOnlyList<RaceCoachView> RetrieveRaces()
         {
             return executor.ExecuteReader(new RetrieveRacesDataDelegate());
         }

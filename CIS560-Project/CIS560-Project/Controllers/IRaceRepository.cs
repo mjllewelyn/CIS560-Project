@@ -9,7 +9,7 @@ namespace CIS560_Project.Controllers
 {
     interface IRaceRepository
     {
-        IReadOnlyList<Race> RetrieveRaces();
+        IReadOnlyList<RaceCoachView> RetrieveRaces();
 
         Race GetRace(int raceId);
 

@@ -14,12 +14,13 @@ namespace CIS560_Project
 {
     public partial class uxRaces : Form
     {
-        IRaceParticipantRepository raceController = new SqlRaceParticipantRepository(Program.connectionString);
+        IRaceRepository raceController = new SqlRaceRepository(Program.connectionString);
 
         public uxRaces()
         {
-            raceController.FetchRacesForRunner(Program.currentUser.UserId);
+            var readOnlyList = raceController.RetrieveRaces();
             InitializeComponent();
+            FillListView(readOnlyList);
         }
 
         private void uxEnterARaceButton_Click(object sender, EventArgs e)
@@ -40,6 +41,13 @@ namespace CIS560_Project
         private void uxRaceDetailsButton_Click(object sender, EventArgs e)
         {
             Application.Run(new RaceDetails());
+        }
+
+        private void FillListView(IReadOnlyList<RaceCoachView> readOnlyList)
+        {
+            BindingSource source = new BindingSource();
+            source.DataSource = readOnlyList;
+            uxRaceDataGrid.DataSource = source;
         }
     }
 }

@@ -33,7 +33,6 @@
             this.uxRunnersButton = new System.Windows.Forms.Button();
             this.uxRacesButton = new System.Windows.Forms.Button();
             this.uxSignoutButton = new System.Windows.Forms.Button();
-            this.uxRecordsButton = new System.Windows.Forms.Button();
             this.uxTeamsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -61,7 +60,7 @@
             // uxRunnersButton
             // 
             this.uxRunnersButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxRunnersButton.Location = new System.Drawing.Point(296, 299);
+            this.uxRunnersButton.Location = new System.Drawing.Point(296, 284);
             this.uxRunnersButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxRunnersButton.Name = "uxRunnersButton";
             this.uxRunnersButton.Size = new System.Drawing.Size(187, 56);
@@ -85,7 +84,7 @@
             // uxSignoutButton
             // 
             this.uxSignoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxSignoutButton.Location = new System.Drawing.Point(180, 466);
+            this.uxSignoutButton.Location = new System.Drawing.Point(178, 377);
             this.uxSignoutButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxSignoutButton.Name = "uxSignoutButton";
             this.uxSignoutButton.Size = new System.Drawing.Size(187, 56);
@@ -93,18 +92,6 @@
             this.uxSignoutButton.Text = "Signout";
             this.uxSignoutButton.UseVisualStyleBackColor = true;
             this.uxSignoutButton.Click += new System.EventHandler(this.uxSignoutButton_Click);
-            // 
-            // uxRecordsButton
-            // 
-            this.uxRecordsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxRecordsButton.Location = new System.Drawing.Point(65, 364);
-            this.uxRecordsButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uxRecordsButton.Name = "uxRecordsButton";
-            this.uxRecordsButton.Size = new System.Drawing.Size(187, 56);
-            this.uxRecordsButton.TabIndex = 5;
-            this.uxRecordsButton.Text = "Records";
-            this.uxRecordsButton.UseVisualStyleBackColor = true;
-            this.uxRecordsButton.Click += new System.EventHandler(this.uxRecordsButton_Click);
             // 
             // uxTeamsButton
             // 
@@ -122,9 +109,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 562);
+            this.ClientSize = new System.Drawing.Size(847, 471);
             this.Controls.Add(this.uxTeamsButton);
-            this.Controls.Add(this.uxRecordsButton);
             this.Controls.Add(this.uxSignoutButton);
             this.Controls.Add(this.uxRacesButton);
             this.Controls.Add(this.uxRunnersButton);
@@ -145,7 +131,6 @@
         private System.Windows.Forms.Button uxRunnersButton;
         private System.Windows.Forms.Button uxRacesButton;
         private System.Windows.Forms.Button uxSignoutButton;
-        private System.Windows.Forms.Button uxRecordsButton;
         private System.Windows.Forms.Button uxTeamsButton;
     }
 }
