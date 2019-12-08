@@ -33,7 +33,8 @@ namespace CIS560_Project
 
         private void uxTeamsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //uxTeamsListBox.SelectedValue.
+            uxTeamsListBox.SelectedItem.ToString();
+            //teamController.GetTeam
         }
 
         private void FillList()
