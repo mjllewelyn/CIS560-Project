@@ -7,6 +7,5 @@ CREATE TABLE CrossCountry.TrainingRun
 	Distance INT NOT NULL,
 	[Time] INT NOT NULL,
 	AvgHeartRate INT,
-	ChangeInElevation INT,
 	IsArchived INT
 );
