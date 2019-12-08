@@ -26,7 +26,7 @@ namespace CIS560_Project
         private void uxProfileButton_Click(object sender, EventArgs e)
         {
             Hide();
-            var profile = new Profile(coachController.GetCoach(Program.currentUser.UserId));
+            var profile = new Profile();
             profile.Closed += (s, args) => Close();
             profile.Show();
         }
@@ -50,7 +50,7 @@ namespace CIS560_Project
         private void uxRacesButton_Click(object sender, EventArgs e)
         {
             Hide();
-            var races = new uxRaces(raceController.FetchRacesForRunner(Program.currentUser.UserId));
+            var races = new uxRaces();
             races.Closed += (s, args) => Close();
             races.Show();
         }
@@ -58,7 +58,7 @@ namespace CIS560_Project
         private void uxRunnersButton_Click(object sender, EventArgs e)
         {
             Hide();
-            var races = new uxRaces(raceController.FetchRacesForRunner(Program.currentUser.UserId));
+            var races = new uxRaces();
             races.Closed += (s, args) => Close();
             races.Show();
         }

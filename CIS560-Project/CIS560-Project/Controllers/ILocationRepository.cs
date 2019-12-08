@@ -9,6 +9,7 @@ namespace CIS560_Project.Controllers
 {
     interface ILocationRepository
     {
+        IReadOnlyList<Location> FetchLocations();
         Location GetLocation(int locationId);
     }
 }

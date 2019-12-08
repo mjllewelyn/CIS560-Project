@@ -26,7 +26,7 @@ namespace CIS560_Project
         private void uxProfileButton_Click(object sender, EventArgs e)
         {
             Hide();
-            var profile = new Profile(runnerController.GetRunner(Program.currentUser.UserId));
+            var profile = new Profile();
             profile.Closed += (s, args) => Close();
             profile.Show();
         }

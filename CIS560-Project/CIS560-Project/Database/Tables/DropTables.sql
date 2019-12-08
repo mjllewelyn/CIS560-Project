@@ -1,8 +1,8 @@
-DROP TABLE CrossCountry.RaceParticipant
-DROP TABLE CrossCountry.Race
-DROP TABLE CrossCountry.[Location]
-DROP TABLE CrossCountry.TrainingRun
-DROP TABLE CrossCountry.Runner
-DROP TABLE CrossCountry.Team
-DROP TABLE CrossCountry.Coach
-DROP TABLE CrossCountry.[User]
+DROP TABLE IF EXISTS CrossCountry.RaceParticipant
+DROP TABLE IF EXISTS CrossCountry.Race
+DROP TABLE IF EXISTS CrossCountry.[Location]
+DROP TABLE IF EXISTS CrossCountry.TrainingRun
+DROP TABLE IF EXISTS CrossCountry.Runner
+DROP TABLE IF EXISTS CrossCountry.Team
+DROP TABLE IF EXISTS CrossCountry.Coach
+DROP TABLE IF EXISTS CrossCountry.[User]

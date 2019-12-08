@@ -34,7 +34,7 @@ namespace CIS560_Project
 
         private void FillLocationList()
         {
-            locationController.GetLocations();
+            locationController.FetchLocations();
 
         }
 

@@ -44,6 +44,13 @@ WHERE C.CoachId = @CoachId;
 
 GO
 
+CREATE OR ALTER PROCEDURE CrossCountry.FetchLocations
+AS
+
+SELECT L.LocationId, L.[Name], L.City, L.StateProvince
+FROM CrossCountry.[Location] L
+
+GO
 
 CREATE OR ALTER PROCEDURE CrossCountry.GetLocation
 	@LocationId INT
