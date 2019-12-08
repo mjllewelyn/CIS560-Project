@@ -31,17 +31,27 @@ namespace CIS560_Project.DataDelegates
         {
             var trainingRuns = new List<TrainingRun>();
 
-            while (reader.Read())
+            if (!reader.Read())
+                return null;
+
+            do
             {
+                double averageHR = 0.0;
+                if (!reader.IsDbNull("AvgHeartRate"))
+                    averageHR = reader.GetValue<double>("AvgHeartRate");
+                bool isArchived = false;
+                if (!reader.IsDbNull("isArchived"))
+                    isArchived = reader.GetValue<bool>("isArchived");
                 trainingRuns.Add(new TrainingRun(
                     reader.GetInt32("TrainingRunId"),
                     runnerId,
                     reader.GetValue<DateTime>("Date"),
                     reader.GetInt32("Distance"),
                     reader.GetInt32("Time"),
-                    reader.GetValue<double>("AverageHeartRate"),
-                    reader.GetValue<bool>("isArchived")));
-            }
+                    averageHR,
+                    isArchived
+                    ));
+            } while (reader.Read()) ;
 
             return trainingRuns;
         }
