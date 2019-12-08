@@ -1,62 +1,27 @@
-BULK INSERT CrossCountry.[User]
-FROM 'User.csv'
-WITH (
-  FIRSTROW=2,
-  FIELDTERMINATOR=',',
-  ROWTERMINATOR='\n');
-GO
+DECLARE @path VARCHAR(max)
+SET @path = 'C:\Users\mjlle\Documents\CIS 560\CIS560-Project\CIS560-Project\CIS560-Project\DATA\';
 
-BULK INSERT CrossCountry.Coach
-FROM 'Coach.csv'
-WITH (
-  FIRSTROW=2,
-  FIELDTERMINATOR=',',
-  ROWTERMINATOR='\n');
-GO
+DECLARE @sql VARCHAR(max)
+SET @sql = 'BULK INSERT CrossCountry.[User] FROM "' + @path + 'User.csv" WITH (FIRSTROW=2, FIELDTERMINATOR='','', ROWTERMINATOR=''\n'')'
+EXEC(@sql)
 
-BULK INSERT CrossCountry.Team
-FROM 'Team.csv'
-WITH (
-  FIRSTROW=2,
-  FIELDTERMINATOR=',',
-  ROWTERMINATOR='\n');
-GO
+SET @sql = 'BULK INSERT CrossCountry.[Coach] FROM "' + @path + 'Coach.csv" WITH (FIRSTROW=2, FIELDTERMINATOR='','', ROWTERMINATOR=''\n'')'
+EXEC(@sql)
 
-BULK INSERT CrossCountry.Runner
-FROM 'Runner.csv'
-WITH (
-  FIRSTROW=2,
-  FIELDTERMINATOR=',',
-  ROWTERMINATOR='\n');
-GO
+SET @sql = 'BULK INSERT CrossCountry.[Team] FROM "' + @path + 'Team.csv" WITH (FIRSTROW=2, FIELDTERMINATOR='','', ROWTERMINATOR=''\n'')'
+EXEC(@sql)
 
-BULK INSERT CrossCountry.TrainingRun
-FROM 'TrainingRun.csv'
-WITH (
-  FIRSTROW=2,
-  FIELDTERMINATOR=',',
-  ROWTERMINATOR='\n');
-GO
+SET @sql = 'BULK INSERT CrossCountry.[Runner] FROM "' + @path + 'Runner.csv" WITH (FIRSTROW=2, FIELDTERMINATOR='','', ROWTERMINATOR=''\n'')'
+EXEC(@sql)
 
-BULK INSERT CrossCountry.[Location]
-FROM 'Location.csv'
-WITH (
-  FIRSTROW=2,
-  FIELDTERMINATOR=',',
-  ROWTERMINATOR='\n');
-GO
+SET @sql = 'BULK INSERT CrossCountry.[TrainingRun] FROM "' + @path + 'TrainingRun.csv" WITH (FIRSTROW=2, FIELDTERMINATOR='','', ROWTERMINATOR=''\n'')'
+EXEC(@sql)
 
-BULK INSERT CrossCountry.Race
-FROM 'Race.csv'
-WITH (
-  FIRSTROW=2,
-  FIELDTERMINATOR=',',
-  ROWTERMINATOR='\n');
-GO
+SET @sql = 'BULK INSERT CrossCountry.[Location] FROM "' + @path + 'Location.csv" WITH (FIRSTROW=2, FIELDTERMINATOR='','', ROWTERMINATOR=''\n'')'
+EXEC(@sql)
 
-BULK INSERT CrossCountry.RaceParticipant
-FROM 'RaceParticipant.csv'
-WITH (
-  FIRSTROW=2,
-  FIELDTERMINATOR=',',
-  ROWTERMINATOR='\n');
+SET @sql = 'BULK INSERT CrossCountry.[Race] FROM "' + @path + 'Race.csv" WITH (FIRSTROW=2, FIELDTERMINATOR='','', ROWTERMINATOR=''\n'')'
+EXEC(@sql)
+
+SET @sql = 'BULK INSERT CrossCountry.[RaceParticipant] FROM "' + @path + 'RaceParticipant.csv" WITH (FIRSTROW=2, FIELDTERMINATOR='','', ROWTERMINATOR=''\n'')'
+EXEC(@sql)
