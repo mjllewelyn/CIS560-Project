@@ -11,6 +11,8 @@ namespace CIS560_Project.Controllers
     {
         Team GetTeam(int teamId);
 
+        Team FetchTeam(string name);
+
         IReadOnlyList<Team> FetchCoachTeams(int coachId);
 
         IReadOnlyList<Team> GetTeamsForRace(int raceId);

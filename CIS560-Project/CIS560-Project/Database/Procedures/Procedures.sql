@@ -193,6 +193,16 @@ WHERE T.TeamId = @TeamId;
 
 GO
 
+CREATE OR ALTER PROCEDURE CrossCountry.GetTeam
+	@Name VARCHAR(50)
+AS
+
+SELECT *
+FROM CrossCountry.Team T
+WHERE T.Name = @Name;
+
+GO
+
 
 CREATE OR ALTER PROCEDURE CrossCountry.FetchCoachTeams
 	@CoachId INT

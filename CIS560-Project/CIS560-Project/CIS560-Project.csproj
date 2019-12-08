@@ -77,6 +77,7 @@
     <Compile Include="DataDelegates\FetchLocationsDataDelegate.cs" />
     <Compile Include="DataDelegates\FetchRacesForRunnerDataDelegate.cs" />
     <Compile Include="DataDelegates\FetchRunnersForRaceDataDelegate.cs" />
+    <Compile Include="DataDelegates\FetchTeamDataDelegate.cs" />
     <Compile Include="DataDelegates\FetchTrainingRunsDataDelegate.cs" />
     <Compile Include="DataDelegates\GetCoachDataDelegate.cs" />
     <Compile Include="DataDelegates\GetCoachsRunnersUserDataDelegate.cs" />
