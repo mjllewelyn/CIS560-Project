@@ -10,16 +10,16 @@ using CIS560_Project.Models;
 
 namespace CIS560_Project.DataDelegates
 {
-    internal class CreateTrainingRunDataDelegate : NonQueryDataDelegate<TrainingRun>
+    internal class CreateTrainingRunDataDelegate : DataDelegate
     {
         public readonly int runnerId;
         public readonly DateTime date;
         public readonly int distance;
         public readonly int time;
-        public readonly double averageHR;
-        public readonly bool isArchived;
+        public readonly int averageHR;
+        public readonly int isArchived;
 
-        public CreateTrainingRunDataDelegate(DateTime date, int distance, int time, double averageHR, bool isArchived)
+        public CreateTrainingRunDataDelegate(DateTime date, int distance, int time, int averageHR, int isArchived)
             : base("CrossCountry.CreateTrainingRun")
         {
             runnerId = Program.currentUser.UserId;
@@ -38,16 +38,8 @@ namespace CIS560_Project.DataDelegates
             command.Parameters.AddWithValue("Date", date);
             command.Parameters.AddWithValue("Distance", distance);
             command.Parameters.AddWithValue("Time", time);
-            command.Parameters.AddWithValue("AverageHR", averageHR);
+            command.Parameters.AddWithValue("AverageHeartRate", averageHR);
             command.Parameters.AddWithValue("IsArchived", isArchived);
-
-            var t = command.Parameters.Add("TrainingRunId", SqlDbType.Int);
-            t.Direction = ParameterDirection.Output;
-        }
-
-        public override TrainingRun Translate(SqlCommand command)
-        {
-            return new TrainingRun((int)command.Parameters["TrainingRunId"].Value, runnerId, date, distance, time, averageHR);
         }
     }
 }

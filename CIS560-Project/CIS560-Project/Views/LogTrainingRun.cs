@@ -22,19 +22,20 @@ namespace CIS560_Project
 
         private void uxLogRunButton_Click(object sender, EventArgs e)
         {
-            if (controller.CreateTrainingRun(Program.currentUser.UserId, uxDateTimePicker.Value, Convert.ToInt32(uxDistanceTextBox.Text), Convert.ToInt32(uxTimeTextBox.Text), Convert.ToDouble(uxAverageHRTextBox.Text)) != null)
-            {
-                Program.GoHome(this);
-            }
-            else
-            {
-                uxErrorLabel.Text = "Invalid input. Please try again.";
-            }
+            ITrainingRunRepository trainingRunController = new SqlTrainingRunRepository(Program.connectionString);
+            Hide();
+            var runs = new TrainingRuns(trainingRunController.FetchTrainingRuns(Program.currentUser.UserId));
+            runs.Closed += (s, args) => Close();
+            runs.Show();
         }
 
         private void uxCancelButton_Click(object sender, EventArgs e)
         {
-            Program.GoHome(this);
+            ITrainingRunRepository trainingRunController = new SqlTrainingRunRepository(Program.connectionString);
+            Hide();
+            var runs = new TrainingRuns(trainingRunController.FetchTrainingRuns(Program.currentUser.UserId));
+            runs.Closed += (s, args) => Close();
+            runs.Show();
         }
     }
 }

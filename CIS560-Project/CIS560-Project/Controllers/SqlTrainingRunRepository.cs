@@ -30,7 +30,7 @@ namespace CIS560_Project.Controllers
             return executor.ExecuteReader(d);
         }
 
-        public TrainingRun CreateTrainingRun(int runnerId, DateTime date, int distance, int time, double averageHeartRate = 0.0, bool isArchived = false)
+        public void CreateTrainingRun(int runnerId, DateTime date, int distance, int time, int averageHeartRate = 0, int isArchived = 0)
         {
             if (string.IsNullOrWhiteSpace(runnerId.ToString()))
                 throw new ArgumentException("The parameter cannot be null or empty.", nameof(runnerId));
@@ -45,7 +45,7 @@ namespace CIS560_Project.Controllers
                 throw new ArgumentException("The parameter cannot be null or empty.", nameof(time));
 
             var d = new CreateTrainingRunDataDelegate(date, distance, time, averageHeartRate, isArchived);
-            return executor.ExecuteNonQuery(d);
+            executor.ExecuteNonQuery(d);
         }
     }
 }

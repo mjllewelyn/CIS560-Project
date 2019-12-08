@@ -247,7 +247,7 @@ AS
 
 SELECT *
 FROM CrossCountry.TrainingRun T
-WHERE T.RunnerId = @RunnerId AND IsArchived IS NULL;
+WHERE T.RunnerId = @RunnerId AND IsArchived = 0;
 
 GO
 
