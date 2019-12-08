@@ -11,14 +11,14 @@ namespace CIS560_Project.Models
         public int TeamId { get; }
         public string Name { get; }
         public int CoachId { get; }
-        public DateTime CreatedOn { get; }
-        public DateTime UpdatedOn { get; }
+        public DateTimeOffset CreatedOn { get; }
+        public DateTimeOffset UpdatedOn { get; }
         public int StartYear { get; }
         public int EndYear { get; }
 
         public Team() { }
 
-        public Team(int teamId, string name, int coachId, DateTime createdOn, DateTime updatedOn, int startYear, int endYear)
+        public Team(int teamId, int coachId, string name, int startYear, int endYear, DateTimeOffset createdOn, DateTimeOffset updatedOn)
         {
             TeamId = teamId;
             Name = name;

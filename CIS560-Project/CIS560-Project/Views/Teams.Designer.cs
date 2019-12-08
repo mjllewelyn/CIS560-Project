@@ -38,19 +38,18 @@
             // 
             this.uxTeamsLabel.AutoSize = true;
             this.uxTeamsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxTeamsLabel.Location = new System.Drawing.Point(39, 45);
+            this.uxTeamsLabel.Location = new System.Drawing.Point(35, 36);
             this.uxTeamsLabel.Name = "uxTeamsLabel";
-            this.uxTeamsLabel.Size = new System.Drawing.Size(127, 40);
+            this.uxTeamsLabel.Size = new System.Drawing.Size(103, 36);
             this.uxTeamsLabel.TabIndex = 0;
             this.uxTeamsLabel.Text = "Teams";
             // 
             // uxCreateTeamButton
             // 
             this.uxCreateTeamButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxCreateTeamButton.Location = new System.Drawing.Point(109, 350);
-            this.uxCreateTeamButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uxCreateTeamButton.Location = new System.Drawing.Point(97, 280);
             this.uxCreateTeamButton.Name = "uxCreateTeamButton";
-            this.uxCreateTeamButton.Size = new System.Drawing.Size(183, 48);
+            this.uxCreateTeamButton.Size = new System.Drawing.Size(163, 38);
             this.uxCreateTeamButton.TabIndex = 1;
             this.uxCreateTeamButton.Text = "Create Team";
             this.uxCreateTeamButton.UseVisualStyleBackColor = true;
@@ -59,10 +58,9 @@
             // uxBackButton
             // 
             this.uxBackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxBackButton.Location = new System.Drawing.Point(343, 350);
-            this.uxBackButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uxBackButton.Location = new System.Drawing.Point(305, 280);
             this.uxBackButton.Name = "uxBackButton";
-            this.uxBackButton.Size = new System.Drawing.Size(183, 48);
+            this.uxBackButton.Size = new System.Drawing.Size(163, 38);
             this.uxBackButton.TabIndex = 2;
             this.uxBackButton.Text = "Back";
             this.uxBackButton.UseVisualStyleBackColor = true;
@@ -71,23 +69,22 @@
             // uxTeamsListBox
             // 
             this.uxTeamsListBox.FormattingEnabled = true;
-            this.uxTeamsListBox.ItemHeight = 20;
-            this.uxTeamsListBox.Location = new System.Drawing.Point(97, 130);
-            this.uxTeamsListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uxTeamsListBox.ItemHeight = 16;
+            this.uxTeamsListBox.Location = new System.Drawing.Point(86, 104);
             this.uxTeamsListBox.Name = "uxTeamsListBox";
-            this.uxTeamsListBox.Size = new System.Drawing.Size(429, 104);
+            this.uxTeamsListBox.Size = new System.Drawing.Size(382, 148);
             this.uxTeamsListBox.TabIndex = 3;
+            this.uxTeamsListBox.SelectedIndexChanged += new System.EventHandler(this.uxTeamsListBox_SelectedIndexChanged);
             // 
             // Teams
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 562);
+            this.ClientSize = new System.Drawing.Size(590, 450);
             this.Controls.Add(this.uxTeamsListBox);
             this.Controls.Add(this.uxBackButton);
             this.Controls.Add(this.uxCreateTeamButton);
             this.Controls.Add(this.uxTeamsLabel);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Teams";
             this.Text = "Teams";
             this.ResumeLayout(false);

@@ -30,12 +30,13 @@ namespace CIS560_Project.DataDelegates
 
             return new Team(
                     teamId,
-                    reader.GetString("Name"),
                     reader.GetInt32("CoachId"),
-                    reader.GetValue<DateTime>("CreatedOn"),
-                    reader.GetValue<DateTime>("UpdatedOn"),
+                    reader.GetString("Name"),
                     reader.GetInt32("StartYear"),
-                    reader.GetInt32("EndYear"));
+                    reader.GetInt32("EndYear"),
+                    reader.GetValue<DateTime>("CreatedOn"),
+                    reader.GetValue<DateTime>("UpdatedOn")
+                    );
         }
     }
 }

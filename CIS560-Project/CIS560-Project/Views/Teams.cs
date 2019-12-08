@@ -14,11 +14,11 @@ namespace CIS560_Project
 {
     public partial class Teams : Form
     {
-        private readonly User user;
-        public Teams(User user)
+        ITeamRepository teamController = new SqlTeamRepository(Program.connectionString);
+        public Teams()
         {
-            this.user = user;
             InitializeComponent();
+            FillList();
         }
 
         private void uxCreateTeamButton_Click(object sender, EventArgs e)
@@ -29,6 +29,20 @@ namespace CIS560_Project
         private void uxBackButton_Click(object sender, EventArgs e)
         {
             Program.GoHome(this);
+        }
+
+        private void uxTeamsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //uxTeamsListBox.SelectedValue.
+        }
+
+        private void FillList()
+        {
+            IReadOnlyList<Team> teams = teamController.FetchCoachTeams(Program.currentUser.UserId);
+            
+            foreach (Team team in teams) {
+                uxTeamsListBox.Items.Add(team.Name);
+            }
         }
     }
 }

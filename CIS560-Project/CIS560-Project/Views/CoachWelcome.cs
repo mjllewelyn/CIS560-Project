@@ -34,7 +34,7 @@ namespace CIS560_Project
         private void uxTeamsButton_Click(object sender, EventArgs e)
         {
             Hide();
-            var teams = new Teams(coachController.GetCoach(Program.currentUser.UserId));
+            var teams = new Teams();
             teams.Closed += (s, args) => Close();
             teams.Show();
         }

@@ -29,18 +29,23 @@ namespace CIS560_Project.DataDelegates
         public override IReadOnlyList<Team> Translate(SqlCommand command, IDataRowReader reader)
         {
             var teams = new List<Team>();
-
-            while (reader.Read())
+            if (!reader.Read())
+                return null;
+            do
             {
+                int EndYear = 0;
+                if (!reader.IsDbNull("EndYear"))
+                    EndYear = reader.GetInt32("EndYear");
                 teams.Add(new Team(
                     reader.GetInt32("TeamId"),
-                    reader.GetString("Name"),
                     coachId,
-                    reader.GetValue<DateTime>("CreatedOn"),
-                    reader.GetValue<DateTime>("UpdatedOn"),
+                    reader.GetString("Name"),
                     reader.GetInt32("StartYear"),
-                    reader.GetInt32("EndYear")));
-            }
+                    EndYear,
+                    reader.GetValue<DateTimeOffset>("CreatedOn"),
+                    reader.GetValue<DateTimeOffset>("UpdatedOn")
+                    ));
+            } while (reader.Read());
 
             return teams;
         }

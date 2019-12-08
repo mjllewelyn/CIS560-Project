@@ -1,6 +1,6 @@
-﻿namespace CIS560_Project.Views
+﻿namespace CIS560_Project
 {
-    partial class Team
+    partial class TeamDetails
     {
         /// <summary>
         /// Required designer variable.
