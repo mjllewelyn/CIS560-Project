@@ -1,5 +1,5 @@
 DECLARE @path VARCHAR(max)
-SET @path = 'C:\Users\mjlle\Documents\CIS 560\CIS560-Project\CIS560-Project\CIS560-Project\DATA\';
+SET @path = 'C:\Users\mbrin\source\repos\CIS560-Project\CIS560-Project\CIS560-Project\DATA\';
 
 DECLARE @sql VARCHAR(max)
 SET @sql = 'BULK INSERT CrossCountry.[User] FROM "' + @path + 'User.csv" WITH (FIRSTROW=2, FIELDTERMINATOR='','', ROWTERMINATOR=''\n'')'
