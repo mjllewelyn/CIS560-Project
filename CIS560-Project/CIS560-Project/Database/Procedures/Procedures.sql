@@ -350,7 +350,7 @@ WHERE RunnerId = @UserId;
 GO
 
 
-CREATE OR ALTER PROCEDURE CrossCountry.GetLocations
+CREATE OR ALTER PROCEDURE CrossCountry.FetchLocations
 AS
 
 SELECT *
