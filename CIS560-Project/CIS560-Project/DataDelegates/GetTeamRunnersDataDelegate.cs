@@ -31,11 +31,14 @@ namespace CIS560_Project.DataDelegates
 
             while (reader.Read())
             {
+                int endYear = 0;
+                if (!reader.IsDbNull("EndYear"))
+                    endYear = reader.GetInt32("EndYear");
                 runners.Add(new Runner(
                     reader.GetInt32("RunnerId"),
                     teamId,
                     reader.GetInt32("StartYear"),
-                    reader.GetInt32("EndYear")));
+                    endYear));
             }
 
             return runners;

@@ -22,6 +22,7 @@ namespace CIS560_Project
 
         private void uxLogRunButton_Click(object sender, EventArgs e)
         {
+            controller.CreateTrainingRun(Program.currentUser.UserId, uxDateTimePicker.Value, Convert.ToInt32(uxDistanceTextBox.Text), Convert.ToInt32(uxTimeTextBox.Text), Convert.ToInt32(uxAverageHRTextBox.Text));
             ITrainingRunRepository trainingRunController = new SqlTrainingRunRepository(Program.connectionString);
             Hide();
             var runs = new TrainingRuns(trainingRunController.FetchTrainingRuns(Program.currentUser.UserId));

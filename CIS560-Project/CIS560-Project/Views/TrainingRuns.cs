@@ -38,6 +38,9 @@ namespace CIS560_Project
             BindingSource source = new BindingSource();
             source.DataSource = readOnlyList;
             uxTrainingRunsDataGrid.DataSource = source;
+            //don't show first two columns of ids
+            uxTrainingRunsDataGrid.Columns[0].Visible = false;
+            uxTrainingRunsDataGrid.Columns[1].Visible = false;
         }
     }
 }
