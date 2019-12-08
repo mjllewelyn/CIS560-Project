@@ -50,7 +50,7 @@ namespace CIS560_Project
         private void uxTeamRosterButton_Click(object sender, EventArgs e)
         {
             Hide();
-            var teams = new Teams(runnerController.GetRunner(Program.currentUser.UserId));
+            var teams = new TeamDetails();
             teams.Closed += (s, args) => Close();
             teams.Show();
         }

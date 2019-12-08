@@ -47,7 +47,7 @@ namespace CIS560_Project.DataDelegates
 
         public override Team Translate(SqlCommand command)
         {
-            return new Team((int)command.Parameters["TeamId"].Value, name, coachId, createdOn, updatedOn, startYear, endYear);
+            return new Team((int)command.Parameters["TeamId"].Value, coachId, name, startYear, endYear, createdOn, updatedOn);
         }
     }
 }

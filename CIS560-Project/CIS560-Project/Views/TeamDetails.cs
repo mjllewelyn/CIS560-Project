@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CIS560_Project.Views
+namespace CIS560_Project
 {
-    public partial class Team : Form
+    public partial class TeamDetails : Form
     {
-        public Team()
+        public TeamDetails()
         {
             InitializeComponent();
         }
