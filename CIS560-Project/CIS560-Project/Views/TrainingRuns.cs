@@ -39,8 +39,12 @@ namespace CIS560_Project
             source.DataSource = readOnlyList;
             uxTrainingRunsDataGrid.DataSource = source;
             //don't show first two columns of ids
-            uxTrainingRunsDataGrid.Columns[0].Visible = false;
-            uxTrainingRunsDataGrid.Columns[1].Visible = false;
+            if (readOnlyList != null)
+            {
+                uxTrainingRunsDataGrid.Columns[0].Visible = false;
+                uxTrainingRunsDataGrid.Columns[1].Visible = false;
+                uxTrainingRunsDataGrid.Columns[6].Visible = false;
+            }
         }
     }
 }

@@ -75,6 +75,7 @@
     <Compile Include="DataDelegates\CreateTeamDataDelegate.cs" />
     <Compile Include="DataDelegates\FetchCoachTeamsDataDelegate.cs" />
     <Compile Include="DataDelegates\FetchLocationsDataDelegate.cs" />
+    <Compile Include="DataDelegates\FetchRacersForRaceDataDelegate.cs" />
     <Compile Include="DataDelegates\FetchRacesForRunnerDataDelegate.cs" />
     <Compile Include="DataDelegates\FetchRunnersForRaceDataDelegate.cs" />
     <Compile Include="DataDelegates\FetchTeamDataDelegate.cs" />
@@ -95,11 +96,16 @@
     <Compile Include="DataDelegates\RetireTeamDataDelegate.cs" />
     <Compile Include="DataDelegates\RetireUserDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveRacesDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrieveRunnerNamesAndTeamsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveRunnersDataDelegate.cs" />
+    <Compile Include="DataDelegates\TeamPlacingForRaceDataDelegate.cs" />
     <Compile Include="DataDelegates\UpdateRaceParticipantTimeDataDelegate.cs" />
     <Compile Include="DataDelegates\ValidateUserDataDelegate.cs" />
     <Compile Include="Models\RaceCoachView.cs" />
     <Compile Include="Models\RaceForRunner.cs" />
+    <Compile Include="Models\Racer.cs" />
+    <Compile Include="Models\RunnerNameAndTeam.cs" />
+    <Compile Include="Models\TeamPlacing.cs" />
     <Compile Include="Models\RaceRecord.cs" />
     <Compile Include="Views\CoachWelcome.cs">
       <SubType>Form</SubType>
@@ -186,6 +192,12 @@
     <Compile Include="Views\RunnerRaces.Designer.cs">
       <DependentUpon>RunnerRaces.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Runners.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Runners.Designer.cs">
+      <DependentUpon>Runners.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\RunnerWelcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +225,12 @@
     </Compile>
     <Compile Include="Views\TeamDetails.Designer.cs">
       <DependentUpon>TeamDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TeamRaceResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TeamRaceResults.Designer.cs">
+      <DependentUpon>TeamRaceResults.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Teams.cs">
       <SubType>Form</SubType>
@@ -262,6 +280,9 @@
     <EmbeddedResource Include="Views\RunnerRaces.resx">
       <DependentUpon>RunnerRaces.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Runners.resx">
+      <DependentUpon>Runners.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\RunnerWelcome.resx">
       <DependentUpon>RunnerWelcome.cs</DependentUpon>
     </EmbeddedResource>
@@ -279,6 +300,9 @@
     </Compile>
     <EmbeddedResource Include="Views\TeamDetails.resx">
       <DependentUpon>TeamDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TeamRaceResults.resx">
+      <DependentUpon>TeamRaceResults.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Teams.resx">
       <DependentUpon>Teams.cs</DependentUpon>

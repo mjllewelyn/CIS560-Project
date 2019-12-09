@@ -30,6 +30,12 @@ namespace CIS560_Project.Controllers
             return executor.ExecuteReader(d);
         }
 
+        public IReadOnlyList<Racer> FetchRacersForRace(int raceId)
+        {
+            var d = new FetchRacersForRaceDataDelegate(raceId);
+            return executor.ExecuteReader(d);
+        }
+
         public IReadOnlyList<RaceForRunner> FetchRacesForRunner(int runnerId)
         {
             var d = new FetchRacesForRunnerDataDelegate(runnerId);
@@ -39,6 +45,12 @@ namespace CIS560_Project.Controllers
         public RaceRecord GetTeamRecords(int runnerId)
         {
             var d = new GetTeamRecordsDataDelegate(runnerId);
+            return executor.ExecuteReader(d);
+        }
+
+        public IReadOnlyList<TeamPlacing> TeamPlacingForRace(int teamId)
+        {
+            var d = new TeamPlacingForRaceDataDelegate(teamId);
             return executor.ExecuteReader(d);
         }
 

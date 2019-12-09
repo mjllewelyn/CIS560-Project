@@ -8,15 +8,16 @@ namespace CIS560_Project.Models
 {
     public class RaceRecord
     {
-        public string raceName;
-        public int time, distance;
-        public DateTime date;
-        public string locationName;
+        public string raceName { get; }
+        public string time { get; }
+        public int distance { get; }
+        public DateTime date { get; }
+        public string locationName { get; }
 
-        public RaceRecord(string raceName, int time, int distance, DateTime date, string locationName)
+    public RaceRecord(string raceName, int time, int distance, DateTime date, string locationName)
         {
             this.raceName = raceName;
-            this.time = time;
+            this.time = Program.GetTimeString(time);
             this.distance = distance;
             this.date = date;
             this.locationName = locationName;

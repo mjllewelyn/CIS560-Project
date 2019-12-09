@@ -11,6 +11,8 @@ namespace CIS560_Project.Controllers
     {
         IReadOnlyList<Runner> RetrieveRunners();
 
+        IReadOnlyList<RunnerNameAndTeam> RetrieveRunnerNamesAndTeams();
+
         Runner GetRunner(int runnerId);
 
         IReadOnlyList<Runner> GetTeamRunners(int teamId);

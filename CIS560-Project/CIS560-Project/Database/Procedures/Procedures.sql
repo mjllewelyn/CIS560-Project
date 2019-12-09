@@ -8,6 +8,18 @@ WHERE RP.RaceParticipantId = @RaceParticipantId;
 
 GO
 
+CREATE OR ALTER PROCEDURE CrossCountry.FetchRacersForRace
+	@RaceId INT
+AS
+
+SELECT RP.RaceParticipantId, CONCAT(U.FirstName, U.LastName) AS [Name], RP.[Time], RP.AvgHeartRate
+FROM CrossCountry.Race R
+	INNER JOIN CrossCountry.RaceParticipant RP ON R.RaceId = RP.RaceId
+	INNER JOIN CrossCountry.Runner Rn ON RP.RunnerId = Rn.RunnerId
+	INNER JOIN CrossCountry.[User] U ON U.UserId = Rn.RunnerId
+WHERE R.RaceId = @RaceId;
+GO
+
 
 CREATE OR ALTER PROCEDURE CrossCountry.FetchRunnersForRace
 	@RaceId INT
@@ -159,6 +171,16 @@ SELECT Rn.RunnerId, Rn.TeamId, Rn.StartYear, Rn.EndYear
 FROM CrossCountry.Runner Rn
 WHERE Rn.EndYear IS NULL;
 
+GO
+
+CREATE OR ALTER PROCEDURE CrossCountry.RetrieveRunnerNamesAndTeams
+AS
+
+SELECT CONCAT(U.FirstName, U.LastName) AS RunnerName, T.[Name] AS TeamName, Rn.StartYear, Rn.EndYear
+FROM CrossCountry.Runner Rn
+  INNER JOIN CrossCountry.[User] U ON U.UserId = Rn.RunnerId
+  INNER JOIN CrossCountry.Team T ON T.TeamId = Rn.TeamId
+WHERE Rn.EndYear IS NULL;
 GO
 
 
@@ -363,9 +385,7 @@ SET EndYear = YEAR(SYSDATETIMEOFFSET())
 WHERE CoachId = @UserId;
 
 UPDATE CrossCountry.Runner
-SET 
-	EndYear = YEAR(SYSDATETIMEOFFSET()),
-	TeamId = NULL
+SET EndYear = YEAR(SYSDATETIMEOFFSET())
 WHERE RunnerId = @UserId;
 
 GO
@@ -426,10 +446,10 @@ WITH TeamAverageCte(TeamId, AverageTime) AS
 		GROUP BY R.TeamId
 	)
 
-SELECT T.TeamId, RANK() OVER(
-	ORDER BY T.AverageTime DESC) AS TeamPlacing
-FROM TeamAverageCte T
-ORDER BY TeamPlacing ASC;
+SELECT CT.[Name], T.AverageTime,
+RANK() OVER(ORDER BY T.AverageTime DESC) AS TeamPlacing
+FROM TeamAverageCte T INNER JOIN CrossCountry.Team CT ON T.TeamId = CT.TeamId
+ORDER BY TeamPlacing DESC;
 
 GO
 
@@ -465,7 +485,7 @@ WHERE RP.RaceParticipantId IN (
 	SELECT TOP(1) RP.RaceParticipantId
 	FROM CrossCountry.RaceParticipant RP
 	INNER JOIN CrossCountry.Race Rc ON Rc.RaceId = RP.RaceId
-	WHERE RP.RunnerId = @RunnerId AND Rc.IsArchived IS NULL AND RP.[Time] IS NOT NULL
+	WHERE RP.RunnerId = @RunnerId AND Rc.IsArchived = 0 AND RP.[Time] IS NOT NULL
 	ORDER BY RP.[Time] ASC
 );
 GO

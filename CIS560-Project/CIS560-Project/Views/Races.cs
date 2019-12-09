@@ -21,6 +21,7 @@ namespace CIS560_Project
             var readOnlyList = raceController.RetrieveRaces();
             InitializeComponent();
             FillListView(readOnlyList);
+            uxEnterARaceButton.Hide();
         }
 
         private void uxEnterARaceButton_Click(object sender, EventArgs e)
@@ -57,6 +58,14 @@ namespace CIS560_Project
             BindingSource source = new BindingSource();
             source.DataSource = readOnlyList;
             uxRaceDataGrid.DataSource = source;
+        }
+
+        private void uxTeamRaceResults_Click(object sender, EventArgs e)
+        {
+            Hide();
+            var races = new TeamRaceResults();
+            races.Closed += (s, args) => Close();
+            races.Show();
         }
     }
 }
