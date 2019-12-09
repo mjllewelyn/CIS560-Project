@@ -34,6 +34,7 @@
             this.uxRaceDataGrid = new System.Windows.Forms.DataGridView();
             this.uxRaceDetailsButton = new System.Windows.Forms.Button();
             this.uxCreateRaceButton = new System.Windows.Forms.Button();
+            this.uxTeamRaceResults = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.uxRaceDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +63,7 @@
             // uxBackButton
             // 
             this.uxBackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxBackButton.Location = new System.Drawing.Point(478, 490);
+            this.uxBackButton.Location = new System.Drawing.Point(352, 573);
             this.uxBackButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxBackButton.Name = "uxBackButton";
             this.uxBackButton.Size = new System.Drawing.Size(184, 59);
@@ -105,11 +106,24 @@
             this.uxCreateRaceButton.UseVisualStyleBackColor = true;
             this.uxCreateRaceButton.Click += new System.EventHandler(this.uxCreateRaceButton_Click);
             // 
+            // uxTeamRaceResults
+            // 
+            this.uxTeamRaceResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxTeamRaceResults.Location = new System.Drawing.Point(478, 490);
+            this.uxTeamRaceResults.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uxTeamRaceResults.Name = "uxTeamRaceResults";
+            this.uxTeamRaceResults.Size = new System.Drawing.Size(240, 59);
+            this.uxTeamRaceResults.TabIndex = 6;
+            this.uxTeamRaceResults.Text = "Team Race Results";
+            this.uxTeamRaceResults.UseVisualStyleBackColor = true;
+            this.uxTeamRaceResults.Click += new System.EventHandler(this.uxTeamRaceResults_Click);
+            // 
             // uxRaces
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 562);
+            this.ClientSize = new System.Drawing.Size(900, 645);
+            this.Controls.Add(this.uxTeamRaceResults);
             this.Controls.Add(this.uxCreateRaceButton);
             this.Controls.Add(this.uxRaceDetailsButton);
             this.Controls.Add(this.uxRaceDataGrid);
@@ -133,5 +147,6 @@
         private System.Windows.Forms.DataGridView uxRaceDataGrid;
         private System.Windows.Forms.Button uxRaceDetailsButton;
         private System.Windows.Forms.Button uxCreateRaceButton;
+        private System.Windows.Forms.Button uxTeamRaceResults;
     }
 }

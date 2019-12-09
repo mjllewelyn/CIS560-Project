@@ -426,9 +426,9 @@ WITH TeamAverageCte(TeamId, AverageTime) AS
 		GROUP BY R.TeamId
 	)
 
-SELECT T.TeamId, RANK() OVER(
-	ORDER BY T.AverageTime DESC) AS TeamPlacing
-FROM TeamAverageCte T
+SELECT CT.[Name], T.AverageTime,
+RANK() OVER(ORDER BY T.AverageTime DESC) AS TeamPlacing
+FROM TeamAverageCte T INNER JOIN CrossCountry.Team CT ON T.TeamId = CT.TeamId
 ORDER BY TeamPlacing ASC;
 
 GO

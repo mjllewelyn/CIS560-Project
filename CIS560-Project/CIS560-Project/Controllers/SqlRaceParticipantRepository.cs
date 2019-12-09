@@ -42,6 +42,12 @@ namespace CIS560_Project.Controllers
             return executor.ExecuteReader(d);
         }
 
+        public IReadOnlyList<TeamPlacing> TeamPlacingForRace(int teamId)
+        {
+            var d = new TeamPlacingForRaceDataDelegate(teamId);
+            return executor.ExecuteReader(d);
+        }
+
         public void UpdateRaceParticipantTime(int raceParticipantId, int time)
         {
             var d = new UpdateRaceParticipantTimeDataDelegate(raceParticipantId, time);

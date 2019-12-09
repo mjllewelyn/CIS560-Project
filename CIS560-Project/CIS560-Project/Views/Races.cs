@@ -58,5 +58,13 @@ namespace CIS560_Project
             source.DataSource = readOnlyList;
             uxRaceDataGrid.DataSource = source;
         }
+
+        private void uxTeamRaceResults_Click(object sender, EventArgs e)
+        {
+            Hide();
+            var races = new TeamRaceResults();
+            races.Closed += (s, args) => Close();
+            races.Show();
+        }
     }
 }

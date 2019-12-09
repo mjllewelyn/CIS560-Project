@@ -96,10 +96,12 @@
     <Compile Include="DataDelegates\RetireUserDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveRacesDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveRunnersDataDelegate.cs" />
+    <Compile Include="DataDelegates\TeamPlacingForRaceDataDelegate.cs" />
     <Compile Include="DataDelegates\UpdateRaceParticipantTimeDataDelegate.cs" />
     <Compile Include="DataDelegates\ValidateUserDataDelegate.cs" />
     <Compile Include="Models\RaceCoachView.cs" />
     <Compile Include="Models\RaceForRunner.cs" />
+    <Compile Include="Models\TeamPlacing.cs" />
     <Compile Include="Views\CoachWelcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +215,12 @@
     <Compile Include="Views\TeamDetails.Designer.cs">
       <DependentUpon>TeamDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\TeamRaceResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TeamRaceResults.Designer.cs">
+      <DependentUpon>TeamRaceResults.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Teams.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,6 +286,9 @@
     </Compile>
     <EmbeddedResource Include="Views\TeamDetails.resx">
       <DependentUpon>TeamDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TeamRaceResults.resx">
+      <DependentUpon>TeamRaceResults.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Teams.resx">
       <DependentUpon>Teams.cs</DependentUpon>

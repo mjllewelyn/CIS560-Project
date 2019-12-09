@@ -17,6 +17,8 @@ namespace CIS560_Project.Controllers
 
         IReadOnlyList<RaceParticipant> GetTeamRecords(int teamId);
 
+        IReadOnlyList<TeamPlacing> TeamPlacingForRace(int teamId);
+
         void UpdateRaceParticipantTime(int raceParticipantId, int time);
 
         RaceParticipant CreateRaceParticipant(int raceId, int runnerId, int time = 0, int averageHeartRate = 0);
