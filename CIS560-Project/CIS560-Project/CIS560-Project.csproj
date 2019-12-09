@@ -102,6 +102,7 @@
     <Compile Include="Models\RaceCoachView.cs" />
     <Compile Include="Models\RaceForRunner.cs" />
     <Compile Include="Models\TeamPlacing.cs" />
+		<Compile Include="Models\RaceRecord.cs" />
     <Compile Include="Views\CoachWelcome.cs">
       <SubType>Form</SubType>
     </Compile>
