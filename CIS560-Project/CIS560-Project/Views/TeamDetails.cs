@@ -26,9 +26,16 @@ namespace CIS560_Project
         private void uxBackButton_Click(object sender, EventArgs e)
         {
             Hide();
-            var profile = new Teams();
-            profile.Closed += (s, args) => Close();
-            profile.Show();
+            if (Program.currentUser.UserType == 1)
+            {
+                Program.GoHome(this);
+            } else
+            { 
+                var teams = new Teams();
+                teams.Closed += (s, args) => Close();
+                teams.Show();
+            }
+            
         }
 
         private void FillGrid()
@@ -37,7 +44,6 @@ namespace CIS560_Project
             BindingSource source = new BindingSource();
             source.DataSource = runners;
             uxTeamRunnersDataGrid.DataSource = source;
-
         }
     }
 }
