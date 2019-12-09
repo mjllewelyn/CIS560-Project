@@ -27,16 +27,26 @@ namespace CIS560_Project.DataDelegates
 
         public override Team Translate(SqlCommand command, IDataRowReader reader)
         {
-
-            return new Team(
-                    reader.GetInt32("TeamId"),
-                    reader.GetInt32("CoachId"),
-                    name,
-                    reader.GetInt32("StartYear"),
-                    reader.GetInt32("EndYear"),
-                    reader.GetValue<DateTime>("CreatedOn"),
-                    reader.GetValue<DateTime>("UpdatedOn")
-                    );
+            int EndYear = 0;
+            if (reader.Read())
+            {
+                if (!reader.IsDbNull("EndYear"))
+                {
+                    EndYear = reader.GetInt32("EndYear");
+                }
+                return new Team(
+                        reader.GetInt32("TeamId"),
+                        reader.GetInt32("CoachId"),
+                        name,
+                        reader.GetInt32("StartYear"),
+                        EndYear,
+                        reader.GetValue<DateTimeOffset>("CreatedOn"),
+                        reader.GetValue<DateTimeOffset>("UpdatedOn")
+                        );
+            } else
+            {
+                return null;
+            }
         }
     }
 }

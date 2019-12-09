@@ -9,38 +9,39 @@ using System.Data.SqlClient;
 
 namespace CIS560_Project.DataDelegates
 {
-    class GetTeamRecordsDataDelegate : DataReaderDelegate<IReadOnlyList<RaceParticipant>>
+    internal class GetTeamRecordsDataDelegate : DataReaderDelegate<RaceRecord>
     {
-        private readonly int teamId;
+        private readonly int runnerId;
 
-        public GetTeamRecordsDataDelegate(int teamId)
-            : base("CrossCountry.GetTeamRecords")
+        public GetTeamRecordsDataDelegate(int runnerId)
+            : base("CrossCountry.GetRunnersRecord")
         {
-            this.teamId = teamId;
+            this.runnerId = runnerId;
         }
 
         public override void PrepareCommand(SqlCommand command)
         {
             base.PrepareCommand(command);
 
-            command.Parameters.AddWithValue("RunnerId", teamId);
+            command.Parameters.AddWithValue("RunnerId", runnerId);
         }
 
-        public override IReadOnlyList<RaceParticipant> Translate(SqlCommand command, IDataRowReader reader)
+        public override RaceRecord Translate(SqlCommand command, IDataRowReader reader)
         {
-            var raceParticipants = new List<RaceParticipant>();
 
-            while (reader.Read())
+            if (reader.Read())
             {
-                raceParticipants.Add(new RaceParticipant(
-                    reader.GetInt32("RaceParticipantId"),
-                    reader.GetInt32("RaceId"),
-                    reader.GetInt32("RunnerId"),
-                    reader.GetInt32("Time"),
-                    reader.GetValue<int>("AverageHeartRate")));
+                return new RaceRecord(
+                        reader.GetString("Name"),
+                        reader.GetInt32("Time"),
+                        reader.GetInt32("Distance"),
+                        reader.GetValue<DateTime>("Date"),
+                        reader.GetString("LocationName"));
             }
-
-            return raceParticipants;
+            else
+            {
+                return null;
+            }
         }
     }
 }

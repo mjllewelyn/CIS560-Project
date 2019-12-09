@@ -15,12 +15,19 @@ namespace CIS560_Project
     public partial class TeamDetails : Form
     {
         private int teamId;
+        IRaceParticipantRepository raceParticipantController = new SqlRaceParticipantRepository(Program.connectionString);
+        ITeamRepository teamController = new SqlTeamRepository(Program.connectionString);
         IRunnerRepository runnerController = new SqlRunnerRepository(Program.connectionString);
+
         public TeamDetails(int teamId)
         {
             this.teamId = teamId;
             InitializeComponent();
             FillGrid();
+            if (Program.currentUser.UserType == 1)
+            {
+                this.Controls.Remove(uxRetireButton);
+            }
         }
 
         private void uxBackButton_Click(object sender, EventArgs e)
@@ -41,9 +48,22 @@ namespace CIS560_Project
         private void FillGrid()
         {
             IReadOnlyList<Runner> runners = runnerController.GetTeamRunners(teamId);
+            List<RaceRecord> raceParticipants = new List<RaceRecord>();
+            foreach (Runner runner in runners)
+            {
+                raceParticipants.Add(raceParticipantController.GetTeamRecords(runner.RunnerId));
+            }
             BindingSource source = new BindingSource();
-            source.DataSource = runners;
+            source.DataSource = raceParticipants;
             uxTeamRunnersDataGrid.DataSource = source;
+        }
+
+        private void uxRetireButton_Click(object sender, EventArgs e)
+        {
+            teamController.RetireTeam(teamId);
+            var teams = new Teams();
+            teams.Closed += (s, args) => Close();
+            teams.Show();
         }
     }
 }

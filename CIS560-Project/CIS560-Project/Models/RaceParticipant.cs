@@ -14,8 +14,6 @@ namespace CIS560_Project.Models
         public string Time { get; }
         public int AverageHeartRate { get; set; }
 
-        public RaceParticipant() { }
-
         public RaceParticipant(int raceParticipantId, int raceId, int runnerId, int time=0, int averageHeartRate=0)
         {
             RaceParticipantId = raceParticipantId;
