@@ -50,11 +50,10 @@ namespace CIS560_Project
 
         private void uxEnterTimesButton_Click(object sender, EventArgs e)
         {
-            /*Hide();
-            var races = new uxEnterTimes();
+            Hide();
+            var races = new EnterTimes();
             races.Closed += (s, args) => Close();
-            races.Show();*/
-            Program.GoHome(this);
+            races.Show();
         }
 
         private void FillListView(List<RaceForRunner> list)
