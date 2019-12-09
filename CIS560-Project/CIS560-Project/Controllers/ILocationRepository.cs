@@ -11,5 +11,6 @@ namespace CIS560_Project.Controllers
     {
         IReadOnlyList<Location> FetchLocations();
         Location GetLocation(int locationId);
+        int GetLocationIdFromName(string name);
     }
 }

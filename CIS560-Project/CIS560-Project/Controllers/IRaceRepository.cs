@@ -9,11 +9,11 @@ namespace CIS560_Project.Controllers
 {
     interface IRaceRepository
     {
-        IReadOnlyList<Race> RetrieveRaces();
+        IReadOnlyList<RaceCoachView> RetrieveRaces();
 
         Race GetRace(int raceId);
 
-        Race CreateRace(int creatorId, int locationId, DateTime dateTime, int distance, bool isArchived = false);
+        void CreateRace(int locationId, DateTime dateTime, int distance, int isArchived = 0);
 
         void ArchiveRace(int raceId);
     }

@@ -25,15 +25,19 @@ namespace CIS560_Project.DataDelegates
         public override IReadOnlyList<Runner> Translate(SqlCommand command, IDataRowReader reader)
         {
             var runners = new List<Runner>();
-
-            while (reader.Read())
+            if (!reader.Read())
+                return null;
+            do
             {
+                int EndYear = 0;
+                if (!reader.IsDbNull("EndYear"))
+                    EndYear = reader.GetInt32("EndYear");
                 runners.Add(new Runner(
                     reader.GetInt32("RunnerId"),
                     reader.GetInt32("TeamId"),
                     reader.GetInt32("StartYear"),
-                    reader.GetInt32("EndYear")));
-            }
+                    EndYear));
+            } while (reader.Read());
 
             return runners;
         }

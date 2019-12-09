@@ -57,10 +57,10 @@ namespace CIS560_Project
 
         private void uxRunnersButton_Click(object sender, EventArgs e)
         {
-            Hide();
+            /*Hide();
             var races = new uxRaces();
             races.Closed += (s, args) => Close();
-            races.Show();
+            races.Show();*/
         }
 
         private void uxSignoutButton_Click(object sender, EventArgs e)

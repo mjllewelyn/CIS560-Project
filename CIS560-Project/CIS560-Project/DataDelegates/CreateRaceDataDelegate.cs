@@ -10,18 +10,18 @@ using CIS560_Project.Models;
 
 namespace CIS560_Project.DataDelegates
 {
-    internal class CreateRaceDataDelegate : NonQueryDataDelegate<Race>
+    internal class CreateRaceDataDelegate : DataDelegate
     {
         public readonly int creatorId;
         public readonly int locationId;
         public readonly DateTime dateTime;
         public readonly int distance;
-        public readonly bool isArchived;
+        public readonly int isArchived;
 
-        public CreateRaceDataDelegate(int creatorId, int locationId, DateTime dateTime, int distance, bool isArchived)
+        public CreateRaceDataDelegate(int locationId, DateTime dateTime, int distance, int isArchived = 0)
             : base("CrossCountry.CreateRace")
         {
-            this.creatorId = creatorId;
+            this.creatorId = Program.currentUser.UserId;
             this.locationId = locationId;
             this.dateTime = dateTime;
             this.distance = distance;
@@ -37,14 +37,6 @@ namespace CIS560_Project.DataDelegates
             command.Parameters.AddWithValue("DateTime", dateTime);
             command.Parameters.AddWithValue("Distance", distance);
             command.Parameters.AddWithValue("IsArchived", isArchived);
-
-            var t = command.Parameters.Add("RaceId", SqlDbType.Int);
-            t.Direction = ParameterDirection.Output;
-        }
-
-        public override Race Translate(SqlCommand command)
-        {
-            return new Race((int)command.Parameters["RaceId"].Value, creatorId, locationId, dateTime, distance, isArchived);
         }
     }
 }

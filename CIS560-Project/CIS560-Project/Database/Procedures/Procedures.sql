@@ -13,7 +13,7 @@ CREATE OR ALTER PROCEDURE CrossCountry.FetchRunnersForRace
 	@RaceId INT
 AS
 
-SELECT Rn.RunnerId, Rn.TeamId, Rn.StartYear, Rn.EndYear
+SELECT RP.RaceParticipantId, Rn.RunnerId, RP.[Time], RP.AvgHeartRate
 FROM CrossCountry.Race R
 	INNER JOIN CrossCountry.RaceParticipant RP ON R.RaceId = RP.RaceId
 	INNER JOIN CrossCountry.Runner Rn ON RP.RunnerId = Rn.RunnerId
@@ -68,6 +68,16 @@ WHERE L.LocationId = @LocationId;
 
 GO
 
+CREATE OR ALTER PROCEDURE CrossCountry.GetLocationIdFromName
+	@Name NVARCHAR(100)
+AS
+
+SELECT L.LocationId
+FROM CrossCountry.[Location] L
+WHERE L.[Name] = @Name;
+
+GO
+
 
 CREATE OR ALTER PROCEDURE CrossCountry.UpdateRaceParticipantTime
 	@RaceParticipantId INT,
@@ -97,8 +107,10 @@ GO
 CREATE OR ALTER PROCEDURE CrossCountry.RetrieveRaces
 AS
 
-SELECT *
-FROM CrossCountry.Race
+SELECT R.RaceId, CONCAT(U.FirstName, U.LastName) AS CreatorName, L.[Name] AS LocationName, R.[DateTime], R.Distance
+FROM CrossCountry.Race R
+  INNER JOIN CrossCountry.[User] U ON R.CreatorId = U.UserId
+  INNER JOIN CrossCountry.[Location] L ON L.LocationId = R.LocationId
 WHERE IsArchived = 0;
 
 GO

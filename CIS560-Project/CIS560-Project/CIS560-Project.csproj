@@ -82,6 +82,7 @@
     <Compile Include="DataDelegates\GetCoachDataDelegate.cs" />
     <Compile Include="DataDelegates\GetCoachsRunnersUserDataDelegate.cs" />
     <Compile Include="DataDelegates\GetLocationDataDelegate.cs" />
+    <Compile Include="DataDelegates\GetLocationIdFromNameDataDelegate.cs" />
     <Compile Include="DataDelegates\GetRunnerDataDelegate.cs" />
     <Compile Include="DataDelegates\GetRunnersNoTeamDataDelegate.cs" />
     <Compile Include="DataDelegates\GetTeamDataDelegate.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="DataDelegates\RetrieveRunnersDataDelegate.cs" />
     <Compile Include="DataDelegates\UpdateRaceParticipantTimeDataDelegate.cs" />
     <Compile Include="DataDelegates\ValidateUserDataDelegate.cs" />
+    <Compile Include="Models\RaceCoachView.cs" />
     <Compile Include="Models\RaceForRunner.cs" />
     <Compile Include="Models\RaceRecord.cs" />
     <Compile Include="Views\CoachWelcome.cs">
@@ -141,6 +143,12 @@
     </Compile>
     <Compile Include="Views\EnterRaceDetails.Designer.cs">
       <DependentUpon>EnterRaceDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EnterTimes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EnterTimes.Designer.cs">
+      <DependentUpon>EnterTimes.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\LogTrainingRun.cs">
       <SubType>Form</SubType>
@@ -232,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\EnterRaceDetails.resx">
       <DependentUpon>EnterRaceDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EnterTimes.resx">
+      <DependentUpon>EnterTimes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LogTrainingRun.resx">
       <DependentUpon>LogTrainingRun.cs</DependentUpon>

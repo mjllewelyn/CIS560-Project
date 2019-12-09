@@ -9,7 +9,7 @@ using DataAccess;
 
 namespace CIS560_Project.DataDelegates
 {
-    internal class RetrieveRacesDataDelegate : DataReaderDelegate<IReadOnlyList<Race>>
+    internal class RetrieveRacesDataDelegate : DataReaderDelegate<IReadOnlyList<RaceCoachView>>
     {
         public RetrieveRacesDataDelegate()
             : base("CrossCountry.RetrieveRaces")
@@ -22,16 +22,16 @@ namespace CIS560_Project.DataDelegates
             base.PrepareCommand(command);
         }
 
-        public override IReadOnlyList<Race> Translate(SqlCommand command, IDataRowReader reader)
+        public override IReadOnlyList<RaceCoachView> Translate(SqlCommand command, IDataRowReader reader)
         {
-            var races = new List<Race>();
+            var races = new List<RaceCoachView>();
 
             while (reader.Read())
             {
-                races.Add(new Race(
+                races.Add(new RaceCoachView(
                     reader.GetInt32("RaceId"),
-                    reader.GetInt32("CreatorId"),
-                    reader.GetInt32("LocationId"),
+                    reader.GetString("CreatorName"),
+                    reader.GetString("LocationName"),
                     reader.GetValue<DateTime>("DateTime"),
                     reader.GetInt32("Distance")));
             }
