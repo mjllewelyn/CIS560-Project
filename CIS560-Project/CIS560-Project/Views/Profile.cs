@@ -32,6 +32,7 @@ namespace CIS560_Project
                 var runnerController = new SqlRunnerRepository(Program.connectionString);
                 var runner = runnerController.GetRunner(Program.currentUser.UserId);
                 uxRunningSinceTextBox.Text = runner.StartYear.ToString();
+                uxAvgDistTextBox.Text = 
             }
             else
             {
