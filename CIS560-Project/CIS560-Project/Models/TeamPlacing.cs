@@ -9,14 +9,14 @@ namespace CIS560_Project.Models
     class TeamPlacing
     {
         public string TeamName { get; }
-        public int AvgTime { get; }
+        public string AvgTime { get; }
 
         public TeamPlacing() { }
 
         public TeamPlacing(string teamName, int avgTime)
         {
             TeamName = teamName;
-            AvgTime = avgTime;
+            AvgTime = Program.GetTimeString(avgTime);
         }
     }
 }

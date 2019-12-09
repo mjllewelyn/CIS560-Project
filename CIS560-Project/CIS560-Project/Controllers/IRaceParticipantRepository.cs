@@ -15,6 +15,8 @@ namespace CIS560_Project.Controllers
 
         IReadOnlyList<RaceForRunner> FetchRacesForRunner(int runnerId);
 
+        IReadOnlyList<Racer> FetchRacersForRace(int raceId);
+
         RaceRecord GetTeamRecords(int runnerId);
 
         IReadOnlyList<TeamPlacing> TeamPlacingForRace(int teamId);

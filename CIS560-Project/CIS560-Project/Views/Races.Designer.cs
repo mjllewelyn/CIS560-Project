@@ -51,7 +51,7 @@
             // uxEnterARaceButton
             // 
             this.uxEnterARaceButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxEnterARaceButton.Location = new System.Drawing.Point(232, 416);
+            this.uxEnterARaceButton.Location = new System.Drawing.Point(636, 53);
             this.uxEnterARaceButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxEnterARaceButton.Name = "uxEnterARaceButton";
             this.uxEnterARaceButton.Size = new System.Drawing.Size(184, 59);
@@ -63,7 +63,7 @@
             // uxBackButton
             // 
             this.uxBackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxBackButton.Location = new System.Drawing.Point(352, 573);
+            this.uxBackButton.Location = new System.Drawing.Point(478, 495);
             this.uxBackButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxBackButton.Name = "uxBackButton";
             this.uxBackButton.Size = new System.Drawing.Size(184, 59);
@@ -85,7 +85,7 @@
             // uxRaceDetailsButton
             // 
             this.uxRaceDetailsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxRaceDetailsButton.Location = new System.Drawing.Point(232, 490);
+            this.uxRaceDetailsButton.Location = new System.Drawing.Point(478, 409);
             this.uxRaceDetailsButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxRaceDetailsButton.Name = "uxRaceDetailsButton";
             this.uxRaceDetailsButton.Size = new System.Drawing.Size(184, 59);
@@ -97,7 +97,7 @@
             // uxCreateRaceButton
             // 
             this.uxCreateRaceButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxCreateRaceButton.Location = new System.Drawing.Point(478, 416);
+            this.uxCreateRaceButton.Location = new System.Drawing.Point(232, 409);
             this.uxCreateRaceButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxCreateRaceButton.Name = "uxCreateRaceButton";
             this.uxCreateRaceButton.Size = new System.Drawing.Size(184, 59);
@@ -109,7 +109,7 @@
             // uxTeamRaceResults
             // 
             this.uxTeamRaceResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxTeamRaceResults.Location = new System.Drawing.Point(478, 490);
+            this.uxTeamRaceResults.Location = new System.Drawing.Point(176, 495);
             this.uxTeamRaceResults.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxTeamRaceResults.Name = "uxTeamRaceResults";
             this.uxTeamRaceResults.Size = new System.Drawing.Size(240, 59);
@@ -122,7 +122,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 645);
+            this.ClientSize = new System.Drawing.Size(900, 590);
             this.Controls.Add(this.uxTeamRaceResults);
             this.Controls.Add(this.uxCreateRaceButton);
             this.Controls.Add(this.uxRaceDetailsButton);

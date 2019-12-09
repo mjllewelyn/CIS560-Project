@@ -23,6 +23,13 @@ namespace CIS560_Project.Controllers
             return executor.ExecuteReader(new RetrieveRunnersDataDelegate());
         }
 
+        public IReadOnlyList<RunnerNameAndTeam> RetrieveRunnerNamesAndTeams()
+        {
+            var d = new RetrieveRunnerNamesAndTeamsDataDelegate();
+            return executor.ExecuteReader(d);
+            
+        }
+
         public Runner GetRunner(int runnerId)
         {
             var d = new GetRunnerDataDelegate(runnerId);

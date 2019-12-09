@@ -21,6 +21,7 @@ namespace CIS560_Project
             var readOnlyList = raceController.RetrieveRaces();
             InitializeComponent();
             FillListView(readOnlyList);
+            uxEnterARaceButton.Hide();
         }
 
         private void uxEnterARaceButton_Click(object sender, EventArgs e)

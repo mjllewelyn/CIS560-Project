@@ -52,7 +52,7 @@
             // uxEnterARaceButton
             // 
             this.uxEnterARaceButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxEnterARaceButton.Location = new System.Drawing.Point(389, 390);
+            this.uxEnterARaceButton.Location = new System.Drawing.Point(235, 63);
             this.uxEnterARaceButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxEnterARaceButton.Name = "uxEnterARaceButton";
             this.uxEnterARaceButton.Size = new System.Drawing.Size(189, 48);
@@ -64,7 +64,7 @@
             // uxBackButton
             // 
             this.uxBackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxBackButton.Location = new System.Drawing.Point(258, 455);
+            this.uxBackButton.Location = new System.Drawing.Point(383, 390);
             this.uxBackButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxBackButton.Name = "uxBackButton";
             this.uxBackButton.Size = new System.Drawing.Size(189, 48);
@@ -76,7 +76,7 @@
             // uxEnterTimesButton
             // 
             this.uxEnterTimesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxEnterTimesButton.Location = new System.Drawing.Point(115, 390);
+            this.uxEnterTimesButton.Location = new System.Drawing.Point(114, 390);
             this.uxEnterTimesButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxEnterTimesButton.Name = "uxEnterTimesButton";
             this.uxEnterTimesButton.Size = new System.Drawing.Size(189, 48);
@@ -125,7 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 562);
+            this.ClientSize = new System.Drawing.Size(705, 460);
             this.Controls.Add(this.uxRaceIdLabel);
             this.Controls.Add(this.uxRaceIdBox);
             this.Controls.Add(this.uxFilterButton);
