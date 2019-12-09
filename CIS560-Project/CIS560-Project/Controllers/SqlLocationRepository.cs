@@ -29,5 +29,11 @@ namespace CIS560_Project.Controllers
             var d = new GetLocationDataDelegate(locationId);
             return executor.ExecuteReader(d);
         }
+
+        public int GetLocationIdFromName(string name)
+        {
+            var d = new GetLocationIdFromNameDataDelegate(name);
+            return executor.ExecuteReader(d);
+        }
     }
 }

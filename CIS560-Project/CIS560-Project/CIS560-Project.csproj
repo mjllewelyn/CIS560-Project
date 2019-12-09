@@ -82,6 +82,7 @@
     <Compile Include="DataDelegates\GetCoachDataDelegate.cs" />
     <Compile Include="DataDelegates\GetCoachsRunnersUserDataDelegate.cs" />
     <Compile Include="DataDelegates\GetLocationDataDelegate.cs" />
+    <Compile Include="DataDelegates\GetLocationIdFromNameDataDelegate.cs" />
     <Compile Include="DataDelegates\GetRunnerDataDelegate.cs" />
     <Compile Include="DataDelegates\GetRunnersNoTeamDataDelegate.cs" />
     <Compile Include="DataDelegates\GetTeamDataDelegate.cs" />

@@ -29,11 +29,8 @@ namespace CIS560_Project.Controllers
             return executor.ExecuteReader(d);
         }
 
-        public Race CreateRace(int creatorId, int locationId, DateTime dateTime, int distance, bool isArchived = false)
+        public void CreateRace(int locationId, DateTime dateTime, int distance, int isArchived = 0)
         {
-            if (string.IsNullOrWhiteSpace(creatorId.ToString()))
-                throw new ArgumentException("The parameter cannot be null or empty.", nameof(creatorId));
-
             if (string.IsNullOrWhiteSpace(locationId.ToString()))
                 throw new ArgumentException("The parameter cannot be null or empty.", nameof(locationId));
 
@@ -43,8 +40,8 @@ namespace CIS560_Project.Controllers
             if (string.IsNullOrWhiteSpace(distance.ToString()))
                 throw new ArgumentException("The parameter cannot be null or empty.", nameof(distance));
 
-            var d = new CreateRaceDataDelegate(creatorId, locationId, dateTime, distance, isArchived);
-            return executor.ExecuteNonQuery(d);
+            var d = new CreateRaceDataDelegate(locationId, dateTime, distance, isArchived);
+            executor.ExecuteNonQuery(d);
         }
 
         public void ArchiveRace(int raceId)

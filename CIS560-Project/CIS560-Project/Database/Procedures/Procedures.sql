@@ -68,6 +68,16 @@ WHERE L.LocationId = @LocationId;
 
 GO
 
+CREATE OR ALTER PROCEDURE CrossCountry.GetLocationIdFromName
+	@Name NVARCHAR(100)
+AS
+
+SELECT L.LocationId
+FROM CrossCountry.[Location] L
+WHERE L.[Name] = @Name;
+
+GO
+
 
 CREATE OR ALTER PROCEDURE CrossCountry.UpdateRaceParticipantTime
 	@RaceParticipantId INT,

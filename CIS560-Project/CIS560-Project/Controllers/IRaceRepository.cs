@@ -13,7 +13,7 @@ namespace CIS560_Project.Controllers
 
         Race GetRace(int raceId);
 
-        Race CreateRace(int creatorId, int locationId, DateTime dateTime, int distance, bool isArchived = false);
+        void CreateRace(int locationId, DateTime dateTime, int distance, int isArchived = 0);
 
         void ArchiveRace(int raceId);
     }
