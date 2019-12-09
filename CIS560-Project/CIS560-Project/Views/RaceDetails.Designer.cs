@@ -81,7 +81,7 @@
             this.uxEnterTimesButton.Name = "uxEnterTimesButton";
             this.uxEnterTimesButton.Size = new System.Drawing.Size(189, 48);
             this.uxEnterTimesButton.TabIndex = 3;
-            this.uxEnterTimesButton.Text = "Enter times";
+            this.uxEnterTimesButton.Text = "Update Time";
             this.uxEnterTimesButton.UseVisualStyleBackColor = true;
             this.uxEnterTimesButton.Click += new System.EventHandler(this.uxEnterTimesButton_Click);
             // 
