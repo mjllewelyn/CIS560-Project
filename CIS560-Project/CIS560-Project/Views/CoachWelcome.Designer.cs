@@ -109,7 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 471);
+            this.ClientSize = new System.Drawing.Size(668, 471);
             this.Controls.Add(this.uxTeamsButton);
             this.Controls.Add(this.uxSignoutButton);
             this.Controls.Add(this.uxRacesButton);

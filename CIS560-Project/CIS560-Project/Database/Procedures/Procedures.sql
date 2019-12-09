@@ -13,7 +13,7 @@ CREATE OR ALTER PROCEDURE CrossCountry.FetchRunnersForRace
 	@RaceId INT
 AS
 
-SELECT Rn.RunnerId, Rn.TeamId, Rn.StartYear, Rn.EndYear
+SELECT RP.RaceParticipantId, Rn.RunnerId, RP.[Time], RP.AvgHeartRate
 FROM CrossCountry.Race R
 	INNER JOIN CrossCountry.RaceParticipant RP ON R.RaceId = RP.RaceId
 	INNER JOIN CrossCountry.Runner Rn ON RP.RunnerId = Rn.RunnerId

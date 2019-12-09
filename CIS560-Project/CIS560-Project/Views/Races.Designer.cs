@@ -50,7 +50,7 @@
             // uxEnterARaceButton
             // 
             this.uxEnterARaceButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxEnterARaceButton.Location = new System.Drawing.Point(97, 416);
+            this.uxEnterARaceButton.Location = new System.Drawing.Point(232, 416);
             this.uxEnterARaceButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxEnterARaceButton.Name = "uxEnterARaceButton";
             this.uxEnterARaceButton.Size = new System.Drawing.Size(184, 59);
@@ -62,7 +62,7 @@
             // uxBackButton
             // 
             this.uxBackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxBackButton.Location = new System.Drawing.Point(303, 489);
+            this.uxBackButton.Location = new System.Drawing.Point(478, 490);
             this.uxBackButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxBackButton.Name = "uxBackButton";
             this.uxBackButton.Size = new System.Drawing.Size(184, 59);
@@ -84,19 +84,19 @@
             // uxRaceDetailsButton
             // 
             this.uxRaceDetailsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxRaceDetailsButton.Location = new System.Drawing.Point(97, 489);
+            this.uxRaceDetailsButton.Location = new System.Drawing.Point(232, 490);
             this.uxRaceDetailsButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxRaceDetailsButton.Name = "uxRaceDetailsButton";
             this.uxRaceDetailsButton.Size = new System.Drawing.Size(184, 59);
             this.uxRaceDetailsButton.TabIndex = 4;
-            this.uxRaceDetailsButton.Text = "Race Details";
+            this.uxRaceDetailsButton.Text = "Racers";
             this.uxRaceDetailsButton.UseVisualStyleBackColor = true;
             this.uxRaceDetailsButton.Click += new System.EventHandler(this.uxRaceDetailsButton_Click);
             // 
             // uxCreateRaceButton
             // 
             this.uxCreateRaceButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxCreateRaceButton.Location = new System.Drawing.Point(303, 422);
+            this.uxCreateRaceButton.Location = new System.Drawing.Point(478, 416);
             this.uxCreateRaceButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxCreateRaceButton.Name = "uxCreateRaceButton";
             this.uxCreateRaceButton.Size = new System.Drawing.Size(184, 59);
