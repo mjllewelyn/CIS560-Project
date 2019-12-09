@@ -98,6 +98,7 @@
     <Compile Include="DataDelegates\UpdateRaceParticipantTimeDataDelegate.cs" />
     <Compile Include="DataDelegates\ValidateUserDataDelegate.cs" />
     <Compile Include="Models\RaceForRunner.cs" />
+    <Compile Include="Models\RaceRecord.cs" />
     <Compile Include="Views\CoachWelcome.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -193,7 +193,7 @@ WHERE T.TeamId = @TeamId;
 
 GO
 
-CREATE OR ALTER PROCEDURE CrossCountry.GetTeam
+CREATE OR ALTER PROCEDURE CrossCountry.FetchTeam
 	@Name VARCHAR(50)
 AS
 
@@ -435,16 +435,25 @@ WHERE TR.RunnerId = @RunnerId AND TR.IsArchived = 0;
 GO
 
 
-CREATE OR ALTER PROCEDURE CrossCountry.FastestTimeForEachRunnerOnTeam
-	@TeamId INT
+CREATE OR ALTER PROCEDURE CrossCountry.GetRunnersRecord
+	@RunnerId INT
 AS
 
-SELECT R.RunnerId,
-	MIN(RP.[Time]) AS FastestTime
+SELECT CONCAT(U.FirstName, U.LastName) AS [Name],
+	RP.[Time],
+	Rc.Distance,
+	Rc.[DateTime] AS [Date],
+	L.[Name] AS LocationName 
 FROM CrossCountry.Runner R
+	INNER JOIN CrossCountry.[User] U ON U.UserId = R.RunnerId
 	INNER JOIN CrossCountry.RaceParticipant RP ON R.RunnerId = RP.RunnerId
 	INNER JOIN CrossCountry.Race Rc ON RP.RaceId = Rc.RaceId
-WHERE R.TeamId = @TeamId AND Rc.IsArchived IS NULL AND RP.[Time] IS NOT NULL
-GROUP BY R.RunnerId;
-
+	INNER JOIN CrossCountry.[Location] L ON L.LocationId = Rc.LocationId
+WHERE RP.RaceParticipantId IN (
+	SELECT TOP(1) RP.RaceParticipantId
+	FROM CrossCountry.RaceParticipant RP
+	INNER JOIN CrossCountry.Race Rc ON Rc.RaceId = RP.RaceId
+	WHERE RP.RunnerId = @RunnerId AND Rc.IsArchived IS NULL AND RP.[Time] IS NOT NULL
+	ORDER BY RP.[Time] ASC
+);
 GO

@@ -36,9 +36,9 @@ namespace CIS560_Project.Controllers
             return executor.ExecuteReader(d);
         }
 
-        public IReadOnlyList<RaceParticipant> GetTeamRecords(int teamId)
+        public RaceRecord GetTeamRecords(int runnerId)
         {
-            var d = new GetTeamRecordsDataDelegate(teamId);
+            var d = new GetTeamRecordsDataDelegate(runnerId);
             return executor.ExecuteReader(d);
         }
 

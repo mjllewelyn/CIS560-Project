@@ -63,6 +63,7 @@
             this.uxRetireButton.TabIndex = 2;
             this.uxRetireButton.Text = "Retire";
             this.uxRetireButton.UseVisualStyleBackColor = true;
+            this.uxRetireButton.Click += new System.EventHandler(this.uxRetireButton_Click);
             // 
             // uxBackButton
             // 
