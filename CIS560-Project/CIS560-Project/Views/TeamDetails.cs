@@ -60,10 +60,10 @@ namespace CIS560_Project
 
         private void uxRetireButton_Click(object sender, EventArgs e)
         {
-            teamController.RetireTeam(teamId);
+            /*teamController.RetireTeam(teamId);
             var teams = new Teams();
             teams.Closed += (s, args) => Close();
-            teams.Show();
+            teams.Show();*/
         }
     }
 }

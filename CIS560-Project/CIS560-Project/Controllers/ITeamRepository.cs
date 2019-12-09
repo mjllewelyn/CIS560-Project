@@ -19,6 +19,8 @@ namespace CIS560_Project.Controllers
 
         void CreateTeam(string name);
 
+        void UpdateRunnersTeam(int runnerId, int teamId);
+
         void RetireTeam(int teamId);
     }
 }

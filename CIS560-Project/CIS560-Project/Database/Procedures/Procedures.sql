@@ -274,6 +274,17 @@ VALUES (@Name, @CoachId);
 
 GO
 
+CREATE OR ALTER PROCEDURE CrossCountry.UpdateRunnersTeam
+	@RunnerId INT,
+	@TeamId INT
+AS
+
+UPDATE CrossCountry.Runner
+SET TeamId = @TeamId
+WHERE RunnerId = @RunnerId
+
+GO
+
 
 CREATE OR ALTER PROCEDURE CrossCountry.GetTrainingRun
 	@TrainingRunId INT

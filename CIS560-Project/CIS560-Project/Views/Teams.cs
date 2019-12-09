@@ -51,5 +51,13 @@ namespace CIS560_Project
                 uxTeamsListBox.Items.Add(team.Name);
             }
         }
+
+        private void uxUpdateRunnersTeamButton_Click(object sender, EventArgs e)
+        {
+            Hide();
+            var teamDetails = new UpdateRunnerTeam();
+            teamDetails.Closed += (s, args) => Close();
+            teamDetails.Show();
+        }
     }
 }

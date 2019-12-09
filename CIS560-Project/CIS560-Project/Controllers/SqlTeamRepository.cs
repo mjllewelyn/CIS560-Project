@@ -51,6 +51,12 @@ namespace CIS560_Project.Controllers
             executor.ExecuteNonQuery(d);
         }
 
+        public void UpdateRunnersTeam(int runnerId, int teamId)
+        {
+            var d = new UpdateRunnersTeamDataDelegate(runnerId, teamId);
+            executor.ExecuteNonQuery(d);
+        }
+
         public void RetireTeam(int teamId)
         {
             if (string.IsNullOrWhiteSpace(teamId.ToString()))
