@@ -23,7 +23,10 @@ namespace CIS560_Project
 
         private void uxCreateTeamButton_Click(object sender, EventArgs e)
         {
-            Program.GoHome(this);
+            Hide();
+            var teamDetails = new CreateTeam();
+            teamDetails.Closed += (s, args) => Close();
+            teamDetails.Show();
         }
 
         private void uxBackButton_Click(object sender, EventArgs e)

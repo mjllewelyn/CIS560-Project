@@ -41,9 +41,9 @@
             // 
             this.uxCreateTeamLabel.AutoSize = true;
             this.uxCreateTeamLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxCreateTeamLabel.Location = new System.Drawing.Point(48, 47);
+            this.uxCreateTeamLabel.Location = new System.Drawing.Point(54, 59);
             this.uxCreateTeamLabel.Name = "uxCreateTeamLabel";
-            this.uxCreateTeamLabel.Size = new System.Drawing.Size(183, 36);
+            this.uxCreateTeamLabel.Size = new System.Drawing.Size(227, 40);
             this.uxCreateTeamLabel.TabIndex = 0;
             this.uxCreateTeamLabel.Text = "Create Team";
             // 
@@ -51,43 +51,46 @@
             // 
             this.uxNameLabel.AutoSize = true;
             this.uxNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxNameLabel.Location = new System.Drawing.Point(54, 124);
+            this.uxNameLabel.Location = new System.Drawing.Point(61, 155);
             this.uxNameLabel.Name = "uxNameLabel";
-            this.uxNameLabel.Size = new System.Drawing.Size(64, 25);
+            this.uxNameLabel.Size = new System.Drawing.Size(78, 29);
             this.uxNameLabel.TabIndex = 1;
             this.uxNameLabel.Text = "Name";
             // 
             // uxNameTextBox
             // 
-            this.uxNameTextBox.Location = new System.Drawing.Point(59, 152);
+            this.uxNameTextBox.Location = new System.Drawing.Point(66, 190);
+            this.uxNameTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxNameTextBox.Name = "uxNameTextBox";
-            this.uxNameTextBox.Size = new System.Drawing.Size(255, 22);
+            this.uxNameTextBox.Size = new System.Drawing.Size(286, 26);
             this.uxNameTextBox.TabIndex = 2;
             // 
             // uxMembersCheckedListBox
             // 
             this.uxMembersCheckedListBox.FormattingEnabled = true;
-            this.uxMembersCheckedListBox.Location = new System.Drawing.Point(59, 229);
+            this.uxMembersCheckedListBox.Location = new System.Drawing.Point(61, 358);
+            this.uxMembersCheckedListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxMembersCheckedListBox.Name = "uxMembersCheckedListBox";
-            this.uxMembersCheckedListBox.Size = new System.Drawing.Size(255, 89);
+            this.uxMembersCheckedListBox.Size = new System.Drawing.Size(291, 46);
             this.uxMembersCheckedListBox.TabIndex = 3;
             // 
             // uxMembersLabel
             // 
             this.uxMembersLabel.AutoSize = true;
             this.uxMembersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxMembersLabel.Location = new System.Drawing.Point(54, 201);
+            this.uxMembersLabel.Location = new System.Drawing.Point(56, 325);
             this.uxMembersLabel.Name = "uxMembersLabel";
-            this.uxMembersLabel.Size = new System.Drawing.Size(94, 25);
+            this.uxMembersLabel.Size = new System.Drawing.Size(115, 29);
             this.uxMembersLabel.TabIndex = 4;
             this.uxMembersLabel.Text = "Members";
             // 
             // uxSaveButton
             // 
             this.uxSaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxSaveButton.Location = new System.Drawing.Point(54, 374);
+            this.uxSaveButton.Location = new System.Drawing.Point(61, 243);
+            this.uxSaveButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxSaveButton.Name = "uxSaveButton";
-            this.uxSaveButton.Size = new System.Drawing.Size(119, 35);
+            this.uxSaveButton.Size = new System.Drawing.Size(134, 44);
             this.uxSaveButton.TabIndex = 5;
             this.uxSaveButton.Text = "Save";
             this.uxSaveButton.UseVisualStyleBackColor = true;
@@ -96,9 +99,10 @@
             // uxCancelButton
             // 
             this.uxCancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxCancelButton.Location = new System.Drawing.Point(195, 374);
+            this.uxCancelButton.Location = new System.Drawing.Point(218, 243);
+            this.uxCancelButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxCancelButton.Name = "uxCancelButton";
-            this.uxCancelButton.Size = new System.Drawing.Size(119, 35);
+            this.uxCancelButton.Size = new System.Drawing.Size(134, 44);
             this.uxCancelButton.TabIndex = 6;
             this.uxCancelButton.Text = "Cancel";
             this.uxCancelButton.UseVisualStyleBackColor = true;
@@ -106,9 +110,9 @@
             // 
             // CreateTeam
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 450);
+            this.ClientSize = new System.Drawing.Size(425, 309);
             this.Controls.Add(this.uxCancelButton);
             this.Controls.Add(this.uxSaveButton);
             this.Controls.Add(this.uxMembersLabel);
@@ -116,6 +120,7 @@
             this.Controls.Add(this.uxNameTextBox);
             this.Controls.Add(this.uxNameLabel);
             this.Controls.Add(this.uxCreateTeamLabel);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "CreateTeam";
             this.Text = "CreateTeam";
             this.ResumeLayout(false);

@@ -266,12 +266,11 @@ GO
 
 CREATE OR ALTER PROCEDURE CrossCountry.CreateTeam
 	@Name NVARCHAR(64),
-	@CoachId INT,
-	@StartYear INT
+	@CoachId INT
 AS
 
-INSERT CrossCountry.Team([Name], CoachId, StartYear)
-VALUES (@Name, @CoachId, @StartYear);
+INSERT CrossCountry.Team([Name], CoachId)
+VALUES (@Name, @CoachId);
 
 GO
 

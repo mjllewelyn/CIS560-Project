@@ -42,28 +42,13 @@ namespace CIS560_Project.Controllers
             return executor.ExecuteReader(d);
         }
 
-        public Team CreateTeam(string name, int coachId, DateTime createdOn, DateTime updatedOn, int startYear, int endYear)
+        public void CreateTeam(string name)
         {
             if (string.IsNullOrWhiteSpace(name))
                 throw new ArgumentException("The parameter cannot be null or empty.", nameof(name));
 
-            if (string.IsNullOrWhiteSpace(coachId.ToString()))
-                throw new ArgumentException("The parameter cannot be null or empty.", nameof(coachId));
-
-            if (string.IsNullOrWhiteSpace(createdOn.ToString()))
-                throw new ArgumentException("The parameter cannot be null or empty.", nameof(createdOn));
-
-            if (string.IsNullOrWhiteSpace(updatedOn.ToString()))
-                throw new ArgumentException("The parameter cannot be null or empty.", nameof(updatedOn));
-
-            if (string.IsNullOrWhiteSpace(startYear.ToString()))
-                throw new ArgumentException("The parameter cannot be null or empty.", nameof(startYear));
-
-            if (string.IsNullOrWhiteSpace(endYear.ToString()))
-                throw new ArgumentException("The parameter cannot be null or empty.", nameof(endYear));
-
-            var d = new CreateTeamDataDelegate(name, coachId, createdOn, updatedOn, startYear, endYear);
-            return executor.ExecuteNonQuery(d);
+            var d = new CreateTeamDataDelegate(name);
+            executor.ExecuteNonQuery(d);
         }
 
         public void RetireTeam(int teamId)
