@@ -50,6 +50,11 @@ namespace CIS560_Project
         private void uxRetireButton_Click(object sender, EventArgs e)
         {
             userController.RetireUser(Program.currentUser.UserId);
+            Hide();
+            var login = new uxSignIn();
+            login.Closed += (s, args) => Close();
+            login.Show();
+            Program.currentUser = null;
         }
 
         private void uxBackButton_Click(object sender, EventArgs e)

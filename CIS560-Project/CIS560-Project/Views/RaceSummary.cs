@@ -12,12 +12,10 @@ using CIS560_Project.Controllers;
 
 namespace CIS560_Project
 {
-    public partial class RaceDetails : Form
+    public partial class RaceSummary : Form
     {
-        IRunnerRepository runnerController = new SqlRunnerRepository(Program.connectionString);
-        IRaceParticipantRepository raceParticipantController = new SqlRaceParticipantRepository(Program.connectionString);
-
-        public RaceDetails()
+        IRaceRepository raceController = new SqlRaceRepository(Program.connectionString);
+        public RaceSummary()
         {
             InitializeComponent();
         }
@@ -30,26 +28,18 @@ namespace CIS560_Project
             races.Show();
         }
 
-        private void uxEnterTimesButton_Click(object sender, EventArgs e)
-        {
-            Hide();
-            var races = new EnterTimes();
-            races.Closed += (s, args) => Close();
-            races.Show();
-        }
-
         private void uxFilterButton_Click(object sender, EventArgs e)
         {
             int raceId = Convert.ToInt32(uxRaceIdBox.Text);
-            List<Racer> readOnlyList = new List<Racer>();
-            foreach (Racer race in raceParticipantController.FetchRacersForRace(raceId))
+            List<RaceSummaryObject> readOnlyList = new List<RaceSummaryObject>();
+            foreach (RaceSummaryObject race in raceController.GetRaceSummary(raceId))
             {
                 readOnlyList.Add(race);
             }
 
             BindingSource source = new BindingSource();
             source.DataSource = readOnlyList;
-            uxRaceDetailsGrid.DataSource = source;
+            uxRaceSummaryDetailsGrid.DataSource = source;
         }
     }
 }

@@ -94,6 +94,7 @@
     <Compile Include="DataDelegates\GetTeamRunnersDataDelegate.cs" />
     <Compile Include="DataDelegates\GetTeamsForRaceDataDelegate.cs" />
     <Compile Include="DataDelegates\GetTrainingRunDataDelegate.cs" />
+    <Compile Include="DataDelegates\RaceSummaryDataDelegate.cs" />
     <Compile Include="DataDelegates\RetireTeamDataDelegate.cs" />
     <Compile Include="DataDelegates\RetireUserDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveRacesDataDelegate.cs" />
@@ -101,10 +102,12 @@
     <Compile Include="DataDelegates\RetrieveRunnersDataDelegate.cs" />
     <Compile Include="DataDelegates\TeamPlacingForRaceDataDelegate.cs" />
     <Compile Include="DataDelegates\UpdateRaceParticipantTimeDataDelegate.cs" />
+    <Compile Include="DataDelegates\UpdateRunnersTeamDataDelegate.cs" />
     <Compile Include="DataDelegates\ValidateUserDataDelegate.cs" />
     <Compile Include="Models\RaceCoachView.cs" />
     <Compile Include="Models\RaceForRunner.cs" />
     <Compile Include="Models\Racer.cs" />
+    <Compile Include="Models\RaceSummaryObject.cs" />
     <Compile Include="Models\RunnerNameAndTeam.cs" />
     <Compile Include="Models\RunnerSummary.cs" />
     <Compile Include="Models\TeamPlacing.cs" />
@@ -182,6 +185,12 @@
     <Compile Include="Views\Races.Designer.cs">
       <DependentUpon>Races.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\RaceSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RaceSummary.Designer.cs">
+      <DependentUpon>RaceSummary.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Records.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +255,12 @@
     <Compile Include="Views\TrainingRuns.Designer.cs">
       <DependentUpon>TrainingRuns.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\UpdateRunnerTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\UpdateRunnerTeam.Designer.cs">
+      <DependentUpon>UpdateRunnerTeam.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Views\CoachWelcome.resx">
       <DependentUpon>CoachWelcome.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Races.resx">
       <DependentUpon>Races.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RaceSummary.resx">
+      <DependentUpon>RaceSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Records.resx">
       <DependentUpon>Records.cs</DependentUpon>
@@ -311,6 +329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TrainingRuns.resx">
       <DependentUpon>TrainingRuns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UpdateRunnerTeam.resx">
+      <DependentUpon>UpdateRunnerTeam.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

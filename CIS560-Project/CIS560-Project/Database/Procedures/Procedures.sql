@@ -1,3 +1,4 @@
+-- Gets all of a race participant's info based on a certain RaceParticipan ID
 CREATE OR ALTER PROCEDURE CrossCountry.GetRaceParticipant
 	@RaceParticipantId	INT
 AS
@@ -8,6 +9,8 @@ WHERE RP.RaceParticipantId = @RaceParticipantId;
 
 GO
 
+
+-- Gets all runners (race participants) in a given race based on RaceId (includes runner name)
 CREATE OR ALTER PROCEDURE CrossCountry.FetchRacersForRace
 	@RaceId INT
 AS
@@ -21,6 +24,7 @@ WHERE R.RaceId = @RaceId;
 GO
 
 
+-- Gets all runners (race participants) in a given race, only runner info
 CREATE OR ALTER PROCEDURE CrossCountry.FetchRunnersForRace
 	@RaceId INT
 AS
@@ -32,7 +36,8 @@ FROM CrossCountry.Race R
 WHERE R.RaceId = @RaceId;
 GO
 
--- Double check this
+
+-- Gets all races a runner will participate in
 CREATE OR ALTER PROCEDURE CrossCountry.FetchRacesForRunner
 	@RunnerId INT
 AS
@@ -45,7 +50,8 @@ WHERE RP.RunnerId = @RunnerId
 
 GO
 
--- Might need to change this one
+
+-- Gets all races a team has participated in
 CREATE OR ALTER PROCEDURE CrossCountry.FetchRacesForTeam
 	@TeamId INT
 AS
@@ -59,6 +65,7 @@ WHERE Rn.TeamId = @TeamId AND RP.[Time] IS NOT NULL AND Rc.IsArchived IS NULL;
 GO
 
 
+-- Gets a specific coach based on coach id
 CREATE OR ALTER PROCEDURE CrossCountry.GetCoach
 	@CoachId INT
 AS
@@ -70,6 +77,7 @@ WHERE C.CoachId = @CoachId;
 GO
 
 
+-- Gets a specific location based on location id
 CREATE OR ALTER PROCEDURE CrossCountry.GetLocation
 	@LocationId INT
 AS
@@ -80,6 +88,8 @@ WHERE L.LocationId = @LocationId;
 
 GO
 
+
+-- Gets a location id based on a location's name
 CREATE OR ALTER PROCEDURE CrossCountry.GetLocationIdFromName
 	@Name NVARCHAR(100)
 AS
@@ -91,6 +101,7 @@ WHERE L.[Name] = @Name;
 GO
 
 
+-- Updates a race participants time for a race given the participant id and new time
 CREATE OR ALTER PROCEDURE CrossCountry.UpdateRaceParticipantTime
 	@RaceParticipantId INT,
 	@Time INT
@@ -103,6 +114,7 @@ WHERE RaceParticipantId = @RaceParticipantId;
 GO
 
 
+-- Inserts a race participant into the race participant table
 CREATE OR ALTER PROCEDURE CrossCountry.CreateRaceParticipant
 	@RaceId INT,
 	@RunnerId INT,
@@ -116,6 +128,7 @@ VALUES (@RaceId, @RunnerId, @Time, @AverageHeartRate);
 GO
 
 
+-- Gets all non-archived races, their locations, and who created them from the race list
 CREATE OR ALTER PROCEDURE CrossCountry.RetrieveRaces
 AS
 
@@ -128,6 +141,7 @@ WHERE IsArchived = 0;
 GO
 
 
+-- Gets a specific race (and all its info) based on a race id
 CREATE OR ALTER PROCEDURE CrossCountry.GetRace
 	@RaceId INT
 AS
@@ -139,6 +153,7 @@ WHERE R.RaceId = @RaceId;
 GO
 
 
+-- Inserts a race into the race table
 CREATE OR ALTER PROCEDURE CrossCountry.CreateRace
 	@CreatorId INT, 
 	@LocationId INT, 
@@ -153,6 +168,7 @@ VALUES (@CreatorId, @LocationId, @DateTime, @Distance, @IsArchived);
 GO
 
 
+-- Archives a race, effectively deleting it from all future information pulls
 CREATE OR ALTER PROCEDURE CrossCountry.ArchiveRace
 	@RaceId INT
 AS
@@ -164,6 +180,7 @@ WHERE RaceId = @RaceId;
 GO
 
 
+-- Gets all active runners from the runner table
 CREATE OR ALTER PROCEDURE CrossCountry.RetrieveRunners
 AS
 
@@ -173,6 +190,7 @@ WHERE Rn.EndYear IS NULL;
 
 GO
 
+-- Gets all runners and their associated team name
 CREATE OR ALTER PROCEDURE CrossCountry.RetrieveRunnerNamesAndTeams
 AS
 
@@ -184,6 +202,7 @@ WHERE Rn.EndYear IS NULL;
 GO
 
 
+-- Gets a specific runner based on runner id
 CREATE OR ALTER PROCEDURE CrossCountry.GetRunner
 	@RunnerId INT
 AS
@@ -195,6 +214,7 @@ WHERE R.RunnerId = @RunnerId;
 GO
 
 
+-- Gets all active runners on a specific team based on team id
 CREATE OR ALTER PROCEDURE CrossCountry.GetTeamRunners
 	@TeamId INT
 AS
@@ -206,7 +226,7 @@ WHERE T.TeamId = @TeamId AND Rn.EndYear IS NULL;
 
 GO
 
-
+-- Gets a Runners with no TeamId
 CREATE OR ALTER PROCEDURE CrossCountry.GetRunnersNoTeam
 AS
 
@@ -217,6 +237,7 @@ WHERE Rn.TeamId IS NULL;
 GO
 
 
+-- Gets a specific team based on team id
 CREATE OR ALTER PROCEDURE CrossCountry.GetTeam
 	@TeamId INT
 AS
@@ -227,6 +248,8 @@ WHERE T.TeamId = @TeamId;
 
 GO
 
+
+-- Gets a team based on team name
 CREATE OR ALTER PROCEDURE CrossCountry.FetchTeam
 	@Name VARCHAR(50)
 AS
@@ -238,6 +261,7 @@ WHERE T.Name = @Name;
 GO
 
 
+-- Gets all active teams that the coach is in charge of based on coach id
 CREATE OR ALTER PROCEDURE CrossCountry.FetchCoachTeams
 	@CoachId INT
 AS
@@ -249,7 +273,7 @@ WHERE T.CoachId = @CoachId AND T.EndYear IS NULL;
 GO
 
 
--- CHECK THIS ONE
+-- gets all the teams for a specific race based on race id
 CREATE OR ALTER PROCEDURE CrossCountry.GetTeamsForRace
 	@RaceId INT
 AS
@@ -264,18 +288,36 @@ GROUP BY Rn.TeamId;
 GO
 
 
+-- Inserts a team into the team table
 CREATE OR ALTER PROCEDURE CrossCountry.CreateTeam
 	@Name NVARCHAR(64),
-	@CoachId INT,
-	@StartYear INT
+	@CoachId INT
 AS
 
-INSERT CrossCountry.Team([Name], CoachId, StartYear)
-VALUES (@Name, @CoachId, @StartYear);
+INSERT CrossCountry.Team([Name], CoachId)
+VALUES (@Name, @CoachId);
 
 GO
 
 
+-- Updates a specific runner's team
+CREATE OR ALTER PROCEDURE CrossCountry.UpdateRunnersTeam
+	@RunnerId INT,
+	@TeamId INT
+AS
+
+UPDATE CrossCountry.Runner
+SET TeamId = @TeamId
+WHERE RunnerId = @RunnerId
+
+UPDATE CrossCountry.[User]
+SET UpdatedOn = SYSDATETIMEOFFSET()
+WHERE UserId = @RunnerId
+
+GO
+
+
+-- Gets a specific training run
 CREATE OR ALTER PROCEDURE CrossCountry.GetTrainingRun
 	@TrainingRunId INT
 AS
@@ -287,6 +329,7 @@ WHERE T.TrainingRunId = @TrainingRunId;
 GO
 
 
+-- Gets all un-archived training runs for a given runner
 CREATE OR ALTER PROCEDURE CrossCountry.FetchTrainingRuns
 	@RunnerId INT
 AS
@@ -298,6 +341,7 @@ WHERE T.RunnerId = @RunnerId AND IsArchived = 0;
 GO
 
 
+-- Inserts a new training run
 CREATE OR ALTER PROCEDURE CrossCountry.CreateTrainingRun
 	@RunnerId INT,
 	@Date DATE,
@@ -313,6 +357,7 @@ VALUES (@RunnerId, @Date, @Distance, @Time, @AverageHeartRate, @IsArchived);
 GO
 
 
+-- Gets a specific user based on email
 CREATE OR ALTER PROCEDURE CrossCountry.GetUser
 	@Email NVARCHAR(64)
 AS
@@ -324,6 +369,7 @@ WHERE U.Email = @Email;
 GO
 
 
+-- Validates a user's login based on email and password
 CREATE OR ALTER PROCEDURE CrossCountry.ValidateUser
 	@Email NVARCHAR(64),
 	@Password NVARCHAR(128)
@@ -336,6 +382,7 @@ WHERE U.Email = @Email AND U.PassHash = @Password;
 GO
 
 
+-- Gets all runners that a coach is in charge of
 CREATE OR ALTER PROCEDURE CrossCountry.GetCoachsRunners
 	@CoachId INT
 AS
@@ -348,6 +395,7 @@ WHERE T.CoachId = @CoachId AND R.EndYear IS NULL;
 GO
 
 
+-- Gets all runners without a team
 CREATE OR ALTER PROCEDURE CrossCountry.GetRunnersNoTeam
 AS
 
@@ -358,6 +406,7 @@ WHERE R.TeamId IS NULL AND R.EndYear IS NULL;
 GO
 
 
+-- Retires a team, archives the team
 CREATE OR ALTER PROCEDURE CrossCountry.RetireTeam
 	@TeamId	INT
 AS
@@ -375,7 +424,8 @@ WHERE TeamId = @TeamId;
 
 GO
 
-
+		       
+-- Retires a user (coach or runner), archiving them
 CREATE OR ALTER PROCEDURE CrossCountry.RetireUser
 	@UserId INT
 AS
@@ -387,10 +437,15 @@ WHERE CoachId = @UserId;
 UPDATE CrossCountry.Runner
 SET EndYear = YEAR(SYSDATETIMEOFFSET())
 WHERE RunnerId = @UserId;
+		   
+UPDATE CrossCountry.[User]
+SET UpdatedOn = SYSDATETIMEOFFSET()
+WHERE UserId = @UserId		 
 
 GO
 
 
+-- Gets all locations in the location table
 CREATE OR ALTER PROCEDURE CrossCountry.FetchLocations
 AS
 
@@ -400,6 +455,7 @@ FROM CrossCountry.[Location] L;
 GO
 
 
+-- Gets all scheduled race times for a given location
 CREATE OR ALTER PROCEDURE CrossCountry.GetDatesForLocation
 	@LocationId INT
 AS
@@ -413,14 +469,14 @@ GO
 
 
 
--- Check these queries
+-- Summarizes the race with # of racers, average pace of all runners in distance/min, and gets the winning time
 CREATE OR ALTER PROCEDURE CrossCountry.RaceSummary
 	@RaceId INT
 AS
 
 SELECT
 	COUNT(*) AS NumberOfRacers,
-	AVG(ALL (R.Distance/RP.[Time])) AS AveragePace,
+	AVG(ALL (RP.[Time]/R.Distance)) AS AveragePace
 	(
 		SELECT TOP(1) RP.[Time]
 		FROM CrossCountry.RaceParticipant RP
@@ -433,6 +489,7 @@ WHERE RP.RaceId = @RaceId;
 GO
 
 
+-- Determines the placement of teams for a given race based on the average of runners times, lowest being first place
 CREATE OR ALTER PROCEDURE CrossCountry.TeamPlacingForRace
 	@RaceId INT
 AS
@@ -454,6 +511,7 @@ ORDER BY TeamPlacing DESC;
 GO
 
 
+-- Summarizes a runners training run data with their average distance, average pace (distance/min), and average time per run
 CREATE OR ALTER PROCEDURE CrossCountry.GetRunnerSummary
 	@RunnerId INT
 AS
@@ -466,6 +524,7 @@ WHERE TR.RunnerId = @RunnerId AND TR.IsArchived IS NULL;
 GO
 
 
+-- Gets a runners lifetime records in official races
 CREATE OR ALTER PROCEDURE CrossCountry.GetRunnersRecord
 	@RunnerId INT
 AS

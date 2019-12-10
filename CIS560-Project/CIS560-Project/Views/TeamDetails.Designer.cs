@@ -39,27 +39,29 @@
             // 
             this.uxTeamLabel.AutoSize = true;
             this.uxTeamLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxTeamLabel.Location = new System.Drawing.Point(53, 47);
+            this.uxTeamLabel.Location = new System.Drawing.Point(60, 59);
             this.uxTeamLabel.Name = "uxTeamLabel";
-            this.uxTeamLabel.Size = new System.Drawing.Size(186, 36);
+            this.uxTeamLabel.Size = new System.Drawing.Size(229, 40);
             this.uxTeamLabel.TabIndex = 0;
             this.uxTeamLabel.Text = "Team Details";
             // 
             // uxTeamRunnersDataGrid
             // 
             this.uxTeamRunnersDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.uxTeamRunnersDataGrid.Location = new System.Drawing.Point(59, 105);
+            this.uxTeamRunnersDataGrid.Location = new System.Drawing.Point(66, 131);
+            this.uxTeamRunnersDataGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxTeamRunnersDataGrid.Name = "uxTeamRunnersDataGrid";
             this.uxTeamRunnersDataGrid.RowTemplate.Height = 24;
-            this.uxTeamRunnersDataGrid.Size = new System.Drawing.Size(439, 189);
+            this.uxTeamRunnersDataGrid.Size = new System.Drawing.Size(494, 236);
             this.uxTeamRunnersDataGrid.TabIndex = 1;
             // 
             // uxRetireButton
             // 
             this.uxRetireButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxRetireButton.Location = new System.Drawing.Point(143, 336);
+            this.uxRetireButton.Location = new System.Drawing.Point(161, 420);
+            this.uxRetireButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxRetireButton.Name = "uxRetireButton";
-            this.uxRetireButton.Size = new System.Drawing.Size(122, 51);
+            this.uxRetireButton.Size = new System.Drawing.Size(137, 64);
             this.uxRetireButton.TabIndex = 2;
             this.uxRetireButton.Text = "Retire";
             this.uxRetireButton.UseVisualStyleBackColor = true;
@@ -68,9 +70,10 @@
             // uxBackButton
             // 
             this.uxBackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxBackButton.Location = new System.Drawing.Point(286, 336);
+            this.uxBackButton.Location = new System.Drawing.Point(322, 420);
+            this.uxBackButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxBackButton.Name = "uxBackButton";
-            this.uxBackButton.Size = new System.Drawing.Size(122, 51);
+            this.uxBackButton.Size = new System.Drawing.Size(137, 64);
             this.uxBackButton.TabIndex = 3;
             this.uxBackButton.Text = "Back";
             this.uxBackButton.UseVisualStyleBackColor = true;
@@ -78,13 +81,14 @@
             // 
             // TeamDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(651, 506);
             this.Controls.Add(this.uxBackButton);
             this.Controls.Add(this.uxRetireButton);
             this.Controls.Add(this.uxTeamRunnersDataGrid);
             this.Controls.Add(this.uxTeamLabel);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "TeamDetails";
             this.Text = "Team";
             ((System.ComponentModel.ISupportInitialize)(this.uxTeamRunnersDataGrid)).EndInit();

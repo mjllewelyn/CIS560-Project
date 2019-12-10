@@ -12,25 +12,25 @@ using CIS560_Project.Controllers;
 
 namespace CIS560_Project
 {
-    public partial class CreateTeam : Form
+    public partial class UpdateRunnerTeam : Form
     {
-        public CreateTeam()
+        public UpdateRunnerTeam()
         {
             InitializeComponent();
         }
 
-        private void uxSaveButton_Click(object sender, EventArgs e)
+        private void uxCancelButton_Click(object sender, EventArgs e)
         {
-            ITeamRepository teamController = new SqlTeamRepository(Program.connectionString);
-            teamController.CreateTeam(uxNameTextBox.Text);
             Hide();
             var teamDetails = new Teams();
             teamDetails.Closed += (s, args) => Close();
             teamDetails.Show();
         }
 
-        private void uxCancelButton_Click(object sender, EventArgs e)
+        private void uxSaveButton_Click(object sender, EventArgs e)
         {
+            ITeamRepository teamController = new SqlTeamRepository(Program.connectionString);
+            teamController.UpdateRunnersTeam(Convert.ToInt32(uxRunnerIdBox.Text), Convert.ToInt32(uxTeamIdBox.Text));
             Hide();
             var teamDetails = new Teams();
             teamDetails.Closed += (s, args) => Close();

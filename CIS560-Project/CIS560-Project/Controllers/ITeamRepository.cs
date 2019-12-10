@@ -17,7 +17,9 @@ namespace CIS560_Project.Controllers
 
         IReadOnlyList<Team> GetTeamsForRace(int raceId);
 
-        Team CreateTeam(string name, int coachId, DateTime createdOn, DateTime updatedOn, int startYear, int endYear);
+        void CreateTeam(string name);
+
+        void UpdateRunnersTeam(int runnerId, int teamId);
 
         void RetireTeam(int teamId);
     }
