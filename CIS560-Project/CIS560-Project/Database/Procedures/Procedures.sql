@@ -46,7 +46,7 @@ SELECT L.Name, R.DateTime, R.Distance, RP.Time, RP.AvgHeartRate
 FROM CrossCountry.RaceParticipant RP
      INNER JOIN CrossCountry.Race R ON RP.RaceId = R.RaceId
 	 INNER JOIN CrossCountry.Location L ON L.LocationId = R.LocationId
-WHERE RP.RunnerId = @RunnerId AND R.IsArchived IS NULL;
+WHERE RP.RunnerId = @RunnerId
 
 GO
 
@@ -223,6 +223,16 @@ SELECT Rn.RunnerId, Rn.TeamId, Rn.StartYear, Rn.EndYear
 FROM CrossCountry.Team T
 	INNER JOIN CrossCountry.Runner Rn ON T.TeamId = Rn.TeamId
 WHERE T.TeamId = @TeamId AND Rn.EndYear IS NULL;
+
+GO
+
+-- Gets a Runners with no TeamId
+CREATE OR ALTER PROCEDURE CrossCountry.GetRunnersNoTeam
+AS
+
+SELECT *
+FROM CrossCountry.Runner Rn
+WHERE Rn.TeamId IS NULL;
 
 GO
 
@@ -466,7 +476,7 @@ AS
 
 SELECT
 	COUNT(*) AS NumberOfRacers,
-	ROUND(AVG(ALL (R.Distance/(RP.[Time]/60.0))), 2) AS AveragePace,
+	AVG(ALL (RP.[Time]/R.Distance)) AS AveragePace
 	(
 		SELECT TOP(1) RP.[Time]
 		FROM CrossCountry.RaceParticipant RP
