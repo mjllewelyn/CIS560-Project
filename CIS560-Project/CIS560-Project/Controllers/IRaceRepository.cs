@@ -13,6 +13,8 @@ namespace CIS560_Project.Controllers
 
         Race GetRace(int raceId);
 
+        IReadOnlyList<RaceSummaryObject> GetRaceSummary(int raceId);
+
         void CreateRace(int locationId, DateTime dateTime, int distance, int isArchived = 0);
 
         void ArchiveRace(int raceId);

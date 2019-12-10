@@ -29,6 +29,12 @@ namespace CIS560_Project.Controllers
             return executor.ExecuteReader(d);
         }
 
+        public IReadOnlyList<RaceSummaryObject> GetRaceSummary(int raceId)
+        {
+            var d = new RaceSummaryDataDelegate(raceId);
+            return executor.ExecuteReader(d);
+        }
+
         public void CreateRace(int locationId, DateTime dateTime, int distance, int isArchived = 0)
         {
             if (string.IsNullOrWhiteSpace(locationId.ToString()))

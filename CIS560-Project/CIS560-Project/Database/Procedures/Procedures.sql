@@ -430,15 +430,16 @@ AS
 
 SELECT
 	COUNT(*) AS NumberOfRacers,
-	AVG(ALL (R.Distance/RP.[Time])) AS AveragePace,
+	AVG(ALL (RP.[Time]/R.Distance)) AS AveragePace,
 	(
 		SELECT TOP(1) RP.[Time]
 		FROM CrossCountry.RaceParticipant RP
-		WHERE RP.RaceId = @RaceId
+		WHERE RP.RaceId = 2
+		ORDER BY RP.[Time]
 	) AS WinningTime
 FROM CrossCountry.RaceParticipant RP
 	INNER JOIN CrossCountry.Race R ON RP.RaceId = R.RaceId
-WHERE RP.RaceId = @RaceId;
+WHERE RP.RaceId = 2;
 
 GO
 

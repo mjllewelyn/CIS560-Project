@@ -21,15 +21,6 @@ namespace CIS560_Project
             var readOnlyList = raceController.RetrieveRaces();
             InitializeComponent();
             FillListView(readOnlyList);
-            uxEnterARaceButton.Hide();
-        }
-
-        private void uxEnterARaceButton_Click(object sender, EventArgs e)
-        {
-            Hide();
-            var races = new uxEnterRace();
-            races.Closed += (s, args) => Close();
-            races.Show();
         }
 
         private void uxBackButton_Click(object sender, EventArgs e)
@@ -64,6 +55,14 @@ namespace CIS560_Project
         {
             Hide();
             var races = new TeamRaceResults();
+            races.Closed += (s, args) => Close();
+            races.Show();
+        }
+
+        private void uxRaceSummaryButton_Click(object sender, EventArgs e)
+        {
+            Hide();
+            var races = new RaceSummary();
             races.Closed += (s, args) => Close();
             races.Show();
         }

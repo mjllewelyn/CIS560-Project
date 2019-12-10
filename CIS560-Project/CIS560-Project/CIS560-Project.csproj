@@ -93,6 +93,7 @@
     <Compile Include="DataDelegates\GetTeamRunnersDataDelegate.cs" />
     <Compile Include="DataDelegates\GetTeamsForRaceDataDelegate.cs" />
     <Compile Include="DataDelegates\GetTrainingRunDataDelegate.cs" />
+    <Compile Include="DataDelegates\RaceSummaryDataDelegate.cs" />
     <Compile Include="DataDelegates\RetireTeamDataDelegate.cs" />
     <Compile Include="DataDelegates\RetireUserDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveRacesDataDelegate.cs" />
@@ -105,6 +106,7 @@
     <Compile Include="Models\RaceCoachView.cs" />
     <Compile Include="Models\RaceForRunner.cs" />
     <Compile Include="Models\Racer.cs" />
+    <Compile Include="Models\RaceSummaryObject.cs" />
     <Compile Include="Models\RunnerNameAndTeam.cs" />
     <Compile Include="Models\TeamPlacing.cs" />
     <Compile Include="Models\RaceRecord.cs" />
@@ -180,6 +182,12 @@
     </Compile>
     <Compile Include="Views\Races.Designer.cs">
       <DependentUpon>Races.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RaceSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RaceSummary.Designer.cs">
+      <DependentUpon>RaceSummary.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Records.cs">
       <SubType>Form</SubType>
@@ -280,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Races.resx">
       <DependentUpon>Races.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RaceSummary.resx">
+      <DependentUpon>RaceSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Records.resx">
       <DependentUpon>Records.cs</DependentUpon>

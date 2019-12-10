@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.uxRacesLabel = new System.Windows.Forms.Label();
-            this.uxEnterARaceButton = new System.Windows.Forms.Button();
             this.uxBackButton = new System.Windows.Forms.Button();
             this.uxRaceDataGrid = new System.Windows.Forms.DataGridView();
             this.uxRaceDetailsButton = new System.Windows.Forms.Button();
             this.uxCreateRaceButton = new System.Windows.Forms.Button();
             this.uxTeamRaceResults = new System.Windows.Forms.Button();
+            this.uxRaceSummaryButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.uxRaceDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,22 +48,10 @@
             this.uxRacesLabel.TabIndex = 0;
             this.uxRacesLabel.Text = "Races";
             // 
-            // uxEnterARaceButton
-            // 
-            this.uxEnterARaceButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxEnterARaceButton.Location = new System.Drawing.Point(636, 53);
-            this.uxEnterARaceButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uxEnterARaceButton.Name = "uxEnterARaceButton";
-            this.uxEnterARaceButton.Size = new System.Drawing.Size(184, 59);
-            this.uxEnterARaceButton.TabIndex = 1;
-            this.uxEnterARaceButton.Text = "Enter a Race";
-            this.uxEnterARaceButton.UseVisualStyleBackColor = true;
-            this.uxEnterARaceButton.Click += new System.EventHandler(this.uxEnterARaceButton_Click);
-            // 
             // uxBackButton
             // 
             this.uxBackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxBackButton.Location = new System.Drawing.Point(478, 495);
+            this.uxBackButton.Location = new System.Drawing.Point(347, 591);
             this.uxBackButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxBackButton.Name = "uxBackButton";
             this.uxBackButton.Size = new System.Drawing.Size(184, 59);
@@ -118,17 +106,29 @@
             this.uxTeamRaceResults.UseVisualStyleBackColor = true;
             this.uxTeamRaceResults.Click += new System.EventHandler(this.uxTeamRaceResults_Click);
             // 
+            // uxRaceSummaryButton
+            // 
+            this.uxRaceSummaryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxRaceSummaryButton.Location = new System.Drawing.Point(478, 495);
+            this.uxRaceSummaryButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uxRaceSummaryButton.Name = "uxRaceSummaryButton";
+            this.uxRaceSummaryButton.Size = new System.Drawing.Size(212, 59);
+            this.uxRaceSummaryButton.TabIndex = 7;
+            this.uxRaceSummaryButton.Text = "Race Summary";
+            this.uxRaceSummaryButton.UseVisualStyleBackColor = true;
+            this.uxRaceSummaryButton.Click += new System.EventHandler(this.uxRaceSummaryButton_Click);
+            // 
             // uxRaces
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 590);
+            this.ClientSize = new System.Drawing.Size(900, 689);
+            this.Controls.Add(this.uxRaceSummaryButton);
             this.Controls.Add(this.uxTeamRaceResults);
             this.Controls.Add(this.uxCreateRaceButton);
             this.Controls.Add(this.uxRaceDetailsButton);
             this.Controls.Add(this.uxRaceDataGrid);
             this.Controls.Add(this.uxBackButton);
-            this.Controls.Add(this.uxEnterARaceButton);
             this.Controls.Add(this.uxRacesLabel);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "uxRaces";
@@ -142,11 +142,11 @@
         #endregion
 
         private System.Windows.Forms.Label uxRacesLabel;
-        private System.Windows.Forms.Button uxEnterARaceButton;
         private System.Windows.Forms.Button uxBackButton;
         private System.Windows.Forms.DataGridView uxRaceDataGrid;
         private System.Windows.Forms.Button uxRaceDetailsButton;
         private System.Windows.Forms.Button uxCreateRaceButton;
         private System.Windows.Forms.Button uxTeamRaceResults;
+        private System.Windows.Forms.Button uxRaceSummaryButton;
     }
 }
