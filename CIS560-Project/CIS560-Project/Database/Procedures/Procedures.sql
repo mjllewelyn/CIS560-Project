@@ -518,9 +518,9 @@ CREATE OR ALTER PROCEDURE CrossCountry.GetRunnerSummary
 AS
 
 SELECT AVG(ALL TR.Distance) AS AverageDistance, 
-	AVG(ALL TR.[Time]) AS AverageTime, 
+	AVG(ALL TR.[Time]) AS AverageTime
 FROM CrossCountry.TrainingRun TR
-WHERE TR.RunnerId = @RunnerId AND TR.IsArchived IS NULL;
+WHERE TR.RunnerId = @RunnerId AND TR.IsArchived = 0;
 
 GO
 
