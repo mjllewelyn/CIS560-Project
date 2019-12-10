@@ -14,7 +14,7 @@ namespace CIS560_Project.Models
         public DateTime date { get; }
         public string locationName { get; }
 
-    public RaceRecord(string raceName, int time, int distance, DateTime date, string locationName)
+        public RaceRecord(string raceName, int time, int distance, DateTime date, string locationName)
         {
             this.raceName = raceName;
             this.time = Program.GetTimeString(time);

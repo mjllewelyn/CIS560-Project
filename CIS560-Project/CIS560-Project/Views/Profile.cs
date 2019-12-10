@@ -15,6 +15,7 @@ namespace CIS560_Project
     public partial class Profile : Form
     {
         IUserRepository userController = new SqlUserRepository(Program.connectionString);
+        IRunnerRepository runnerController = new SqlRunnerRepository(Program.connectionString);
 
         public Profile()
         {
@@ -32,7 +33,10 @@ namespace CIS560_Project
                 var runnerController = new SqlRunnerRepository(Program.connectionString);
                 var runner = runnerController.GetRunner(Program.currentUser.UserId);
                 uxRunningSinceTextBox.Text = runner.StartYear.ToString();
-                uxAvgDistTextBox.Text = 
+                RunnerSummary summary = runnerController.GetRunnerSummary(Program.currentUser.UserId);
+                uxAvgDistTextBox.Text = summary.averageDistance.ToString();
+                uxAvgPaceTextBox.Text = Program.GetTimeString(summary.averagePace);
+                uxAvgTimeTextBox.Text = Program.GetTimeString(summary.averageTime);
             }
             else
             {
