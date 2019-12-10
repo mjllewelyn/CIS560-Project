@@ -30,7 +30,6 @@
         {
             this.uxTeamLabel = new System.Windows.Forms.Label();
             this.uxTeamRunnersDataGrid = new System.Windows.Forms.DataGridView();
-            this.uxRetireButton = new System.Windows.Forms.Button();
             this.uxBackButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.uxTeamRunnersDataGrid)).BeginInit();
             this.SuspendLayout();
@@ -55,22 +54,10 @@
             this.uxTeamRunnersDataGrid.Size = new System.Drawing.Size(494, 236);
             this.uxTeamRunnersDataGrid.TabIndex = 1;
             // 
-            // uxRetireButton
-            // 
-            this.uxRetireButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxRetireButton.Location = new System.Drawing.Point(161, 420);
-            this.uxRetireButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uxRetireButton.Name = "uxRetireButton";
-            this.uxRetireButton.Size = new System.Drawing.Size(137, 64);
-            this.uxRetireButton.TabIndex = 2;
-            this.uxRetireButton.Text = "Retire";
-            this.uxRetireButton.UseVisualStyleBackColor = true;
-            this.uxRetireButton.Click += new System.EventHandler(this.uxRetireButton_Click);
-            // 
             // uxBackButton
             // 
             this.uxBackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxBackButton.Location = new System.Drawing.Point(322, 420);
+            this.uxBackButton.Location = new System.Drawing.Point(230, 420);
             this.uxBackButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uxBackButton.Name = "uxBackButton";
             this.uxBackButton.Size = new System.Drawing.Size(137, 64);
@@ -85,7 +72,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(651, 506);
             this.Controls.Add(this.uxBackButton);
-            this.Controls.Add(this.uxRetireButton);
             this.Controls.Add(this.uxTeamRunnersDataGrid);
             this.Controls.Add(this.uxTeamLabel);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -101,7 +87,6 @@
 
         private System.Windows.Forms.Label uxTeamLabel;
         private System.Windows.Forms.DataGridView uxTeamRunnersDataGrid;
-        private System.Windows.Forms.Button uxRetireButton;
         private System.Windows.Forms.Button uxBackButton;
     }
 }

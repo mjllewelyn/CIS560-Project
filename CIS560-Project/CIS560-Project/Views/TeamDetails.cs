@@ -24,10 +24,6 @@ namespace CIS560_Project
             this.teamId = teamId;
             InitializeComponent();
             FillGrid();
-            if (Program.currentUser.UserType == 1)
-            {
-                this.Controls.Remove(uxRetireButton);
-            }
         }
 
         private void uxBackButton_Click(object sender, EventArgs e)
@@ -56,14 +52,6 @@ namespace CIS560_Project
             BindingSource source = new BindingSource();
             source.DataSource = raceParticipants;
             uxTeamRunnersDataGrid.DataSource = source;
-        }
-
-        private void uxRetireButton_Click(object sender, EventArgs e)
-        {
-            /*teamController.RetireTeam(teamId);
-            var teams = new Teams();
-            teams.Closed += (s, args) => Close();
-            teams.Show();*/
         }
     }
 }
