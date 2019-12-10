@@ -11,7 +11,7 @@ namespace CIS560_Project
     static class Program
     {
         static public User currentUser = new User();
-        public const string connectionString = @"Server=PHOBOS\SQLEXPRESS;Database=master;Integrated Security=SSPI;";
+        public const string connectionString = @"Server=DESKTOP-FI4BV8L\MSSQLSERVER2;Database=master;Integrated Security=SSPI;";
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

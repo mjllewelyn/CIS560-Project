@@ -47,5 +47,11 @@ namespace CIS560_Project.Controllers
             var d = new GetRunnersNoTeamDataDelegate();
             return executor.ExecuteReader(d);
         }
+
+        public RunnerSummary GetRunnerSummary(int runnerId)
+        {
+            var d = new GetRunnerSummaryDataDelegate(runnerId);
+            return executor.ExecuteReader(d);
+        }
     }
 }

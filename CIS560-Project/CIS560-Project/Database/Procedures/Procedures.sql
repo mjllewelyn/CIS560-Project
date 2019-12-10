@@ -513,15 +513,14 @@ GO
 
 
 -- Summarizes a runners training run data with their average distance, average pace (distance/min), and average time per run
-CREATE OR ALTER PROCEDURE CrossCountry.RunnerSummary
+CREATE OR ALTER PROCEDURE CrossCountry.GetRunnerSummary
 	@RunnerId INT
 AS
 
-SELECT ROUND(AVG(ALL TR.Distance * 1.0), 2) AS AverageDistance, 
-	ROUND(AVG(ALL TR.[Time] * 1.0), 2) AS AverageTime, 
-	ROUND(AVG(ALL (TR.Distance/(TR.[Time]/60.0))), 2) AS AveragePace
+SELECT AVG(ALL TR.Distance) AS AverageDistance, 
+	AVG(ALL TR.[Time]) AS AverageTime, 
 FROM CrossCountry.TrainingRun TR
-WHERE TR.RunnerId = @RunnerId AND TR.IsArchived = 0;
+WHERE TR.RunnerId = @RunnerId AND TR.IsArchived IS NULL;
 
 GO
 
